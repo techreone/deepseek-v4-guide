@@ -7,17 +7,17 @@ export const deepseekHarness: GuideContent = {
   slug: "deepseek-harness",
   category: "NEWS & UPCOMING",
   title: "DeepSeek Harness: Everything We Know Before the Official Release",
-  seoTitle: "DeepSeek Harness: Everything We Know So Far",
+  seoTitle: "DeepSeek Harness Release Date: What We Know",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:
-    "DeepSeek Harness is DeepSeek's official agent framework, first named in the July 31 changelog and marked 'to be released soon.'",
+    "DeepSeek Harness is DeepSeek's official agent framework, first named in the July 31 changelog as 'to be released soon.' Includes the rumored release date and timeline.",
   toc: [
     { id: "step-1", label: "Step 1: What Is DeepSeek Harness?" },
     { id: "step-2", label: "Step 2: Model + Harness = Agent: What the JD Reveals" },
     { id: "step-3", label: "Step 3: The Official Harness-Measured Benchmarks" },
     { id: "step-4", label: "Step 4: The Benchmark-Maxxing Debate" },
-    { id: "step-5", label: "Step 5: Rumored Timeline: Official vs Reported vs Analysis" },
+    { id: "step-5", label: "Step 5: DeepSeek Harness Release Date" },
     { id: "step-6", label: "Step 6: Watch Out for the Same-Name Trap" },
     { id: "step-7", label: "Step 7: Why the Harness Release Matters" },
     { id: "step-8", label: "Step 8: How to Watch for the Official Release" },
@@ -112,9 +112,9 @@ The Harness scope covers:
     },
     {
       num: "05",
-      title: "Rumored Timeline: Official vs Reported vs Analysis",
+      title: "DeepSeek Harness Release Date: Rumored Timeline",
       description:
-        "Release-date chatter is everywhere, and almost none of it is official. This is the part of the DeepSeek Harness story where you must separate three layers of information: what DeepSeek confirmed, what the press reported, and what analysts inferred.",
+        "If you are asking 'when is the DeepSeek Harness coming out?', there is no official release date yet — only a rumored one. Release-date chatter is everywhere, and almost none of it is official. To find a real DeepSeek Harness launch date you must separate three layers of information: what DeepSeek confirmed, what the press reported, and what analysts inferred.",
       paragraphs: [
         "The two most specific claims come from reports built on leaked screenshots. On July 28, Fast Technology (via Sina Finance) reported that the official V4 would begin internal testing, with V4 arriving around mid-August, and linked the delay to the Harness. On July 30, Zhineng Jiyuan AGI (via Sina) reported a narrower window: an NDA-style closed beta for a small group of invited users, followed by V4 general availability between August 10 and 20.",
         "A third-party analysis aggregator is blunt about both: they rely on circulated screenshots and anonymous sources, so they do not count as independent confirmation. August 10-20 should be treated as a reported target, not a confirmed date.",

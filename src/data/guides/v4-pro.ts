@@ -5,7 +5,7 @@ export const v4Pro: GuideContent = {
   slug: "v4-pro",
   category: "MODEL GUIDE",
   title: "DeepSeek V4 Pro: Specs, Pricing & Release Date (2026)",
-  seoTitle: "DeepSeek V4 Pro: Specs, Pricing & Launch",
+  seoTitle: "DeepSeek V4 Pro: Release Date, Specs & Pricing",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:
