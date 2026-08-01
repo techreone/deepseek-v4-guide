@@ -114,13 +114,20 @@ export function GuideDetail({ guide }: GuideDetailProps) {
       {/* Header Breadcrumb */}
       <div className="border-b border-zinc-800/80 pt-8 pb-6">
         <div className="mx-auto max-w-5xl px-6">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-zinc-100 transition-colors mb-6"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>BACK TO ALL GUIDES</span>
-          </Link>
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs font-mono text-zinc-500 mb-6 flex-wrap">
+            <Link href="/" className="hover:text-cyan-400 transition-colors">
+              DeepSeek V4 Guide
+            </Link>
+            <span aria-hidden="true" className="text-zinc-700">/</span>
+            <Link href="/#guides" className="hover:text-cyan-400 transition-colors">
+              Guides
+            </Link>
+            <span aria-hidden="true" className="text-zinc-700">/</span>
+            <span className="text-zinc-300 truncate max-w-[40vw] sm:max-w-[50vw]">
+              {guide.title}
+            </span>
+          </nav>
 
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-900 text-zinc-300 border border-zinc-800">

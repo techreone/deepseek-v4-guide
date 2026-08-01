@@ -43,6 +43,30 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} ${pixelFont.variable} antialiased bg-[#070709] text-charcoal selection:bg-zinc-800 selection:text-zinc-100 font-sans flex flex-col min-h-[100dvh] relative`}>
+        {/* WebSite + Organization structured data (brand EEAT) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  name: "DeepSeek V4 Guide",
+                  url: "https://deepseekv4guide.org/",
+                  description:
+                    "Step-by-step tutorials for using DeepSeek V4 Flash & Pro: API setup, pricing, benchmarks, and local deployment.",
+                  inLanguage: "en",
+                },
+                {
+                  "@type": "Organization",
+                  name: "DeepSeek V4 Guide",
+                  url: "https://deepseekv4guide.org/",
+                },
+              ],
+            }),
+          }}
+        />
         {/* Document-level Grid Overlay that scrolls 1:1 with content */}
         <div className="grid-pattern" aria-hidden="true" />
         <Header />

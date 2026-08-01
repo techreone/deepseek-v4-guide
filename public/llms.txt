@@ -27,6 +27,10 @@
 - [Connect Claude Code & Claude Desktop to DeepSeek V4 with CC Switch](https://deepseekv4guide.org/guides/cc-switch-claude-code)
 - [DeepSeek Harness: Everything We Know Before the Official Release](https://deepseekv4guide.org/guides/deepseek-harness)
 - [DeepSeek V4 Technical Report Explained: Architecture & Benchmarks](https://deepseekv4guide.org/guides/official-tech-report)
+- [Why a Native Harness Makes AI Agents Dramatically Better](https://deepseekv4guide.org/guides/harness-agent-capability)
+- [Reasonix: The DeepSeek Harness That Hits 99%+ Cache Rates](https://deepseekv4guide.org/guides/reasonix-deepseek)
+- [Hermes Best Setup: DeepSeek V4 Flash 0731 + MiMo V2.5 (Vision)](https://deepseekv4guide.org/guides/hermes-setup)
+- [DeepSeek V4 vs GPT-5.6 Luna: Which Is Better After the Price Cut?](https://deepseekv4guide.org/guides/v4-vs-gpt56-luna)
 
 ## Official resources
 

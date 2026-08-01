@@ -14,6 +14,10 @@ import { opencodeGo } from "./opencode-go";
 import { ccSwitchClaudeCode } from "./cc-switch-claude-code";
 import { deepseekHarness } from "./deepseek-harness";
 import { officialTechReport } from "./official-tech-report";
+import { harnessAgentCapability } from "./harness-agent-capability";
+import { reasonixDeepseek } from "./reasonix-deepseek";
+import { hermesSetup } from "./hermes-setup";
+import { v4VsGpt56Luna } from "./v4-vs-gpt56-luna";
 
 // 中央指南注册表：新增教程 = 在 src/data/guides/ 新建文件并在下方登记
 // 首页列表 / 指南页 / 内链全部以此为准，避免硬编码失同步
@@ -33,6 +37,10 @@ export const guidesDatabase: Record<string, GuideContent> = {
   [ccSwitchClaudeCode.slug]: ccSwitchClaudeCode,
   [deepseekHarness.slug]: deepseekHarness,
   [officialTechReport.slug]: officialTechReport,
+  [harnessAgentCapability.slug]: harnessAgentCapability,
+  [reasonixDeepseek.slug]: reasonixDeepseek,
+  [hermesSetup.slug]: hermesSetup,
+  [v4VsGpt56Luna.slug]: v4VsGpt56Luna,
 };
 
 export function getAllGuides(): GuideContent[] {
@@ -141,6 +149,30 @@ export const guideMeta: Record<string, GuideCardMeta> = {
     catId: "deepdive",
     tag: "Technical",
     desc: "A guided tour of the DeepSeek V4 paper — CSA+HCA attention, Muon, 27% of V3.2's FLOPs, and how to read the model cards.",
+  },
+  "harness-agent-capability": {
+    slug: "harness-agent-capability",
+    catId: "agents",
+    tag: "Harness",
+    desc: "Why 'Model + Harness = Agent' — the context management, tool loops, and self-correction that turn a raw model into a real agent.",
+  },
+  "reasonix-deepseek": {
+    slug: "reasonix-deepseek",
+    catId: "pricing",
+    tag: "Cost Hacks",
+    desc: "Reasonix hits 99%+ DeepSeek cache rates — 435M input tokens for $1.38 instead of $61. How the cache-first loop saves ~98%.",
+  },
+  "hermes-setup": {
+    slug: "hermes-setup",
+    catId: "agents",
+    tag: "Hermes",
+    desc: "The community-verified best pairing for Hermes: DeepSeek V4 Flash 0731 as the text brain + MiMo V2.5 for vision.",
+  },
+  "v4-vs-gpt56-luna": {
+    slug: "v4-vs-gpt56-luna",
+    catId: "benchmarks",
+    tag: "Comparisons",
+    desc: "DeepSeek V4 Flash vs the price-cut GPT-5.6 Luna: AI Intelligence Index 50 vs 51, but 60% lower cost per task. Who wins by scenario.",
   },
 };
 
