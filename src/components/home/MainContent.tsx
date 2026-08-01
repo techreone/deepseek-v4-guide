@@ -25,9 +25,10 @@ interface MainContentProps {
   activeCategory: string;
   setActiveCategory: (cat: string) => void;
   searchQuery: string;
+  setSearchQuery: (query: string) => void;
 }
 
-export function MainContent({ activeCategory, setActiveCategory, searchQuery }: MainContentProps) {
+export function MainContent({ activeCategory, setActiveCategory, searchQuery, setSearchQuery }: MainContentProps) {
   const guides = getGuideCards().map((card, i) => ({
     num: String(i + 1).padStart(2, "0"),
     catId: card.catId,
@@ -52,24 +53,41 @@ export function MainContent({ activeCategory, setActiveCategory, searchQuery }: 
       <div className="mx-auto max-w-5xl px-6">
         {/* Essential Guides List Section */}
         <div id="guides" className="scroll-mt-24 mb-14">
-          {/* Category Filter — free-wrap, no scrollbar */}
-          <div className="flex flex-wrap gap-2 pb-5 mb-6 border-b border-zinc-800/80">
-            {categories.map((cat) => {
-              const isSelected = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3 py-1.5 rounded text-xs font-sans whitespace-nowrap transition-colors ${
-                    isSelected
-                      ? "bg-zinc-100 text-zinc-950 font-medium"
-                      : "bg-[#0e0e11] border border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              );
-            })}
+          {/* Search + Category Filter — 紧邻指南列表，实时过滤 */}
+          <div className="flex flex-col gap-4 pb-6 mb-6 border-b border-zinc-800/80">
+            <div className="relative max-w-md">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-zinc-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="w-4 h-4">
+                  <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                placeholder="Search tutorials, API setup steps, cost guides..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-2.5 bg-[#0e0e11] border border-zinc-800 rounded-lg text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-zinc-600 transition-colors shadow-inner font-sans"
+              />
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => {
+                const isSelected = activeCategory === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id)}
+                    className={`px-3 py-1.5 rounded text-xs font-sans whitespace-nowrap transition-colors ${
+                      isSelected
+                        ? "bg-zinc-100 text-zinc-950 font-medium"
+                        : "bg-[#0e0e11] border border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700"
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div className="flex items-center justify-between pb-4 border-b border-zinc-800/80 mb-6">

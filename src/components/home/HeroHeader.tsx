@@ -1,12 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
-
-interface HeroHeaderProps {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
-}
 
 const phrases = [
   "DEEPSEEK V4 FLASH",
@@ -54,10 +48,7 @@ function TypewriterText() {
   );
 }
 
-export function HeroHeader({
-  searchQuery,
-  setSearchQuery
-}: HeroHeaderProps) {
+export function HeroHeader() {
   return (
     <section className="pt-16 pb-10 border-b border-zinc-800/80 relative overflow-hidden">
       <div className="mx-auto max-w-4xl px-6 text-center flex flex-col items-center">
@@ -93,19 +84,7 @@ export function HeroHeader({
           </a>
         </div>
 
-        {/* Centered Search Bar */}
-        <div className="w-full max-w-md relative mb-10">
-          <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-zinc-500">
-            <MagnifyingGlass className="w-4 h-4" />
-          </div>
-          <input
-            type="text"
-            placeholder="Search tutorials, API setup steps, cost guides..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 bg-[#0e0e11] border border-zinc-800 rounded-lg text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none focus:border-zinc-600 transition-colors shadow-inner font-sans"
-          />
-        </div>
+        {/* Centered Search Bar — 已移到指南列表顶部（MainContent，与筛选器一起） */}
 
         {/* Category Pill Filter Bar — 已移到 FEATURED GUIDES 上方（MainContent） */}
 
