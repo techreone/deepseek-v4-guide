@@ -82,9 +82,9 @@ export function HeroHeader({
       <div className="mx-auto max-w-4xl px-6 text-center flex flex-col items-center">
         {/* Pure Monochrome Status Pill */}
         <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-md bg-[#0c0c0e] border border-zinc-800 text-xs font-mono">
-          <span className="text-zinc-300 font-medium">OFFICIAL V4 FLASH GUIDES</span>
+          <span className="text-amber-400/90 font-medium">FAN-MADE V4 GUIDE</span>
           <span className="text-zinc-600">|</span>
-          <span className="text-zinc-400">STEP-BY-STEP TUTORIALS</span>
+          <span className="text-zinc-400">NOT AFFILIATED WITH DEEPSEEK</span>
         </div>
 
         {/* Hero Title */}
@@ -95,7 +95,7 @@ export function HeroHeader({
 
         {/* Subtitle */}
         <p className="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-xl font-sans mb-4">
-          The complete, step-by-step tutorial directory for DeepSeek V4 Flash. Learn how to access official APIs, optimize costs, and connect LLMs to your apps — simplified for everyone.
+          The complete, step-by-step tutorial directory for DeepSeek V4 Flash. Learn how to access official APIs, optimize costs, and connect LLMs to your apps — simplified for everyone. An independent fan-made resource, not run by DeepSeek.
         </p>
 
         {/* Official API Status Link */}

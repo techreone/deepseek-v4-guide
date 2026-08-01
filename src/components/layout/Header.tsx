@@ -6,12 +6,17 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-zinc-800/80 bg-[#060608]/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 text-zinc-100">
-          <div className="font-mono text-zinc-400 font-bold text-sm tracking-tighter">
-            -&#123;&#125; <span className="font-sans text-white text-base font-bold tracking-tight">DeepSeek V4</span>
-          </div>
-          <span className="font-mono text-[10px] text-zinc-500 bg-zinc-900 border border-zinc-800 px-1.5 py-0.5 rounded">
-            GUIDE
+        <Link href="/" className="flex items-center gap-2.5 text-zinc-100">
+          <img
+            src="/icon.png"
+            alt="DeepSeek V4 Guide — whale logo"
+            className="h-7 w-7 rounded-md bg-white/[0.04] ring-1 ring-zinc-800"
+            width={32}
+            height={32}
+          />
+          <span className="font-sans text-white text-base font-bold tracking-tight">DeepSeek V4</span>
+          <span className="font-mono text-[10px] text-amber-400/90 bg-amber-950/40 border border-amber-800/50 px-1.5 py-0.5 rounded">
+            FAN SITE
           </span>
         </Link>
 
