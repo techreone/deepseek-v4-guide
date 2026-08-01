@@ -23,7 +23,7 @@ export type { GuideContent };
  * 仅当 n 在 sources 范围内才解析为引用，否则按普通文本输出。
  */
 function renderRichText(text: string, sourceCount: number) {
-  const parts = text.split(/(\[\[[^\]|]+\|[^\]]+\]\]|\[\d+\])/g);
+  const parts = text.split(/(\[\[[^\]|]+\|[^\]]+\]\]|\[\d+\]|https?:\/\/[^\s\[\]]+)/g);
   return parts.map((part, i) => {
     if (!part) return null;
     const linkMatch = part.match(/^\[\[([^\]|]+)\|([^\]]+)\]\]$/);
@@ -53,6 +53,20 @@ function renderRichText(text: string, sourceCount: number) {
           </sup>
         );
       }
+    }
+    const urlMatch = part.match(/^https?:\/\/[^\s\[\]]+$/);
+    if (urlMatch) {
+      return (
+        <a
+          key={i}
+          href={urlMatch[0]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-cyan-400 hover:text-cyan-300 hover:underline break-all"
+        >
+          {urlMatch[0]}
+        </a>
+      );
     }
     return part;
   });
@@ -113,7 +127,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
       />
       {/* Header Breadcrumb */}
       <div className="border-b border-zinc-800/80 pt-8 pb-6">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-6xl px-6">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs font-mono text-zinc-500 mb-6 flex-wrap">
             <Link href="/" className="hover:text-cyan-400 transition-colors">
@@ -170,7 +184,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
       </div>
 
       {/* Main Layout: Left Content (70%) + Right Table of Contents Sidebar (30%) */}
-      <div className="mx-auto max-w-5xl px-6 pt-10">
+      <div className="mx-auto max-w-6xl px-6 pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           {/* Main Article Body (8 cols) */}
@@ -198,13 +212,13 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                   </h2>
                 </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed font-sans mb-4">
+                <p className="text-base text-zinc-300 leading-relaxed font-sans mb-5">
                   {renderRichText(step.description, sourceCount)}
                 </p>
 
                 {/* Additional Paragraphs (long-form) */}
                 {step.paragraphs?.map((para, i) => (
-                  <p key={i} className="text-sm text-zinc-300 leading-relaxed font-sans mb-4">
+                  <p key={i} className="text-base text-zinc-300 leading-relaxed font-sans mb-5">
                     {renderRichText(para, sourceCount)}
                   </p>
                 ))}
@@ -213,7 +227,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                 {step.list && step.list.length > 0 && (
                   <ul className="my-4 flex flex-col gap-2">
                     {step.list.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed font-sans">
+                      <li key={i} className="flex items-start gap-2.5 text-base text-zinc-300 leading-relaxed font-sans">
                         <span className="mt-2 h-1 w-1 rounded-full bg-zinc-500 shrink-0" />
                         <span>{renderRichText(item, sourceCount)}</span>
                       </li>
@@ -224,11 +238,11 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                 {/* Data Table (specs / pricing / benchmarks) */}
                 {step.table && (
                   <div className="my-4 rounded-lg bg-[#0c0c0e] border border-zinc-800/80 overflow-x-auto">
-                    <table className="w-full text-xs font-sans">
+                    <table className="w-full text-sm font-sans">
                       <thead>
                         <tr className="border-b border-zinc-800/80">
                           {step.table.headers.map((h, i) => (
-                            <th key={i} className="text-left px-4 py-2.5 font-mono text-[10px] uppercase tracking-wider text-zinc-500 whitespace-nowrap">
+                            <th key={i} className="text-left px-4 py-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500 whitespace-nowrap">
                               {h}
                             </th>
                           ))}
@@ -238,7 +252,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                         {step.table.rows.map((row, i) => (
                           <tr key={i} className="border-b border-zinc-800/40 last:border-0">
                             {row.map((cell, j) => (
-                              <td key={j} className={`px-4 py-2.5 text-zinc-300 whitespace-nowrap ${j === 0 ? "font-medium text-zinc-100" : ""}`}>
+                              <td key={j} className={`px-4 py-3 text-zinc-300 whitespace-nowrap ${j === 0 ? "font-medium text-zinc-100" : ""}`}>
                                 {cell}
                               </td>
                             ))}
@@ -255,7 +269,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                     <div className="font-mono text-[10px] text-zinc-500 tracking-widest uppercase mb-1">
                       NOTE
                     </div>
-                    <p className="text-zinc-300 text-xs leading-relaxed">
+                    <p className="text-zinc-300 text-sm leading-relaxed">
                       {renderRichText(step.note, sourceCount)}
                     </p>
                   </div>

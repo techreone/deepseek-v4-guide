@@ -26,8 +26,8 @@ export const flashModelSize: GuideContent = {
       description:
         "DeepSeek V4 Flash is a 284B-parameter Mixture-of-Experts (MoE) model that activates only 13B parameters per token. It supports a native 1M-token context and up to 384K tokens of output.[2]",
       paragraphs: [
-        "The name \"Flash\" describes inference cost, not volume. Every token activates only 13B of the 284B total parameters,[2] which keeps per-token compute low. But all 284B weights must stay resident in memory or VRAM for the entire session.",
-        "Official weights ship pre-quantized in mixed FP4 + FP8 precision. MoE expert parameters use FP4; attention, norm, and router parameters use FP8.[2] This is a natively quantized model, not a BF16/FP16 distribution.",
+        "The name \"Flash\" describes inference cost, not volume. Every token activates only 13B of the 284B total parameters, which keeps per-token compute low. But all 284B weights must stay resident in memory or VRAM for the entire session.",
+        "Official weights ship pre-quantized in mixed FP4 + FP8 precision. MoE expert parameters use FP4; attention, norm, and router parameters use FP8. This is a natively quantized model, not a BF16/FP16 distribution.",
       ],
       table: {
         headers: ["Spec", "Value"],
@@ -51,9 +51,9 @@ export const flashModelSize: GuideContent = {
       description:
         "In a dense model, every parameter runs for every token. MoE splits the model into many small \"expert\" networks, and a router picks only a few experts per token.",
       paragraphs: [
-        "[[deepseek-v4-flash|DeepSeek V4 Flash]] has 284B total parameters, but the router activates roughly 4.6% of them — about 13B — for each token.[2] That active count decides how much compute each token costs. The total decides how much memory you need.",
+        "[[deepseek-v4-flash|DeepSeek V4 Flash]] has 284B total parameters, but the router activates roughly 4.6% of them — about 13B — for each token. That active count decides how much compute each token costs. The total decides how much memory you need.",
         "This is the key memory trap: active parameters determine compute, not VRAM. Unless the runtime loads and unloads experts on demand, every expert weight must be loaded, so the full 284B footprint is always on your machine.",
-        "The large context window is not what makes the model heavy. The 1M-token context uses hybrid attention (Compressed Sparse Attention + Heavily Compressed Attention), which keeps the KV cache small — roughly 10 GB for a full 1M context.[2] The weights dominate the memory bill.",
+        "The large context window is not what makes the model heavy. The 1M-token context uses hybrid attention (Compressed Sparse Attention + Heavily Compressed Attention), which keeps the KV cache small — roughly 10 GB for a full 1M context. The weights dominate the memory bill.",
       ],
       list: [
         "Total params (284B): everything on disk and in memory.",
@@ -66,10 +66,10 @@ export const flashModelSize: GuideContent = {
       num: "03",
       title: "Weight File Sizes: FP4/FP8, FP8, and BF16",
       description:
-        "The official DeepSeek V4 Flash inference weights are about 159.61 GB on disk, per the model's safetensors index.[2] Reports across sources land in the 146–167 GB range.",
+        "The official DeepSeek V4 Flash inference weights are about 159.61 GB on disk, per the model's safetensors index. Reports across sources land in the 146–167 GB range.",
       paragraphs: [
-        "The variance comes from measurement conventions: GB versus GiB, disk usage versus tensor sizes, and whether the checkpoint includes the DSpark draft module. The fused checkpoint with DSpark weighs about 167 GB; the plain preview around 160 GB.[2] Treat roughly 160 GB as the working number and 158–167 GB as the range.",
-        "A full FP8-only conversion is about 284 GB, which is the build Hopper users deploy. An unquantized BF16 version would be roughly 568 GB (284B x 2 bytes), but DeepSeek ships no official BF16 weights. The Flash-Base research checkpoint is ~294.67 GB, near full FP8.[2]",
+        "The variance comes from measurement conventions: GB versus GiB, disk usage versus tensor sizes, and whether the checkpoint includes the DSpark draft module. The fused checkpoint with DSpark weighs about 167 GB; the plain preview around 160 GB. Treat roughly 160 GB as the working number and 158–167 GB as the range.",
+        "A full FP8-only conversion is about 284 GB, which is the build Hopper users deploy. An unquantized BF16 version would be roughly 568 GB (284B x 2 bytes), but DeepSeek ships no official BF16 weights. The Flash-Base research checkpoint is ~294.67 GB, near full FP8.",
       ],
       table: {
         headers: ["Model", "Parameters", "Official weights"],
@@ -90,7 +90,7 @@ export const flashModelSize: GuideContent = {
         "Full-precision inference of the native FP4/FP8 weights needs roughly 170–175 GB of total VRAM: about 158 GB of weights, ~10 GB for a full 1M-context KV cache, plus runtime overhead.[5]",
       paragraphs: [
         "That fits on 2x H200 (282 GB) or 2x RTX Pro 6000 Blackwell (192 GB). The commonly cited reference deployment is a 4x H200 node with vLLM and MoE expert parallelism.[3] On the Hopper side, the FP8-only weights (~284 GB) require 8x H100 in an HGX chassis with tensor parallelism 8.",
-        "Below full precision, quantized tiers shrink the footprint. The table below shows estimated minimum and comfortable VRAM per tier.[5] Note that the Q4–Q2 rows are bit-depth estimates, not guarantees that a stable GGUF exists at every step.",
+        "Below full precision, quantized tiers shrink the footprint. The table below shows estimated minimum and comfortable VRAM per tier. Note that the Q4–Q2 rows are bit-depth estimates, not guarantees that a stable GGUF exists at every step.",
       ],
       table: {
         headers: ["Tier", "Weight size", "Min VRAM", "Comfortable VRAM"],
@@ -104,7 +104,7 @@ export const flashModelSize: GuideContent = {
         ],
       },
       list: [
-        "Q4_K_M (~142 GB): Mac Studio 192 GB or 6x RTX 4090.[5]",
+        "Q4_K_M (~142 GB): Mac Studio 192 GB or 6x RTX 4090.",
         "Q2_K_XL (~96.8 GB): RTX 5090 with 128 GB DDR4, ~15 tokens/s.",
         "INT4 multi-card (~90 GB): 4x RTX 4090.",
         "24 GB single cards cannot run the full model.",
@@ -117,20 +117,20 @@ export const flashModelSize: GuideContent = {
       description:
         "NVIDIA publishes an NVFP4 variant, nvidia/DeepSeek-V4-Flash-NVFP4, that requantizes the MoE experts to standard NVFP4 while attention, shared experts, router head, and MTP stay in FP8. It is quantized with the NVIDIA Model Optimizer and requires a Blackwell GPU.[7]",
       paragraphs: [
-        "The research notes did not surface an exact on-disk size for the NVFP4 variant, but it lands in the ~150 GB range like the official weights.[7] Do not assume it matches the FP4/FP8 checkpoint byte-for-byte — verify the file listing before you download.",
-        "In vLLM, serve it with tensor parallelism and an FP8 KV cache. Note that NVFP4 experts do not support the deep_gemm_mega_moe MoE kernel (that path is FP8-only), so the model runs on the default MoE backend.[7]",
+        "The research notes did not surface an exact on-disk size for the NVFP4 variant, but it lands in the ~150 GB range like the official weights. Do not assume it matches the FP4/FP8 checkpoint byte-for-byte — verify the file listing before you download.",
+        "In vLLM, serve it with tensor parallelism and an FP8 KV cache. Note that NVFP4 experts do not support the deep_gemm_mega_moe MoE kernel (that path is FP8-only), so the model runs on the default MoE backend.",
       ],
       code: `vllm serve nvidia/DeepSeek-V4-Flash-NVFP4 --tensor-parallel-size 4 --trust-remote-code --kv-cache-dtype fp8`,
-      note: "The NVFP4 build was validated on GB300 with the vllm-openai nightly image (vLLM 0.22.1rc1.dev504). Blackwell only — it will not run on Hopper or consumer GPUs.[7]",
+      note: "The NVFP4 build was validated on GB300 with the vllm-openai nightly image (vLLM 0.22.1rc1.dev504). Blackwell only — it will not run on Hopper or consumer GPUs.",
     },
     {
       num: "06",
       title: "GGUF Quantization Options: Q8, Q4, and Below",
       description:
-        "The official weights are quantization-aware-trained, and the routed experts (about 96% of the model) are already native MXFP4. Unsloth repacks those experts bit-exact — near-zero KL divergence — which is why its UD-Q8_K_XL is called lossless.[4]",
+        "The official weights are quantization-aware-trained, and the routed experts (about 96% of the model) are already native MXFP4. Unsloth repacks those experts bit-exact — near-zero KL divergence — which is why its UD-Q8_K_XL is called lossless.",
       paragraphs: [
-        "Unsloth's UD-Q8_K_XL comes in at 162 GB and is bit-exact to the official full precision; plan for at least 169 GB of total memory. The near-lossless UD-Q4_K_XL is 155.1 GB (KLD 0.0102) with experts kept bit-exact, and UD-IQ3_XXS at 103 GB is Unsloth's officially recommended tier, needing at least 110 GB.[4]",
-        "Community conversions that re-quantize the experts — for example to Q4_K or IQ2_XXS — round about 5% and over 30% of weights respectively. That trade-off is where the smaller sizes come from: Q4_K_M at ~142 GB, antirez's 2-bit IQ2XXS at ~86.7 GB, and the smallest commonly cited usable build at roughly 81 GB.[5]",
+        "Unsloth's UD-Q8_K_XL comes in at 162 GB and is bit-exact to the official full precision; plan for at least 169 GB of total memory. The near-lossless UD-Q4_K_XL is 155.1 GB (KLD 0.0102) with experts kept bit-exact, and UD-IQ3_XXS at 103 GB is Unsloth's officially recommended tier, needing at least 110 GB.",
+        "Community conversions that re-quantize the experts — for example to Q4_K or IQ2_XXS — round about 5% and over 30% of weights respectively. That trade-off is where the smaller sizes come from: Q4_K_M at ~142 GB, antirez's 2-bit IQ2XXS at ~86.7 GB, and the smallest commonly cited usable build at roughly 81 GB.",
         "llama.cpp support is upstream since PR #24162. Use a recent build: an older llama.cpp can garble output after the second turn of a multi-turn conversation due to a fixed prompt-caching bug. Native FP4/FP8 GGUF files additionally need a build with F8_E4M3_B128 and MXFP4 support — stock upstream llama.cpp cannot load them.",
       ],
       table: {
@@ -150,14 +150,14 @@ export const flashModelSize: GuideContent = {
       num: "07",
       title: "vLLM Version Requirements and Launch Commands",
       description:
-        "vLLM has an official recipe for DeepSeek V4 Flash. A plain NVIDIA deployment works on vLLM 0.25.0, but the fused DSpark checkpoint requires vLLM 0.26.0.[3] Third-party deployment guides ask for vllm>=0.19.0 as a baseline.",
+        "vLLM has an official recipe for DeepSeek V4 Flash. A plain NVIDIA deployment works on vLLM 0.25.0, but the fused DSpark checkpoint requires vLLM 0.26.0. Third-party deployment guides ask for vllm>=0.19.0 as a baseline.",
       paragraphs: [
-        "The recipe ships four checkpoint variants: 0731 (the default official release), FP8 (preview weights), NVFP4, and DSpark (preview weights plus the fused draft module).[3] Serve the native FP4/FP8 checkpoint with the deepseek_v4 tokenizer and tool-call and reasoning parsers.",
-        "For speculative decoding, DSpark uses seven speculative tokens with greedy sampling; the MTP path uses three.[3] On Blackwell, enable the FP4 indexer cache. The example below is the single-GPU command for a DGX Station or B300 288 GB.",
+        "The recipe ships four checkpoint variants: 0731 (the default official release), FP8 (preview weights), NVFP4, and DSpark (preview weights plus the fused draft module). Serve the native FP4/FP8 checkpoint with the deepseek_v4 tokenizer and tool-call and reasoning parsers.",
+        "For speculative decoding, DSpark uses seven speculative tokens with greedy sampling; the MTP path uses three. On Blackwell, enable the FP4 indexer cache. The example below is the single-GPU command for a DGX Station or B300 288 GB.",
       ],
       list: [
         "--enable-expert-parallel — shards MoE experts across GPUs.",
-        "--data-parallel-size 4 — recommended single-node DP + EP setup.[3]",
+        "--data-parallel-size 4 — recommended single-node DP + EP setup.",
         "--kv-cache-dtype fp8 and --block-size 256.",
         "--tokenizer-mode deepseek_v4, --tool-call-parser deepseek_v4, --reasoning-parser deepseek_v4.",
         "--no-disable-hybrid-kv-cache-manager — required for CSA + HCA attention.",
@@ -173,13 +173,13 @@ export const flashModelSize: GuideContent = {
   --enable-auto-tool-choice --reasoning-parser deepseek_v4 \\
   --max-cudagraph-capture-size 128 \\
   --speculative-config '{"method":"mtp","num_speculative_tokens":3}'`,
-      note: "Think Max mode requires a minimum context of 384K tokens (--max-model-len >= 393216).[3]",
+      note: "Think Max mode requires a minimum context of 384K tokens (--max-model-len >= 393216).",
     },
     {
       num: "08",
       title: "Can an RTX 4090 Run DeepSeek V4 Flash?",
       description:
-        "Not on raw power. A 24 GB RTX 4090 cannot hold the full model: the native FP4/FP8 weights need about 170–175 GB of VRAM, and even the most aggressive practical quantizations sit around 81 GB.[5]",
+        "Not on raw power. A 24 GB RTX 4090 cannot hold the full model: the native FP4/FP8 weights need about 170–175 GB of VRAM, and even the most aggressive practical quantizations sit around 81 GB.",
       paragraphs: [
         "What a 4090 can do is run a community GGUF with most layers offloaded to system RAM. The pattern is common in the community: an RTX 5090 with 128 GB DDR4 ran a Q2_K_XL (~96.8 GB) build at about 15 tokens/s, and a MacBook M3 Max with 128 GB hit ~17 tokens/s on a 2-bit build. Expect low single-digit to low-double-digit tokens per second on consumer hardware with CPU offload.",
         "For a 24–48 GB consumer card, the practical recommendation is to use the [[flash-api-setup|DeepSeek API]] ($0.14 per 1M input, $0.28 per 1M output tokens)[1] or a smaller distilled model. Running V4 Flash locally is a workstation or server-class deployment.",

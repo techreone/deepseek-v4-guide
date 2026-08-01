@@ -94,9 +94,23 @@ export function HeroHeader({
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-xl font-sans mb-8">
+        <p className="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-xl font-sans mb-4">
           The complete, step-by-step tutorial directory for DeepSeek V4 Flash. Learn how to access official APIs, optimize costs, and connect LLMs to your apps — simplified for everyone.
         </p>
+
+        {/* Official API Status Link */}
+        <div className="inline-flex items-center gap-2 text-[11px] font-mono text-zinc-500 mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
+          <span>DEEPSEEK API SLOW OR DOWN?</span>
+          <a
+            href="https://status.deepseek.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
+          >
+            Check the official status → status.deepseek.com
+          </a>
+        </div>
 
         {/* Centered Search Bar */}
         <div className="w-full max-w-md relative mb-10">

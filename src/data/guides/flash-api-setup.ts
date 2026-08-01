@@ -65,9 +65,9 @@ export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic`,
       num: "03",
       title: "Pick the Model: deepseek-v4-flash",
       description:
-        "Set the model parameter to deepseek-v4-flash. This slug now points to DeepSeek-V4-Flash-0731, the official public-beta release from July 31, 2026.[2]",
+        "Set the model parameter to deepseek-v4-flash. This slug now points to DeepSeek-V4-Flash-0731, the official public-beta release from July 31, 2026.",
       paragraphs: [
-        "The legacy names deepseek-chat and deepseek-reasoner were retired on July 24, 2026.[2] Any code still sending them now gets an error. New integrations should use deepseek-v4-flash, or [[v4-pro|deepseek-v4-pro]] for the flagship model.",
+        "The legacy names deepseek-chat and deepseek-reasoner were retired on July 24, 2026. Any code still sending them now gets an error. New integrations should use deepseek-v4-flash, or [[v4-pro|deepseek-v4-pro]] for the flagship model.",
         "deepseek-v4-flash is a [[flash-model-size|284B-parameter Mixture-of-Experts model]] with 13B active parameters, a 1M-token context window, and a 384K-token max output.[3]",
       ],
       table: {
@@ -97,7 +97,7 @@ export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic`,
       num: "04",
       title: "Make Your First Call with cURL",
       description:
-        "A single curl request is the fastest way to prove your key works. This call hits the Chat Completions endpoint with the thinking parameters from DeepSeek's official quickstart.[1]",
+        "A single curl request is the fastest way to prove your key works. This call hits the Chat Completions endpoint with the thinking parameters from DeepSeek's official quickstart.",
       code: `curl https://api.deepseek.com/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer \${DEEPSEEK_API_KEY}" \\
@@ -121,7 +121,7 @@ export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic`,
       num: "05",
       title: "First Call in Python & Node.js",
       description:
-        "Because the DeepSeek V4 Flash API is OpenAI-compatible, the standard openai SDK works with a one-line change: set base_url to https://api.deepseek.com and send model deepseek-v4-flash.[1]",
+        "Because the DeepSeek V4 Flash API is OpenAI-compatible, the standard openai SDK works with a one-line change: set base_url to https://api.deepseek.com and send model deepseek-v4-flash.",
       code: `# pip3 install openai
 import os
 from openai import OpenAI
@@ -168,7 +168,7 @@ main();`,
       description:
         "Thinking mode is on by default. Two parameters control it: thinking toggles it, and reasoning_effort sets how much reasoning the model spends before answering.[6]",
       paragraphs: [
-        "reasoning_effort supports three levels: low, high, and max. The default is high. For compatibility, low and medium map to high, and xhigh maps to max.[6] Complex agent requests — like Claude Code or [[flash-opencode|OpenCode]] — are automatically set to max.",
+        "reasoning_effort supports three levels: low, high, and max. The default is high. For compatibility, low and medium map to high, and xhigh maps to max. Complex agent requests — like Claude Code or [[flash-opencode|OpenCode]] — are automatically set to max.",
         "When thinking is enabled, chain-of-thought reasoning comes back in the reasoning_content field. In multi-turn tool calls, you must return the assistant's reasoning_content together with the message, or the reasoning chain breaks.",
       ],
       table: {
@@ -203,7 +203,7 @@ response = client.responses.create(
 print(response.output_text)`,
       paragraphs: [
         "Streaming responses return semantic SSE events. Each event carries an event field and an increasing sequence_number, and the stream ends with response.completed, response.incomplete, or response.failed — there is no data: [DONE] message.",
-        "Unsupported parameters are silently ignored, so existing Responses API clients connect without code changes.[7]",
+        "Unsupported parameters are silently ignored, so existing Responses API clients connect without code changes.",
       ],
       list: [
         "Tools: function, plus server-side web_search and web_search_2025_08_26.",
@@ -216,7 +216,7 @@ print(response.output_text)`,
       num: "08",
       title: "Handle Errors, Rate Limits & Context Caching",
       description:
-        "DeepSeek documents seven HTTP error codes.[4] Four mean fix your request and retry; three mean slow down and retry later.",
+        "DeepSeek documents seven HTTP error codes. Four mean fix your request and retry; three mean slow down and retry later.",
       table: {
         headers: ["Code", "Meaning", "What to do"],
         rows: [
@@ -231,9 +231,9 @@ print(response.output_text)`,
       },
       paragraphs: [
         "Rate limits are measured by concurrency, not by requests per minute. Each account gets 2,500 concurrent requests for deepseek-v4-flash (500 for deepseek-v4-pro), and all API keys on the account share that pool. Exceeding it returns HTTP 429.[5]",
-        "Context caching is automatic and needs no configuration. Repeated prompt prefixes hit a server-side cache and are billed at the cache-hit price: $0.0028 per 1M tokens instead of $0.14 — roughly a 98% discount.[3] Watch usage.prompt_cache_hit_tokens and usage.prompt_cache_miss_tokens in responses.",
+        "Context caching is automatic and needs no configuration. Repeated prompt prefixes hit a server-side cache and are billed at the cache-hit price: $0.0028 per 1M tokens instead of $0.14 — roughly a 98% discount. Watch usage.prompt_cache_hit_tokens and usage.prompt_cache_miss_tokens in responses.",
       ],
-      note: "Caching is best-effort, so hit rates are not guaranteed. Keep stable system prompts and shared prefixes in front of your requests to maximize cache hits.",
+      note: "Caching is best-effort, so hit rates are not guaranteed. Keep stable system prompts and shared prefixes in front of your requests to maximize cache hits. If requests are slow or you hit 500/503, check the official API status page first — https://status.deepseek.com",
     },
   ],
   prevGuide: {

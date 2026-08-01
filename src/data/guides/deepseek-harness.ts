@@ -28,15 +28,15 @@ export const deepseekHarness: GuideContent = {
       description:
         "DeepSeek Harness is DeepSeek's official agent framework, and it is not released yet. The name appears in exactly one place in official documentation so far: the July 31, 2026 changelog that launched the V4-Flash-0731 build[1].",
       paragraphs: [
-        "That changelog note reads: 'For the Code Agent tasks in the public benchmark sets, the official DeepSeek-V4-Flash was tested using the DeepSeek Harness minimal mode (to be released soon) as the framework, with the max effort level, topp=0.95, and temperature=1.0'[1]. The Hugging Face model card says the same in fewer words: the agent benchmark numbers were produced with the official DeepSeek Harness, which is 'to be released'[2].",
-        "So the official definition, as of August 1, 2026, is narrow: the Harness is the agent framework DeepSeek used to run its own coding-agent benchmarks[1]. 'Minimal mode' is the only configuration DeepSeek has disclosed, and it was used with max reasoning effort, topp 0.95, and temperature 1.0. Everything else about the product is still official silence.",
+        "That changelog note reads: 'For the Code Agent tasks in the public benchmark sets, the official DeepSeek-V4-Flash was tested using the DeepSeek Harness minimal mode (to be released soon) as the framework, with the max effort level, topp=0.95, and temperature=1.0'. The Hugging Face model card says the same in fewer words: the agent benchmark numbers were produced with the official DeepSeek Harness, which is 'to be released'[2].",
+        "So the official definition, as of August 1, 2026, is narrow: the Harness is the agent framework DeepSeek used to run its own coding-agent benchmarks. 'Minimal mode' is the only configuration DeepSeek has disclosed, and it was used with max reasoning effort, topp 0.95, and temperature 1.0. Everything else about the product is still official silence.",
       ],
       list: [
-        "First mentioned in the official changelog on July 31, 2026[1]",
-        "Used to run every public Code Agent benchmark for V4-Flash-0731[1]",
+        "First mentioned in the official changelog on July 31, 2026",
+        "Used to run every public Code Agent benchmark for V4-Flash-0731",
         "Minimal mode config: max effort, topp=0.95, temperature=1.0",
         "No GitHub repo exists under github.com/deepseek-ai as of August 1, 2026[3]",
-        "Official status: 'to be released soon'[1]",
+        "Official status: 'to be released soon'",
       ],
       note: "'To be released soon' is not a release. As of August 1, 2026, DeepSeek has published no download and no product page for the Harness[8].",
     },
@@ -46,9 +46,9 @@ export const deepseekHarness: GuideContent = {
       description:
         "DeepSeek's own job descriptions give the clearest definition of what the Harness will do. The core formula is simple: Model + Harness = Agent[4].",
       paragraphs: [
-        "The formula comes straight from DeepSeek's hiring materials. The company is turning its frontier model capabilities into leading agent products, and it defines the split bluntly: everything outside the model itself belongs to the Harness[4].",
-        "That scope is the whole engineering surface of an agent: context management, tool calling, file read and write, terminal execution, self-correction driven by test feedback, memory, MCP, and feedback loops[4]. If the model is the brain, the Harness is everything else.",
-        "DeepSeek has been staffing this team since spring 2026[4]. The same job posts say the new hires will help build a desktop agent product and define what the Harness means at DeepSeek[4].",
+        "The formula comes straight from DeepSeek's hiring materials. The company is turning its frontier model capabilities into leading agent products, and it defines the split bluntly: everything outside the model itself belongs to the Harness.",
+        "That scope is the whole engineering surface of an agent: context management, tool calling, file read and write, terminal execution, self-correction driven by test feedback, memory, MCP, and feedback loops. If the model is the brain, the Harness is everything else.",
+        "DeepSeek has been staffing this team since spring 2026. The same job posts say the new hires will help build a desktop agent product and define what the Harness means at DeepSeek.",
       ],
       code: `Model + Harness = Agent
 
@@ -64,16 +64,16 @@ The Harness scope covers:
 - memory
 - MCP
 - feedback loops`,
-      note: "This is why the benchmark numbers matter: the model and the harness evolve together. Official scores are a measure of the pair, not the model alone[4].",
+      note: "This is why the benchmark numbers matter: the model and the harness evolve together. Official scores are a measure of the pair, not the model alone.",
     },
     {
       num: "03",
       title: "The Official Harness-Measured Benchmarks",
       description:
-        "Every official agent score DeepSeek published on July 31 was measured with the DeepSeek Harness minimal mode[1]. Here is the complete table from the changelog: nine benchmarks, two of which are internal test sets.",
+        "Every official agent score DeepSeek published on July 31 was measured with the DeepSeek Harness minimal mode. Here is the complete table from the changelog: nine benchmarks, two of which are internal test sets.",
       paragraphs: [
-        "The DeepSWE jump is the headline: 7.3 on the preview to 54.4, a 645% increase on the same model after re-post-training[6]. DeepSeek says Flash 0731 wins all nine published benchmarks against its own V4-Pro-Preview[6].",
-        "Two rows are marked internal. DSBench-FullStack and DSBench-Hard are DeepSeek's own test sets and cannot be reproduced externally[1]. The other seven are public benchmarks, but every score is vendor-reported, and until the Harness ships, no third party can reproduce any of them[6].",
+        "The DeepSWE jump is the headline: 7.3 on the preview to 54.4, a 645% increase on the same model after re-post-training[6]. DeepSeek says Flash 0731 wins all nine published benchmarks against its own V4-Pro-Preview.",
+        "Two rows are marked internal. DSBench-FullStack and DSBench-Hard are DeepSeek's own test sets and cannot be reproduced externally. The other seven are public benchmarks, but every score is vendor-reported, and until the Harness ships, no third party can reproduce any of them.",
       ],
       table: {
         headers: ["Benchmark", "V4-Flash-0731", "Preview comparison", "Status"],
@@ -95,16 +95,16 @@ The Harness scope covers:
       num: "04",
       title: "The Benchmark-Maxxing Debate",
       description:
-        "Because the harness behind these scores is unreleased, the entire official agent benchmark table is vendor-reported[6]. 'Benchmark maxxing' is the loudest question in the community, and the answer is genuinely split[7].",
+        "Because the harness behind these scores is unreleased, the entire official agent benchmark table is vendor-reported. 'Benchmark maxxing' is the loudest question in the community, and the answer is genuinely split[7].",
       paragraphs: [
-        "The sharpest challenge comes from the DeepSWE benchmark thread. DeepSWE is a harder, from-scratch benchmark with behavioral verifiers, and its author ran every model through one shared harness: a single bash tool and a single prompt[7]. But the fairness pilot only covered Claude, GPT, and Gemini. DeepSeek was not in it. As one top comment put it: 'A bottom-of-board score for the one model nobody validated the harness against reads as a harness result, not a capability result'[7].",
-        "Independent numbers add context. A separate DeepSWE audit by yage.ai in June 2026 scored V4-Pro at just 8% pass@1, against 70% for GPT-5.5 and 54% for Opus 4.7[6]. Compare that with the 54.4 the official Harness reports for Flash 0731 on the same benchmark, and the gap is the whole argument in miniature.",
-        "Reaction to the July 31 release on r/LocalLLaMA mixed genuine enthusiasm with a blunt caveat: strong numbers only count if they reproduce outside the lab[7]. Until an independent lab re-runs the suite, treat every official agent number as directional.",
+        "The sharpest challenge comes from the DeepSWE benchmark thread. DeepSWE is a harder, from-scratch benchmark with behavioral verifiers, and its author ran every model through one shared harness: a single bash tool and a single prompt. But the fairness pilot only covered Claude, GPT, and Gemini. DeepSeek was not in it. As one top comment put it: 'A bottom-of-board score for the one model nobody validated the harness against reads as a harness result, not a capability result'.",
+        "Independent numbers add context. A separate DeepSWE audit by yage.ai in June 2026 scored V4-Pro at just 8% pass@1, against 70% for GPT-5.5 and 54% for Opus 4.7. Compare that with the 54.4 the official Harness reports for Flash 0731 on the same benchmark, and the gap is the whole argument in miniature.",
+        "Reaction to the July 31 release on r/LocalLLaMA mixed genuine enthusiasm with a blunt caveat: strong numbers only count if they reproduce outside the lab. Until an independent lab re-runs the suite, treat every official agent number as directional.",
       ],
       list: [
-        "All nine official scores are vendor-reported; the measuring harness is not public[6]",
-        "DeepSWE's fairness pilot validated its harness only on Claude, GPT, and Gemini[7]",
-        "yage.ai's independent DeepSWE run scored V4-Pro at 8% vs GPT-5.5's 70%[6]",
+        "All nine official scores are vendor-reported; the measuring harness is not public",
+        "DeepSWE's fairness pilot validated its harness only on Claude, GPT, and Gemini",
+        "yage.ai's independent DeepSWE run scored V4-Pro at 8% vs GPT-5.5's 70%",
         "Analysts advise waiting for independent labs before betting on high-value workloads",
       ],
       note: "Read the delta column with care: the preview comparison scores (61.8, 7.3) come from third-party runs on a different framework, not the DeepSeek Harness, so the before/after gap is directional, not apples-to-apples.",
@@ -113,10 +113,10 @@ The Harness scope covers:
       num: "05",
       title: "Rumored Timeline: Official vs Reported vs Analysis",
       description:
-        "Release-date chatter is everywhere, and almost none of it is official. This is the part of the DeepSeek Harness story where you must separate three layers of information: what DeepSeek confirmed, what the press reported, and what analysts inferred[8].",
+        "Release-date chatter is everywhere, and almost none of it is official. This is the part of the DeepSeek Harness story where you must separate three layers of information: what DeepSeek confirmed, what the press reported, and what analysts inferred.",
       paragraphs: [
-        "The two most specific claims come from reports built on leaked screenshots. On July 28, Fast Technology (via Sina Finance) reported that the official V4 would begin internal testing, with V4 arriving around mid-August, and linked the delay to the Harness[8]. On July 30, Zhineng Jiyuan AGI (via Sina) reported a narrower window: an NDA-style closed beta for a small group of invited users, followed by V4 general availability between August 10 and 20[8].",
-        "A third-party analysis aggregator is blunt about both: they rely on circulated screenshots and anonymous sources, so they do not count as independent confirmation. August 10-20 should be treated as a reported target, not a confirmed date[8].",
+        "The two most specific claims come from reports built on leaked screenshots. On July 28, Fast Technology (via Sina Finance) reported that the official V4 would begin internal testing, with V4 arriving around mid-August, and linked the delay to the Harness. On July 30, Zhineng Jiyuan AGI (via Sina) reported a narrower window: an NDA-style closed beta for a small group of invited users, followed by V4 general availability between August 10 and 20.",
+        "A third-party analysis aggregator is blunt about both: they rely on circulated screenshots and anonymous sources, so they do not count as independent confirmation. August 10-20 should be treated as a reported target, not a confirmed date.",
       ],
       table: {
         headers: ["Layer", "Statement", "Status"],
@@ -129,18 +129,18 @@ The Harness scope covers:
           ["Analysis", "V4 delays are linked to the Harness; the two may launch together", "Speculation"],
         ],
       },
-      note: "Rule of thumb: anything not in the official changelog is not confirmed. Circulated screenshots are not sources[8].",
+      note: "Rule of thumb: anything not in the official changelog is not confirmed. Circulated screenshots are not sources.",
     },
     {
       num: "06",
       title: "Watch Out for the Same-Name Trap",
       description:
-        "Search 'deepseek harness' today and you will find a minefield: third-party tools and community repos using the exact same name. None of them are the official product[3].",
+        "Search 'deepseek harness' today and you will find a minefield: third-party tools and community repos using the exact same name. None of them are the official product.",
       paragraphs: [
-        "The official DeepSeek Harness has not shipped, and nothing exists under the github.com/deepseek-ai organization[3]. That gap is exactly what third parties are filling with the same name.",
+        "The official DeepSeek Harness has not shipped, and nothing exists under the github.com/deepseek-ai organization. That gap is exactly what third parties are filling with the same name.",
       ],
       list: [
-        "Official DeepSeek Harness — unreleased; no repo under github.com/deepseek-ai as of Aug 1, 2026[3]",
+        "Official DeepSeek Harness — unreleased; no repo under github.com/deepseek-ai as of Aug 1, 2026",
         "FreeBuff — a third-party terminal coding agent from the CodeBuff team that dominates current 'deepseek harness' search results; it is unrelated to DeepSeek",
         "HenryZ838978/deepseek-harness — a community GitHub project (Python library, CLI, and MCP server); personal, not official",
         "DeepSeek-TUI — a popular community terminal agent for DeepSeek models; related ecosystem, still not official",
@@ -151,33 +151,33 @@ The Harness scope covers:
       num: "07",
       title: "Why the Harness Release Matters",
       description:
-        "The Harness is not a benchmark footnote. It is the only path to verifying DeepSeek's agent claims, and it will likely be the way most people run DeepSeek agents once it ships[6].",
+        "The Harness is not a benchmark footnote. It is the only path to verifying DeepSeek's agent claims, and it will likely be the way most people run DeepSeek agents once it ships.",
       paragraphs: [
-        "First, verification. Every official agent score was produced by software you cannot run. Until the Harness is public, no third party can reproduce DeepSWE 54.4 or Terminal-Bench 2.1 82.7, and analysts advise waiting for independent labs such as yage.ai before making production decisions on high-value workloads[6].",
-        "Second, cost. The harness decides how a model actually works on your tasks: how many tool calls it makes, how it manages context, how it corrects itself. Third-party tests cited by 36Kr measured roughly 70 tool calls per task for Claude Code versus about 22 for OpenCode[5]. DeepSeek's own job description puts smart context management at the center of the Harness[4], which could change that math and your [[flash-pricing|token bill]].",
-        "Third, the product entry. The Harness team is building DeepSeek's desktop agent product[4]. It may become the default way to use DeepSeek for coding, alongside the existing Claude Code, OpenCode, and Codex integrations.",
+        "First, verification. Every official agent score was produced by software you cannot run. Until the Harness is public, no third party can reproduce DeepSWE 54.4 or Terminal-Bench 2.1 82.7, and analysts advise waiting for independent labs such as yage.ai before making production decisions on high-value workloads.",
+        "Second, cost. The harness decides how a model actually works on your tasks: how many tool calls it makes, how it manages context, how it corrects itself. Third-party tests cited by 36Kr measured roughly 70 tool calls per task for Claude Code versus about 22 for OpenCode[5]. DeepSeek's own job description puts smart context management at the center of the Harness, which could change that math and your [[flash-pricing|token bill]].",
+        "Third, the product entry. The Harness team is building DeepSeek's desktop agent product. It may become the default way to use DeepSeek for coding, alongside the existing Claude Code, OpenCode, and Codex integrations.",
       ],
       list: [
-        "It is the only way to re-test official agent benchmarks[6]",
-        "It will set the tool-call efficiency baseline for DeepSeek agent work[5]",
-        "It may become DeepSeek's official agent product entry point[4]",
+        "It is the only way to re-test official agent benchmarks",
+        "It will set the tool-call efficiency baseline for DeepSeek agent work",
+        "It may become DeepSeek's official agent product entry point",
       ],
     },
     {
       num: "08",
       title: "How to Watch for the Official Release",
       description:
-        "You do not need rumors to follow the DeepSeek Harness. There are four official signals to watch, and when any of them appears, the 'to be released soon' promise is becoming real[8].",
+        "You do not need rumors to follow the DeepSeek Harness. There are four official signals to watch, and when any of them appears, the 'to be released soon' promise is becoming real.",
       paragraphs: [
-        "The changelog is the strongest signal: it is where the Harness was first named, and it is updated by DeepSeek itself[1]. Meanwhile, the [[deepseek-v4-flash|V4 Flash]] release is already live and usable without waiting for the Harness.",
+        "The changelog is the strongest signal: it is where the Harness was first named, and it is updated by DeepSeek itself. Meanwhile, the [[deepseek-v4-flash|V4 Flash]] release is already live and usable without waiting for the Harness.",
       ],
       list: [
-        "The DeepSeek API changelog adds a GA entry for the Harness — the same page that first named it[1]",
-        "A new repository appears under github.com/deepseek-ai — currently there is no harness repo there[3]",
+        "The DeepSeek API changelog adds a GA entry for the Harness — the same page that first named it",
+        "A new repository appears under github.com/deepseek-ai — currently there is no harness repo there",
         "The official @deepseek_ai X account announces it",
-        "A download or product page for the Harness goes live[8]",
+        "A download or product page for the Harness goes live",
       ],
-      note: "Until one of those four fires, treat any 'release date' you read online as reported, not confirmed[8]. For the flagship model that is expected alongside it, see the [[v4-pro|V4 Pro guide]].",
+      note: "Until one of those four fires, treat any 'release date' you read online as reported, not confirmed. For the flagship model that is expected alongside it, see the [[v4-pro|V4 Pro guide]].",
     },
   ],
   prevGuide: {

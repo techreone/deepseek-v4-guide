@@ -30,29 +30,29 @@ export const flashOpencode: GuideContent = {
         "[[deepseek-v4-flash|DeepSeek V4 Flash]] is the fast, efficient, economical tier of the V4 family. It is a [[flash-model-size|284B-total / 13B-active MoE model]] with a 1M token context window and MIT-licensed weights.[3] Its reasoning closely approaches V4 Pro, and it performs on par with V4 Pro on simple agent tasks. Community users on r/opencode call Flash the undisputed price-performance leader and the closest thing to Opus, measuring roughly 100-150 tokens/s with OpenCode.",
       ],
       list: [
-        "Built-in /connect provider for DeepSeek, so no manual config file is required.[1]",
+        "Built-in /connect provider for DeepSeek, so no manual config file is required.",
         "The model id deepseek-v4-flash automatically points at the official 0731 build.",
-        "Official [[flash-pricing|pricing]] of $0.14 input / $0.28 output per 1M tokens keeps high-volume work cheap.[3]",
+        "Official [[flash-pricing|pricing]] of $0.14 input / $0.28 output per 1M tokens keeps high-volume work cheap.",
       ],
     },
     {
       num: "02",
       title: "Prerequisites: OpenCode Version and a DeepSeek API Key",
       description:
-        "Before you connect, confirm your OpenCode version is at least v1.14.24[1] and grab a DeepSeek API key from platform.deepseek.com/api_keys. Both are one-time steps that take about a minute.",
+        "Before you connect, confirm your OpenCode version is at least v1.14.24 and grab a DeepSeek API key from platform.deepseek.com/api_keys. Both are one-time steps that take about a minute.",
       list: [
         "OpenCode >= v1.14.24 is required for the built-in DeepSeek provider. The old Go-binary build reports v0.0.x and throws 'agent coder not found'; reinstall with npm install -g opencode-ai.[7]",
         "Create a DeepSeek API key from the [[flash-api-setup|API Keys page]]. You paste it in raw, with no Bearer prefix.",
-        "Use the model id deepseek-v4-flash. Not deepseek-v4, not deepseek-flash, and not the retired deepseek-chat or deepseek-reasoner aliases.[1]",
+        "Use the model id deepseek-v4-flash. Not deepseek-v4, not deepseek-flash, and not the retired deepseek-chat or deepseek-reasoner aliases.",
       ],
       code: `curl https://api.deepseek.com/v1/models -H "Authorization: Bearer your-key"`,
-      note: "Model names matter. A custom provider passes the model id through verbatim to the API, so deepseek-v4-flash must match exactly. The old aliases deepseek-chat and deepseek-reasoner were retired on July 24, 2026[3] and no longer route to V4 Flash.",
+      note: "Model names matter. A custom provider passes the model id through verbatim to the API, so deepseek-v4-flash must match exactly. The old aliases deepseek-chat and deepseek-reasoner were retired on July 24, 2026 and no longer route to V4 Flash.",
     },
     {
       num: "03",
       title: "Connect with the Built-in /connect DeepSeek Provider",
       description:
-        "The official DeepSeek V4 Flash + OpenCode path needs no config file. Launch OpenCode, type /connect, enter deepseek, paste your API key, and pick a model.[1]",
+        "The official DeepSeek V4 Flash + OpenCode path needs no config file. Launch OpenCode, type /connect, enter deepseek, paste your API key, and pick a model.",
       code: `opencode            # enter the TUI
 /connect            # type "deepseek" and select the provider
 # paste your DeepSeek API Key
@@ -79,7 +79,7 @@ export const flashOpencode: GuideContent = {
   }
 }`,
       paragraphs: [
-        "Credentials stay separate from the provider config. Run opencode auth login, choose Other, use deepseek as the provider id, and paste your key. It is stored in ~/.local/share/opencode/auth.json. The provider key in opencode.json must match that id exactly.[5]",
+        "Credentials stay separate from the provider config. Run opencode auth login, choose Other, use deepseek as the provider id, and paste your key. It is stored in ~/.local/share/opencode/auth.json. The provider key in opencode.json must match that id exactly.",
         "Two details trip people up: do not wrap the key in a Bearer prefix, and do not rely on a soft reload. Quit OpenCode completely and relaunch it before /models will show the newly declared models.",
       ],
     },
@@ -87,7 +87,7 @@ export const flashOpencode: GuideContent = {
       num: "05",
       title: "Enable Thinking and Reasoning Effort on V4 Flash",
       description:
-        "DeepSeek V4 Flash keeps thinking on by default and accepts a reasoning_effort level of low, high, or max.[2] In OpenCode you control both per model inside the provider block.",
+        "DeepSeek V4 Flash keeps thinking on by default and accepts a reasoning_effort level of low, high, or max. In OpenCode you control both per model inside the provider block.",
       code: `{
   "provider": {
     "deepseek": {
@@ -116,10 +116,10 @@ export const flashOpencode: GuideContent = {
   "autoCompact": true
 }`,
       paragraphs: [
-        "This agent-split setup is the recommended pattern: [[v4-pro|V4 Pro]] writes real code while V4 Flash handles file search, grep, and title generation. Community cost reports land around 85% Pro / 15% Flash,[7] keeping the expensive model on the work that matters.",
-        "Reasoning effort maps to OpenCode's --variant flag. --variant max is Think Max, which wants the full 384K output context.[3] high is the cost-effective default for day-to-day coding.",
+        "This agent-split setup is the recommended pattern: [[v4-pro|V4 Pro]] writes real code while V4 Flash handles file search, grep, and title generation. Community cost reports land around 85% Pro / 15% Flash, keeping the expensive model on the work that matters.",
+        "Reasoning effort maps to OpenCode's --variant flag. --variant max is Think Max, which wants the full 384K output context. high is the cost-effective default for day-to-day coding.",
       ],
-      note: "DeepSeek's official sampling guidance for agentic scenarios is temperature 1.0 and top_p 0.95 (top_p 1.0 for everything else).[2] On high or max effort, the maximum output is 384K tokens.",
+      note: "DeepSeek's official sampling guidance for agentic scenarios is temperature 1.0 and top_p 0.95 (top_p 1.0 for everything else). On high or max effort, the maximum output is 384K tokens.",
     },
     {
       num: "06",
@@ -132,9 +132,9 @@ opencode run -m deepseek/deepseek-v4-pro --variant max "Architect a distributed 
 opencode run --model opencode-go/deepseek-v4-flash --variant max "your task"   # OpenCode Go channel`,
       list: [
         "Run opencode test first. It takes about two seconds and verifies the connection before any real work.",
-        "Keep the model id exactly deepseek-v4-flash; custom providers pass it through verbatim.[1]",
+        "Keep the model id exactly deepseek-v4-flash; custom providers pass it through verbatim.",
         "During peak hours the official DeepSeek API can return 503s or timeouts. Raise the request timeout above 60s or route through a gateway fallback.",
-        "Your auth provider id and the config key must match. Check with opencode auth list.[5]",
+        "Your auth provider id and the config key must match. Check with opencode auth list.",
       ],
     },
     {
@@ -143,8 +143,8 @@ opencode run --model opencode-go/deepseek-v4-flash --variant max "your task"   #
       description:
         "OpenCode Go bundles DeepSeek V4 Flash with a flat monthly credit. Subscribe at opencode.ai/auth, copy the API key, then run /connect and pick OpenCode Go.[4]",
       paragraphs: [
-        "Use the model id opencode-go/deepseek-v4-flash. Under the hood it is the same deepseek-v4-flash model served through OpenCode's own endpoint, https://opencode.ai/zen/go/v1/chat/completions.[4]",
-        "Go pricing mirrors the official DeepSeek rates at $0.14 input / $0.28 output per 1M tokens, with cache reads at $0.0028.[4] The $60 monthly credit makes Flash one of the most economical models on the service.",
+        "Use the model id opencode-go/deepseek-v4-flash. Under the hood it is the same deepseek-v4-flash model served through OpenCode's own endpoint, https://opencode.ai/zen/go/v1/chat/completions.",
+        "Go pricing mirrors the official DeepSeek rates at $0.14 input / $0.28 output per 1M tokens, with cache reads at $0.0028. The $60 monthly credit makes Flash one of the most economical models on the service.",
       ],
       table: {
         headers: ["Item", "DeepSeek V4 Flash on OpenCode Go"],
@@ -155,7 +155,7 @@ opencode run --model opencode-go/deepseek-v4-flash --variant max "your task"   #
           ["Global spend limits", "$12 / 5 hours · $30 / week · $60 / month"],
         ],
       },
-      note: "Region note: the 0731 build is hosted in China on OpenCode Go.[4] Open opencode.ai and enable 'Enable models hosted in China', then restart. Without it, requests fail with HTTP 403. Go's other models do not use China-hosted servers.",
+      note: "Region note: the 0731 build is hosted in China on OpenCode Go. Open opencode.ai and enable 'Enable models hosted in China', then restart. Without it, requests fail with HTTP 403. Go's other models do not use China-hosted servers.",
     },
     {
       num: "08",
@@ -165,7 +165,7 @@ opencode run --model opencode-go/deepseek-v4-flash --variant max "your task"   #
       code: `ollama launch opencode --model deepseek-v4-flash:cloud`,
       paragraphs: [
         "Ollama offers the same one-liner for the other agents: ollama launch claude --model deepseek-v4-flash:cloud and ollama launch openclaw --model deepseek-v4-flash:cloud.",
-        "For the comparison: OpenCode talks to DeepSeek through the OpenAI-compatible endpoint at https://api.deepseek.com/v1. [[flash-ide|Claude Code]] instead uses the Anthropic-compatible endpoint https://api.deepseek.com/anthropic, where claude-haiku* and claude-sonnet* map to deepseek-v4-flash and claude-opus* maps to deepseek-v4-pro.[2] Routing haiku and subagent traffic to Flash cuts subagent costs by 80-90%. Codex needs no conversion layer at all: the 0731 build natively supports the Responses API and is specifically adapted for Codex.[3]",
+        "For the comparison: OpenCode talks to DeepSeek through the OpenAI-compatible endpoint at https://api.deepseek.com/v1. [[flash-ide|Claude Code]] instead uses the Anthropic-compatible endpoint https://api.deepseek.com/anthropic, where claude-haiku* and claude-sonnet* map to deepseek-v4-flash and claude-opus* maps to deepseek-v4-pro. Routing haiku and subagent traffic to Flash cuts subagent costs by 80-90%. Codex needs no conversion layer at all: the 0731 build natively supports the Responses API and is specifically adapted for Codex.",
       ],
       table: {
         headers: ["Agent", "Config method", "V4 Flash role"],

@@ -25,7 +25,7 @@ export const beginnerGuide: GuideContent = {
       description:
         "You do not need to memorize model names to use DeepSeek V4, you just need to know there are two of them. DeepSeek V4 is an open-source AI family released as a preview on April 24, 2026, and its MIT-licensed weights are downloadable if you ever want to run it yourself.[2] The two models are DeepSeek V4 Flash and DeepSeek V4 Pro, and every entry point in this guide lets you pick between them.",
       paragraphs: [
-        "Think of the pair as a fast junior engineer and a careful senior one. Flash is the quick, efficient, economical workhorse: 284B total parameters with 13B active per token, built for high-volume everyday work.[2] Pro is the flagship: 1.6T total parameters and 49B active per token, aimed at what DeepSeek calls \"quality reasoning\" — complex code, long analysis, agent tasks.[2]",
+        "Think of the pair as a fast junior engineer and a careful senior one. Flash is the quick, efficient, economical workhorse: 284B total parameters with 13B active per token, built for high-volume everyday work. Pro is the flagship: 1.6T total parameters and 49B active per token, aimed at what DeepSeek calls \"quality reasoning\" — complex code, long analysis, agent tasks.",
         "Both models read up to 1M tokens of context, and both support a thinking mode that returns chain-of-thought reasoning before the answer.[1] The real difference between them is price and depth, not access.",
       ],
       list: [
@@ -39,10 +39,10 @@ export const beginnerGuide: GuideContent = {
       num: "02",
       title: "Why the \"Best Cheap AI\" Label Holds Up: The Price Gap",
       description:
-        "The price gap is the reason this label is not an exaggeration. DeepSeek V4 Flash charges $0.14 per 1M input tokens and $0.28 per 1M output tokens.[1] The US models you already know cost an order of magnitude more: GPT-5.5 runs $5 input / $30 output, and Claude Sonnet 4.6 runs $3 / $15.[5] On output tokens, Flash is roughly 100x cheaper than GPT-5.5 ($0.28 vs $30).",
+        "The price gap is the reason this label is not an exaggeration. DeepSeek V4 Flash charges $0.14 per 1M input tokens and $0.28 per 1M output tokens. The US models you already know cost an order of magnitude more: GPT-5.5 runs $5 input / $30 output, and Claude Sonnet 4.6 runs $3 / $15.[5] On output tokens, Flash is roughly 100x cheaper than GPT-5.5 ($0.28 vs $30).",
       paragraphs: [
-        "Third-party trackers sum the gap as 97-99% cheaper than GPT-5.5 and Claude Sonnet for the same token volume.[5] Even among open-weight competitors, Flash is the price floor: GLM-5.2 sits at $1.40 / $4.40 per 1M, still about 10x more expensive on input.",
-        "Prices get friendlier from there. Cache-hit input drops to $0.0028 per 1M tokens, a 98% discount on repeated prefixes that applies automatically with no configuration.[1] On OpenRouter, you can buy Flash at $0.0896 / $0.1792 per 1M, about 36% off the official rate.[4]",
+        "Third-party trackers sum the gap as 97-99% cheaper than GPT-5.5 and Claude Sonnet for the same token volume. Even among open-weight competitors, Flash is the price floor: GLM-5.2 sits at $1.40 / $4.40 per 1M, still about 10x more expensive on input.",
+        "Prices get friendlier from there. Cache-hit input drops to $0.0028 per 1M tokens, a 98% discount on repeated prefixes that applies automatically with no configuration. On OpenRouter, you can buy Flash at $0.0896 / $0.1792 per 1M, about 36% off the official rate.[4]",
       ],
       table: {
         headers: ["Model", "Input per 1M tokens", "Output per 1M tokens"],
@@ -55,7 +55,7 @@ export const beginnerGuide: GuideContent = {
       },
       list: [
         "1M tokens is roughly 750,000 English words, so a casual month of API use is a rounding error in dollars.",
-        "The 97-99% figure compares per-token prices; your real savings depend on output volume, which is where Flash is cheapest relative to GPT-5.5.[5]",
+        "The 97-99% figure compares per-token prices; your real savings depend on output volume, which is where Flash is cheapest relative to GPT-5.5.",
       ],
       note: "The full cost picture, including cache math and peak-hour pricing that is announced but not yet in effect, is in the [[flash-pricing|pricing guide]].",
     },
@@ -65,12 +65,12 @@ export const beginnerGuide: GuideContent = {
       description:
         "Cheap only matters if the model is actually good, so here is the quality picture. Independent evaluation firm Artificial Analysis puts V4 Flash's Intelligence Index at 47 on its Max setting, roughly the level of Claude Sonnet 4.6's max configuration.[3] Community reviewers read the same story on agent-heavy workloads, calling the July 31, 2026 build an \"undisputed price-performance leader.\"",
       paragraphs: [
-        "A caveat worth keeping: Artificial Analysis also flags that the strongest published benchmark numbers come from DeepSeek's own model card, which describes Flash-0731 as \"broadly competitive with the strongest proprietary models available.\"[2] Treat vendor-reported scores as directional, not an independent verdict.",
+        "A caveat worth keeping: Artificial Analysis also flags that the strongest published benchmark numbers come from DeepSeek's own model card, which describes Flash-0731 as \"broadly competitive with the strongest proprietary models available.\" Treat vendor-reported scores as directional, not an independent verdict.",
         "For the flagship, community threads routinely place V4 Pro in Opus-class territory for hard reasoning — at a fraction of the price. Whether that quality gap is worth the premium is exactly the trade-off this guide helps you make, rather than a fact anyone can settle for you.",
       ],
       list: [
-        "Flash's official positioning: fast, efficient, economical, with reasoning that \"closely approaches\" V4 Pro.[2]",
-        "The 0731 build is a re-post-trained Flash, not a new architecture — parameters, context, and price are all unchanged.[2]",
+        "Flash's official positioning: fast, efficient, economical, with reasoning that \"closely approaches\" V4 Pro.",
+        "The 0731 build is a re-post-trained Flash, not a new architecture — parameters, context, and price are all unchanged.",
         "For a beginner, the practical takeaway: Flash handles daily work well enough that most people will rarely need Pro.",
       ],
       note: "Benchmark scores vary by configuration and date. The full agent-benchmark table, with all caveats, lives in the flash-benchmarks guide.",
@@ -81,7 +81,7 @@ export const beginnerGuide: GuideContent = {
       description:
         "You do not have to pay anything to meet DeepSeek V4, and the cheapest paid path is almost nothing. There are three good on-ramps, from the zero-dollar web app to a $5 subscription.",
       paragraphs: [
-        "First, the web app at chat.deepseek.com is free and needs no subscription. The model picker at the top switches between Instant Mode (V4 Flash) and Expert Mode (V4 Pro).[2]",
+        "First, the web app at chat.deepseek.com is free and needs no subscription. The model picker at the top switches between Instant Mode (V4 Flash) and Expert Mode (V4 Pro).",
         "Second, the API. Multiple third-party trackers report that new accounts receive a one-time grant of about 5 million free tokens — roughly $3.40-$8.40 of value, valid about 30 days, with no credit card required.[7] This is third-party reporting: the official pricing page does not state the grant directly, and a few users report not seeing it, so check your actual balance at platform.deepseek.com after registering.",
         "Third, the cheapest paid on-ramp for developers: OpenCode Go costs $5 for the first month, then $10/month, and includes DeepSeek V4 Flash and Pro through the open-source OpenCode agent.[6]",
       ],
@@ -104,7 +104,7 @@ export const beginnerGuide: GuideContent = {
       num: "05",
       title: "The Honest Downside List",
       description:
-        "No honest \"best cheap AI\" writeup skips the downsides, so here they are in plain terms. The biggest one is hallucination: on Artificial Analysis' Omniscience accuracy test, V4 Pro scored 94% and V4 Flash 96% — the models answer confidently even when they do not know.[3] For comparison, GLM-5.2 scored 28% and MiniMax M3 scored 16% on the same test.[3]",
+        "No honest \"best cheap AI\" writeup skips the downsides, so here they are in plain terms. The biggest one is hallucination: on Artificial Analysis' Omniscience accuracy test, V4 Pro scored 94% and V4 Flash 96% — the models answer confidently even when they do not know. For comparison, GLM-5.2 scored 28% and MiniMax M3 scored 16% on the same test.",
       list: [
         "Not for high-stakes medical, legal, or financial advice. A confident wrong answer is the real risk, and it applies to every model in this price class.",
         "English output is not always stable. One user reported the model switching back to Chinese mid-session despite an explicit English-only request.[8]",
@@ -119,9 +119,9 @@ export const beginnerGuide: GuideContent = {
       description:
         "Whether DeepSeek V4 is the right pick for you depends on your use case, so treat this as a self-check rather than a verdict.",
       paragraphs: [
-        "Great fit: budget-sensitive individuals, students, and developers; workloads with lots of calls such as classification, extraction, summarization, and code completion; and anyone who values open weights they could self-host or move between platforms.[3]",
+        "Great fit: budget-sensitive individuals, students, and developers; workloads with lots of calls such as classification, extraction, summarization, and code completion; and anyone who values open weights they could self-host or move between platforms.",
         "Think twice: teams whose answers must be right the first time, projects that need rock-solid English-only output, and anyone planning to let an agent run fully unattended.",
-        "A common pattern among heavy users is hybrid routing: Flash for the high-volume work, then an escalation to Pro — or a US model — for the rare request that needs maximum care. The cost math usually makes Flash the default.[1]",
+        "A common pattern among heavy users is hybrid routing: Flash for the high-volume work, then an escalation to Pro — or a US model — for the rare request that needs maximum care. The cost math usually makes Flash the default.",
       ],
       list: [
         "Budget-conscious individual, student, or solo developer: strongly consider.",
@@ -136,9 +136,9 @@ export const beginnerGuide: GuideContent = {
       description:
         "Ten minutes is enough to form a first opinion. Here is the fastest path from zero to a real answer, without spending anything beyond a $5 optional detour.",
       list: [
-        "Open chat.deepseek.com, sign up with email, phone, or Google, and start in Instant Mode (V4 Flash). Ask something you already know the answer to, so you can judge the quality yourself.[2]",
-        "If you want API access, register at platform.deepseek.com, check whether the reported ~5M free-token grant appears in your balance, and generate an API key.[7]",
-        "Developers: try OpenCode Go for $5 in the first month and run the same prompt inside a real coding agent.[6]",
+        "Open chat.deepseek.com, sign up with email, phone, or Google, and start in Instant Mode (V4 Flash). Ask something you already know the answer to, so you can judge the quality yourself.",
+        "If you want API access, register at platform.deepseek.com, check whether the reported ~5M free-token grant appears in your balance, and generate an API key.",
+        "Developers: try OpenCode Go for $5 in the first month and run the same prompt inside a real coding agent.",
         "Compare the results against whatever you use today. If output quality holds for your tasks at a fraction of the price, you have your answer.",
       ],
       code: `curl https://api.deepseek.com/chat/completions \\

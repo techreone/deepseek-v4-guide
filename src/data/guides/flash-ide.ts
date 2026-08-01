@@ -121,7 +121,7 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
         "Prompts for your sk- API key on first run.",
       ],
       paragraphs: [
-        "Codex CLI, the ChatGPT desktop app, and the VS Code Codex extension share the same ~/.codex/ configuration. Today only deepseek-v4-flash integrates with Codex; DeepSeek says deepseek-v4-pro support arrives in early August 2026[2].",
+        "Codex CLI, the ChatGPT desktop app, and the VS Code Codex extension share the same ~/.codex/ configuration. Today only deepseek-v4-flash integrates with Codex; DeepSeek says deepseek-v4-pro support arrives in early August 2026.",
         "The Responses endpoint has no previous_response_id, so multi-turn sessions resend the full context, and OpenAI built-in tools like file_search and code_interpreter are not supported.",
       ],
       note: "Prerequisite: install Codex CLI or the ChatGPT desktop app and launch it once so ~/.codex exists before running the script.",
@@ -130,7 +130,7 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
       num: "05",
       title: "Understand Model-Name Auto-Mapping",
       description:
-        "The Anthropic endpoint maps claude-* model names onto DeepSeek models automatically[4]. In most Claude Code sessions you never type a DeepSeek slug at all.",
+        "The Anthropic endpoint maps claude-* model names onto DeepSeek models automatically. In most Claude Code sessions you never type a DeepSeek slug at all.",
       table: {
         headers: ["Claude model name", "Mapped to", "Why it matters"],
         rows: [
@@ -159,10 +159,10 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
         ],
       },
       paragraphs: [
-        "DeepSeek's own [[flash-benchmarks|benchmarks]], run on its DeepSeek Harness in minimal mode with max effort, put Flash-0731 at 82.7 on Terminal-Bench 2.1 and 54.4 on DeepSWE[1]. The changelog says all nine published agent benchmarks beat V4-Pro-Preview. Treat these as vendor-reported until third parties reproduce them. On the independent Artificial Analysis Intelligence Index v4.1, V4-Flash-0731 scores 50, ranking #2 of 162 models in its price tier.",
+        "DeepSeek's own [[flash-benchmarks|benchmarks]], run on its DeepSeek Harness in minimal mode with max effort, put Flash-0731 at 82.7 on Terminal-Bench 2.1 and 54.4 on DeepSWE. The changelog says all nine published agent benchmarks beat V4-Pro-Preview. Treat these as vendor-reported until third parties reproduce them. On the independent Artificial Analysis Intelligence Index v4.1, V4-Flash-0731 scores 50, ranking #2 of 162 models in its price tier.",
         "A typical Cursor Composer run is around 20K input and 3K output tokens: about $0.013 on Pro and $0.003 on Flash. A full day at roughly 150 rounds is about $2 on Pro and under $0.50 on Flash. Community estimates put a $5 top-up at about a week of heavy Flash usage.",
       ],
-      note: "Concurrency limits are account-level: 2,500 concurrent requests for flash, 500 for pro[5]. In Cursor, your plan's own context ceiling hits before DeepSeek's 1M window.",
+      note: "Concurrency limits are account-level: 2,500 concurrent requests for flash, 500 for pro. In Cursor, your plan's own context ceiling hits before DeepSeek's 1M window.",
     },
     {
       num: "07",

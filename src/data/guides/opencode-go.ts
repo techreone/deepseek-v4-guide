@@ -52,7 +52,7 @@ export const opencodeGo: GuideContent = {
         ],
       },
       paragraphs: [
-        "Global limits cap the whole account at $12 of usage per 5-hour window, $30 per week, and $60 per month.[1] At typical request sizes, DeepSeek V4 Flash is officially estimated at 31,650 requests per 5 hours and roughly 158,150 per month — effectively unlimited for a solo developer.",
+        "Global limits cap the whole account at $12 of usage per 5-hour window, $30 per week, and $60 per month. At typical request sizes, DeepSeek V4 Flash is officially estimated at 31,650 requests per 5 hours and roughly 158,150 per month — effectively unlimited for a solo developer.",
         "The per-token rates inside Go mirror DeepSeek's current official pricing: Flash at $0.14 input / $0.28 output per 1M tokens, Pro at $0.435 / $0.87.[4] The subscription buys volume at those rates, not a per-token discount.",
         "Model ids on Go use an opencode-go/ prefix, so you request opencode-go/deepseek-v4-flash or opencode-go/deepseek-v4-pro.",
       ],
@@ -134,7 +134,7 @@ curl https://opencode.ai/zen/go/v1/models -H "Authorization: Bearer YOUR_GO_API_
       num: "07",
       title: "Privacy, Regions, and Fine Print",
       description:
-        "One privacy caveat matters before you commit a codebase: every Go model is zero-retention (0-day, not used for training) except DeepSeek V4 Flash, which is marked 'used for model training, no agreement'.[1] That single exception changes which projects you run on Flash.",
+        "One privacy caveat matters before you commit a codebase: every Go model is zero-retention (0-day, not used for training) except DeepSeek V4 Flash, which is marked 'used for model training, no agreement'. That single exception changes which projects you run on Flash.",
       paragraphs: [
         "For proprietary or client work, treat Flash-on-Go as a training-eligible model and keep secrets out of the context. The other 15 models hold nothing and use nothing for training.",
         "Region: most Go models run in US, EU, and Singapore data centers, but the 0731 Flash build runs on China-hosted servers. Open opencode.ai and enable 'Enable models hosted in China' — otherwise Flash requests fail with HTTP 403.",

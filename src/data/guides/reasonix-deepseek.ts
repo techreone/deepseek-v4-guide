@@ -30,13 +30,13 @@ export const reasonixDeepseek: GuideContent = {
       paragraphs: [
         "The mechanism explains the spread. DeepSeek's context caching is automatic, best-effort, and byte-prefix based: a request earns the discount only when its byte prefix exactly matches a previously seen request[3]. Whether you pay $0.0028 or $0.14 for the history you resend each turn is decided by how your client orders, reorders, or rewrites that conversation.",
         "Agents are the worst case for misses: they resend the whole conversation — system prompt, tool definitions, history — before every request. If the prefix drifts, you pay full price each turn.",
-        "The gap is large in practice. At a 30% hit rate, V4 Flash input prices at roughly $0.099 per 1M; at 99%, the same input prices at roughly $0.004 per 1M — about 24x cheaper from cache discipline alone[4].",
+        "The gap is large in practice. At a 30% hit rate, V4 Flash input prices at roughly $0.099 per 1M; at 99%, the same input prices at roughly $0.004 per 1M — about 24x cheaper from cache discipline alone.",
       ],
       list: [
-        "V4 Flash cache hit: $0.0028 per 1M input tokens[4]",
-        "V4 Flash cache miss: $0.14 per 1M input tokens[4]",
-        "50x input-price spread; output is $0.28 per 1M either way[4]",
-        "V4 Pro cache hit $0.003625 vs miss $0.435 — a 120x spread[4]",
+        "V4 Flash cache hit: $0.0028 per 1M input tokens",
+        "V4 Flash cache miss: $0.14 per 1M input tokens",
+        "50x input-price spread; output is $0.28 per 1M either way",
+        "V4 Pro cache hit $0.003625 vs miss $0.435 — a 120x spread",
       ],
       note: "The legacy aliases deepseek-chat and deepseek-reasoner were retired on July 24, 2026; always use deepseek-v4-flash or deepseek-v4-pro. For the full breakdown, see the [[flash-pricing|DeepSeek V4 Flash pricing guide]].",
     },
@@ -47,8 +47,8 @@ export const reasonixDeepseek: GuideContent = {
         "DeepSeek Reasonix is a DeepSeek-native terminal coding agent and harness from the esengine organization on GitHub — a single static Go binary tuned around DeepSeek's prefix cache so token costs stay low across long sessions[1].",
       paragraphs: [
         "Official backing is the first differentiator. Reasonix is one of the few third-party integrations with a dedicated page in DeepSeek's own API docs, titled \"Integrate with Reasonix\"[2]. Vendor documentation is not endorsement, but it signals the project follows the API well.",
-        "Scale followed traction: roughly 28.3k stars and 1.8k forks as of August 1, 2026. The project is MIT-licensed and ships as one static Go binary for macOS, Linux, and Windows; the npm package reasonix is just an installer that pulls that binary[1]. Current release line: v1.18.0.",
-        "The tagline carries the intent: a DeepSeek-native agent \"engineered around prefix-cache stability — leave it running.\" The longer a session stays alive with a stable prefix, the cheaper each turn gets[1].",
+        "Scale followed traction: roughly 28.3k stars and 1.8k forks as of August 1, 2026. The project is MIT-licensed and ships as one static Go binary for macOS, Linux, and Windows; the npm package reasonix is just an installer that pulls that binary. Current release line: v1.18.0.",
+        "The tagline carries the intent: a DeepSeek-native agent \"engineered around prefix-cache stability — leave it running.\" The longer a session stays alive with a stable prefix, the cheaper each turn gets.",
       ],
       note: "Do not confuse this with the [[deepseek-harness|official DeepSeek Harness]], which is \"to be released soon\" and is a separate product. Reasonix is a community harness that DeepSeek's docs chose to document — see [[harness-agent-capability|why a native harness makes agents dramatically better]].",
     },
@@ -58,20 +58,20 @@ export const reasonixDeepseek: GuideContent = {
       description:
         "Reasonix's design reduces to one discipline: every request's context is partitioned into three regions with strict invariants — an immutable prefix, an append-only log, and a volatile scratch area[6].",
       paragraphs: [
-        "ImmutablePrefix freezes the system prompt, tool definitions, and few-shot examples byte-for-byte at session start, so nothing drifts. AppendOnlyLog means history only ever grows — never reordered, rewritten, or re-serialized. VolatileScratch holds reasoning and temp state that resets each turn and never enters the cache prefix[6].",
+        "ImmutablePrefix freezes the system prompt, tool definitions, and few-shot examples byte-for-byte at session start, so nothing drifts. AppendOnlyLog means history only ever grows — never reordered, rewritten, or re-serialized. VolatileScratch holds reasoning and temp state that resets each turn and never enters the cache prefix.",
         "Auto-compact sits on top: near the context limit, old turns fold into a summary, and the summary request is shaped to reuse the main agent's already-cached system, tool, and history prefix. The benchmark doc puts it plainly: \"DeepSeek gave us cacheable bytes. The four mechanisms above are how we keep the bytes cacheable.\"[5]",
-        "The lesson generalizes: caching is a server capability, and hit rate is a client design decision. Two clients on the same DeepSeek API can land at 30% and 99%[5].",
+        "The lesson generalizes: caching is a server capability, and hit rate is a client design decision. Two clients on the same DeepSeek API can land at 30% and 99%.",
       ],
-      note: "\"That single discipline is enough to push cache hit rates to 85-95% on real sessions. Nothing else in the framework would matter if this was wrong,\" the maintainer wrote[6].",
+      note: "\"That single discipline is enough to push cache hit rates to 85-95% on real sessions. Nothing else in the framework would matter if this was wrong,\" the maintainer wrote.",
     },
     {
       num: "04",
       title: "The Hard Numbers: One Real Day at 99.82%",
       description:
-        "The project publishes a real-world cache benchmark built from an actual user day. On May 1, 2026, that day logged 435,033,856 cached input tokens against just 767,616 uncached — a 99.82% hit rate across 435.98M tokens[5].",
+        "The project publishes a real-world cache benchmark built from an actual user day. On May 1, 2026, that day logged 435,033,856 cached input tokens against just 767,616 uncached — a 99.82% hit rate across 435.98M tokens.",
       paragraphs: [
-        "The cost is the point: $1.38 that day, versus $61.06 at a 0% hit rate — a 97.7% saving. On the V4 Pro tier, the same day cost $2.07 instead of $189.73, a 98.9% saving; Pro's wider 120x cache spread makes the discipline pay even more[5].",
-        "One honesty note: the README's hero image says \"~$12 instead of ~$61\" — about 5x — which contradicts the benchmark table's $1.38. The table is the detail; the $12 figure looks like an older estimate on earlier prices. Use the table numbers[5].",
+        "The cost is the point: $1.38 that day, versus $61.06 at a 0% hit rate — a 97.7% saving. On the V4 Pro tier, the same day cost $2.07 instead of $189.73, a 98.9% saving; Pro's wider 120x cache spread makes the discipline pay even more.",
+        "One honesty note: the README's hero image says \"~$12 instead of ~$61\" — about 5x — which contradicts the benchmark table's $1.38. The table is the detail; the $12 figure looks like an older estimate on earlier prices. Use the table numbers.",
       ],
       table: {
         headers: ["Metric", "Real day (May 1, 2026)", "0% cache baseline", "Saving"],
@@ -82,32 +82,32 @@ export const reasonixDeepseek: GuideContent = {
           ["V4 Pro daily cost", "$2.07", "$189.73", "98.9%"],
         ],
       },
-      note: "A single-day snapshot is not a guarantee, but it is a documented real session from the maintainers' repo — the number the project's marketing and DeepSeek's docs both point back to[5].",
+      note: "A single-day snapshot is not a guarantee, but it is a documented real session from the maintainers' repo — the number the project's marketing and DeepSeek's docs both point back to.",
     },
     {
       num: "05",
       title: "Tool-Call Repair and the Cost-Control Pillar",
       description:
-        "A high hit rate does not make an agent usable; tool calling does. Reasonix wraps DeepSeek's known tool-call quirks in a repair pipeline, then layers a cost-control pillar on top so long sessions stay cheap by design[6].",
+        "A high hit rate does not make an agent usable; tool calling does. Reasonix wraps DeepSeek's known tool-call quirks in a repair pipeline, then layers a cost-control pillar on top so long sessions stay cheap by design.",
       list: [
-        "Flatten — deep or wide tool schemas are flattened so argument serialization stops breaking[6]",
-        "Scavenge — tool calls stuck in the reasoning stream are recovered and re-emitted[6]",
-        "Truncation repair — truncated JSON tool calls are detected and fixed[6]",
-        "Storm suppression — repeated tool-call storms are throttled[6]",
-        "Flash-first default — the executor runs on deepseek-v4-flash; /pro or /preset max moves a turn or session to v4-pro[2]",
-        "Turn-end compaction — automatic compression under a 3000-token ceiling[6]",
+        "Flatten — deep or wide tool schemas are flattened so argument serialization stops breaking",
+        "Scavenge — tool calls stuck in the reasoning stream are recovered and re-emitted",
+        "Truncation repair — truncated JSON tool calls are detected and fixed",
+        "Storm suppression — repeated tool-call storms are throttled",
+        "Flash-first default — the executor runs on deepseek-v4-flash; /pro or /preset max moves a turn or session to v4-pro",
+        "Turn-end compaction — automatic compression under a 3000-token ceiling",
       ],
       paragraphs: [
-        "Two old features were deliberately removed, a useful signal about the project's taste. v0.31 deleted the R1 Thought Harvesting and self-consistency branching features because they \"rarely paid for themselves\"[6]. The framework keeps only what earns its cost.",
-        "Cost control is in the defaults: the executor runs on the cheap flash tier, and a model can self-report a <<<NEEDS_PRO>>> signal to escalate mid-session when the task justifies it[6]. The default pair is deepseek-v4-flash as executor with an optional planner model for heavier work.",
+        "Two old features were deliberately removed, a useful signal about the project's taste. v0.31 deleted the R1 Thought Harvesting and self-consistency branching features because they \"rarely paid for themselves\". The framework keeps only what earns its cost.",
+        "Cost control is in the defaults: the executor runs on the cheap flash tier, and a model can self-report a <<<NEEDS_PRO>>> signal to escalate mid-session when the task justifies it. The default pair is deepseek-v4-flash as executor with an optional planner model for heavier work.",
       ],
-      note: "Slash commands have moved between releases: DeepSeek's current docs list /pro and /preset max, while older architecture notes mention /model. Run /help on your installed version to confirm[2].",
+      note: "Slash commands have moved between releases: DeepSeek's current docs list /pro and /preset max, while older architecture notes mention /model. Run /help on your installed version to confirm.",
     },
     {
       num: "06",
       title: "Install and First Run",
       description:
-        "Reasonix installs three ways, and one of them is the route DeepSeek's own docs recommend: npx reasonix code[2]. Every route lands on the same prebuilt static Go binary, with no Node runtime to maintain after install[1].",
+        "Reasonix installs three ways, and one of them is the route DeepSeek's own docs recommend: npx reasonix code. Every route lands on the same prebuilt static Go binary, with no Node runtime to maintain after install.",
       code: `# Option 1: global install (any OS, pulls the prebuilt Go binary)
 npm i -g reasonix
 
@@ -125,8 +125,8 @@ reasonix
 reasonix run "implement the TODOs in main.go"`,
       paragraphs: [
         "Before setup, create a DeepSeek API key at platform.deepseek.com/api_keys. The [[flash-api-setup|DeepSeek V4 Flash API setup guide]] covers the key, base URL, and first request.",
-        "reasonix setup walks you through provider and model selection and persists the API key to ~/.reasonix/config.json[1]. Then plain reasonix opens the interactive TUI, and reasonix run \"...\" executes a one-shot task.",
-        "Inside the TUI: /pro runs the next turn on V4 Pro, /preset max uses Pro for the whole session, and /preset fast restores the default[2].",
+        "reasonix setup walks you through provider and model selection and persists the API key to ~/.reasonix/config.json. Then plain reasonix opens the interactive TUI, and reasonix run \"...\" executes a one-shot task.",
+        "Inside the TUI: /pro runs the next turn on V4 Pro, /preset max uses Pro for the whole session, and /preset fast restores the default.",
       ],
       note: "New DeepSeek accounts reportedly start with a free 5M-token grant and no credit card requirement — enough to trial Reasonix before paying. DeepSeek has not confirmed the grant officially, so treat it as reported.",
     },
@@ -134,7 +134,7 @@ reasonix run "implement the TODOs in main.go"`,
       num: "07",
       title: "Configure reasonix.toml for Cache-Stable Sessions",
       description:
-        "Configuration lives in reasonix.toml. The compaction thresholds do double duty: they decide when old context folds into a summary, and they keep the cached prefix intact by compacting before the ceiling[6].",
+        "Configuration lives in reasonix.toml. The compaction thresholds do double duty: they decide when old context folds into a summary, and they keep the cached prefix intact by compacting before the ceiling.",
       code: `default_model = "deepseek-flash"   # executor; add [agent] planner_model = "deepseek-pro" for dual-model
 
 [context]
@@ -144,11 +144,11 @@ compact_ratio = 0.8                # attempt a compact at 80%
 compact_force_ratio = 0.9          # forced compact ceiling at 90%
 # prices = { "deepseek-v4-flash" = { cache_hit = 0.0028, input = 0.14, output = 0.28 } }  # per 1M tokens, USD`,
       paragraphs: [
-        "Project instructions follow the pattern Claude Code popularized: REASONIX.md for committed project rules, REASONIX.local.md for personal git-ignored notes, and ~/.config/reasonix/REASONIX.md globally. The project calls REASONIX.md \"the Reasonix analog of Claude Code's CLAUDE.md\"[1].",
-        "An optional prices table in the same file teaches the CLI your per-model rates — cache_hit 0.0028, input 0.14, output 0.28 in USD per 1M — so the cost badge reflects your real numbers[6].",
-        "Whatever you tune, keep the immutable region identical across sessions: a single changed byte in the system prompt or tool definitions breaks the byte-prefix match and forfeits the discount[3].",
+        "Project instructions follow the pattern Claude Code popularized: REASONIX.md for committed project rules, REASONIX.local.md for personal git-ignored notes, and ~/.config/reasonix/REASONIX.md globally. The project calls REASONIX.md \"the Reasonix analog of Claude Code's CLAUDE.md\".",
+        "An optional prices table in the same file teaches the CLI your per-model rates — cache_hit 0.0028, input 0.14, output 0.28 in USD per 1M — so the cost badge reflects your real numbers.",
+        "Whatever you tune, keep the immutable region identical across sessions: a single changed byte in the system prompt or tool definitions breaks the byte-prefix match and forfeits the discount.",
       ],
-      note: "Treat compaction ratios as cache controls, not just memory controls. Compact early and the summary can reuse the cached prefix; compact late and the rebuild may miss[6].",
+      note: "Treat compaction ratios as cache controls, not just memory controls. Compact early and the summary can reuse the cached prefix; compact late and the rebuild may miss.",
     },
     {
       num: "08",
@@ -156,16 +156,16 @@ compact_force_ratio = 0.9          # forced compact ceiling at 90%
       description:
         "Reception is enthusiastic but not unanimous. On r/DeepSeek, users report sharp jumps in cache hits after switching — one wrote \"I went from a less than 5% cache hits with claude code to 90% with reasonix\" — and credit it with shrinking their DeepSeek balance usage drastically[8].",
       paragraphs: [
-        "The counterpoint is real. OpenCode users report equally high hit rates — one HN user logged roughly 97.9% cache hits on 1.2 billion tokens in a day, another claims 96-98% with opencode + deepseek-v4-flash[7]. The deeper critique from an experienced harness author: when tools deliberately break the prefix, it is usually because they tested it and got better results overall — append-only is one strategy, not always the best[7].",
-        "Honest limits: Reasonix is still in active development with a smaller feature surface than Claude Code or OpenCode — no first-class multi-agent orchestration, no RAG, no web UI, and DeepSeek's flash tier is not multimodal, so it cannot process UI mockups[1]. Quality comparisons against classic agents are community opinion; no controlled benchmark pits it against Claude Code or OpenCode on task completion[7]. The maintainer positions the tool as \"opinionated, not general.\"[1]",
-        "Pairing with OpenCode: you are not locked in. reasonix-connector is a community plugin that brings Reasonix's cache-optimized backend into OpenCode's UI, and pi-reasonix ports the algorithm for other clients. If you stay in OpenCode, cache discipline still pays: Reddit users describe the [[opencode-go|OpenCode Go subscription]] as usage-based with cache hits taken into account — a community claim, not a vendor one[8].",
+        "The counterpoint is real. OpenCode users report equally high hit rates — one HN user logged roughly 97.9% cache hits on 1.2 billion tokens in a day, another claims 96-98% with opencode + deepseek-v4-flash[7]. The deeper critique from an experienced harness author: when tools deliberately break the prefix, it is usually because they tested it and got better results overall — append-only is one strategy, not always the best.",
+        "Honest limits: Reasonix is still in active development with a smaller feature surface than Claude Code or OpenCode — no first-class multi-agent orchestration, no RAG, no web UI, and DeepSeek's flash tier is not multimodal, so it cannot process UI mockups. Quality comparisons against classic agents are community opinion; no controlled benchmark pits it against Claude Code or OpenCode on task completion. The maintainer positions the tool as \"opinionated, not general.\"",
+        "Pairing with OpenCode: you are not locked in. reasonix-connector is a community plugin that brings Reasonix's cache-optimized backend into OpenCode's UI, and pi-reasonix ports the algorithm for other clients. If you stay in OpenCode, cache discipline still pays: Reddit users describe the [[opencode-go|OpenCode Go subscription]] as usage-based with cache hits taken into account — a community claim, not a vendor one.",
       ],
       list: [
-        "Most common positive report: cache hits jump to 90%+ on long sessions after switching[8]",
-        "Smaller feature surface; no multi-agent orchestration, no RAG, no web UI[1]",
-        "Development is ongoing; the v2 rewrite lives on the main-v2 branch[1]",
+        "Most common positive report: cache hits jump to 90%+ on long sessions after switching",
+        "Smaller feature surface; no multi-agent orchestration, no RAG, no web UI",
+        "Development is ongoing; the v2 rewrite lives on the main-v2 branch",
       ],
-      note: "Measure cost per completed task, not hit rate alone. A 99% hit rate on a loop that finishes the job is a win; on a loop that churns, it is still expensive[7].",
+      note: "Measure cost per completed task, not hit rate alone. A 99% hit rate on a loop that finishes the job is a win; on a loop that churns, it is still expensive.",
     },
   ],
   prevGuide: {

@@ -41,10 +41,10 @@ export const flashHuggingface: GuideContent = {
       num: "02",
       title: "The 304B Display Mystery: DSpark Draft Module",
       description:
-        "Open the DeepSeek-V4-Flash-0731 model card and HuggingFace shows 304B params, ~167 GB, and 48 Safetensors shards.[1] The April preview listed 284B. Nothing got bigger: the extra parameter count comes from the DSpark speculative decoding draft module bundled into the same repository.",
+        "Open the DeepSeek-V4-Flash-0731 model card and HuggingFace shows 304B params, ~167 GB, and 48 Safetensors shards. The April preview listed 284B. Nothing got bigger: the extra parameter count comes from the DSpark speculative decoding draft module bundled into the same repository.",
       paragraphs: [
-        "Under the hood, [[deepseek-v4-flash|DeepSeek V4 Flash]] is a 284B-total / 13B-active Mixture-of-Experts model with a native 1M token context window and up to 384K tokens of output.[1] The 0731 release is architecturally identical to the April 24 preview. DeepSeek only re-post-trained the weights and attached the DSpark draft module, which shares the same structure as the DeepSeek-V4-Flash-DSpark repository.",
-        "The weights ship in mixed precision: FP4 for the MoE expert weights and FP8 for everything else.[1] This is a natively quantized distribution, not a BF16 release. DeepSeek has never published a BF16 version of V4 Flash.",
+        "Under the hood, [[deepseek-v4-flash|DeepSeek V4 Flash]] is a 284B-total / 13B-active Mixture-of-Experts model with a native 1M token context window and up to 384K tokens of output. The 0731 release is architecturally identical to the April 24 preview. DeepSeek only re-post-trained the weights and attached the DSpark draft module, which shares the same structure as the DeepSeek-V4-Flash-DSpark repository.",
+        "The weights ship in mixed precision: FP4 for the MoE expert weights and FP8 for everything else. This is a natively quantized distribution, not a BF16 release. DeepSeek has never published a BF16 version of V4 Flash.",
       ],
       table: {
         headers: ["Item", "Value"],
@@ -78,13 +78,13 @@ export const flashHuggingface: GuideContent = {
           ["IQ2_XXS (2-bit)", "86.7 GB", "Targets a 128 GB MacBook class machine"],
         ],
       },
-      note: "Unsloth's rule of thumb: total RAM + VRAM of 92 / 102 / 162-169 GB for the 1-bit, 2-bit, and 4-bit tiers respectively.[4]",
+      note: "Unsloth's rule of thumb: total RAM + VRAM of 92 / 102 / 162-169 GB for the 1-bit, 2-bit, and 4-bit tiers respectively.",
     },
     {
       num: "04",
       title: "Download the Weights with huggingface-cli",
       description:
-        "The official tool is huggingface-cli from the huggingface_hub package. Enable hf_transfer to parallelize downloads on fast connections, then point --local-dir at a target folder. The full 0731 snapshot is ~167 GB[1], so plan disk space and a stable network.",
+        "The official tool is huggingface-cli from the huggingface_hub package. Enable hf_transfer to parallelize downloads on fast connections, then point --local-dir at a target folder. The full 0731 snapshot is ~167 GB, so plan disk space and a stable network.",
       code: `pip install huggingface_hub hf_transfer
 export HF_HUB_ENABLE_HF_TRANSFER=1   # speeds up downloads on 1Gbit+ connections
 
@@ -96,15 +96,15 @@ huggingface-cli download deepseek-ai/DeepSeek-V4-Flash-0731 \\
   --include="*.safetensors" "*.json" "*.py" --local-dir ./deepseek-v4-flash-0731`,
       paragraphs: [
         "The equivalent Python call is snapshot_download(repo_id=\"deepseek-ai/DeepSeek-V4-Flash-0731\", local_dir=\"./DeepSeek-V4-Flash-0731\") from huggingface_hub.",
-        "In mainland China, use the ModelScope mirror instead for faster transfer: modelscope.cn/models/deepseek-ai/DeepSeek-V4-Flash.[8] Weights on the official deepseek v4 flash huggingface channel and the ModelScope path are the same files.",
+        "In mainland China, use the ModelScope mirror instead for faster transfer: modelscope.cn/models/deepseek-ai/DeepSeek-V4-Flash. Weights on the official deepseek v4 flash huggingface channel and the ModelScope path are the same files.",
       ],
-      note: "One quirk: the 0731 repo ships no Jinja chat template. It provides an 'encoding/' directory plus encode_messages and parse_message_from_completion_text helper scripts.[1] vLLM users sidestep this with --tokenizer-mode deepseek_v4.[3]",
+      note: "One quirk: the 0731 repo ships no Jinja chat template. It provides an 'encoding/' directory plus encode_messages and parse_message_from_completion_text helper scripts. vLLM users sidestep this with --tokenizer-mode deepseek_v4.",
     },
     {
       num: "05",
       title: "Run DeepSeek V4 Flash Locally with vLLM",
       description:
-        "The official model card publishes a reference vLLM command built for a single-node 4x GB300 setup.[1] The critical piece for the 0731 weights is the DSpark speculative decoding flag - one line enables draft-based generation.",
+        "The official model card publishes a reference vLLM command built for a single-node 4x GB300 setup. The critical piece for the 0731 weights is the DSpark speculative decoding flag - one line enables draft-based generation.",
       code: `vllm serve deepseek-ai/DeepSeek-V4-Flash-0731 \\
   --trust-remote-code --kv-cache-dtype fp8 --block-size 256 \\
   --data-parallel-size 4 --enable-expert-parallel \\
@@ -112,24 +112,24 @@ huggingface-cli download deepseek-ai/DeepSeek-V4-Flash-0731 \\
   --attention-config '{"use_fp4_indexer_cache": true}' \\
   --speculative-config '{"method":"dspark","num_speculative_tokens":7,"draft_sample_method":"greedy"}'`,
       paragraphs: [
-        "DSpark is a single flag: --speculative-config '{\"method\":\"dspark\",\"num_speculative_tokens\":7,\"draft_sample_method\":\"greedy\"}'. vLLM 0.25.0 and newer support DSpark drafting.[3] ROCm targets (MI325X / MI355X) require vLLM 0.26.0.",
-        "vLLM exposes the model through an OpenAI-compatible interface when you pass --tokenizer-mode deepseek_v4, so standard chat completions calls just work. Add --reasoning-parser deepseek_v4 and --tool-call-parser deepseek_v4 for reasoning and tool calls.[3]",
+        "DSpark is a single flag: --speculative-config '{\"method\":\"dspark\",\"num_speculative_tokens\":7,\"draft_sample_method\":\"greedy\"}'. vLLM 0.25.0 and newer support DSpark drafting. ROCm targets (MI325X / MI355X) require vLLM 0.26.0.",
+        "vLLM exposes the model through an OpenAI-compatible interface when you pass --tokenizer-mode deepseek_v4, so standard chat completions calls just work. Add --reasoning-parser deepseek_v4 and --tool-call-parser deepseek_v4 for reasoning and tool calls.",
       ],
-      note: "Recommended sampling: temperature = 1.0 with top_p = 0.95 for agentic workloads, top_p = 1.0 otherwise. Reasoning has three tiers - low, high, and max - and the max tier wants a context window of at least 384K tokens.[1]",
+      note: "Recommended sampling: temperature = 1.0 with top_p = 0.95 for agentic workloads, top_p = 1.0 otherwise. Reasoning has three tiers - low, high, and max - and the max tier wants a context window of at least 384K tokens.",
     },
     {
       num: "06",
       title: "Go Smaller with Unsloth GGUF Quants",
       description:
-        "If 167 GB of FP4+FP8 weights is too much, Unsloth publishes repackaged GGUF quants of the 0731 release at unsloth/DeepSeek-V4-Flash-0731-GGUF.[5] Because the official weights are quantization-aware-trained, the routed experts (about 96% of the model) are natively MXFP4 - Unsloth keeps them bit-exact while rounding only the non-expert remainder.[4]",
+        "If 167 GB of FP4+FP8 weights is too much, Unsloth publishes repackaged GGUF quants of the 0731 release at unsloth/DeepSeek-V4-Flash-0731-GGUF.[5] Because the official weights are quantization-aware-trained, the routed experts (about 96% of the model) are natively MXFP4 - Unsloth keeps them bit-exact while rounding only the non-expert remainder.",
       code: `hf download unsloth/DeepSeek-V4-Flash-0731-GGUF --local-dir ./deepseek-v4-flash-gguf --include "*UD-Q8_K_XL*"
 
 # llama.cpp: control thinking / reasoning effort
 --chat-template-kwargs '{"enable_thinking":false}'   # disable thinking
 --chat-template-kwargs '{"reasoning_effort":"max"}'  # set reasoning tier`,
       paragraphs: [
-        "The UD-Q8_K_XL quant is 161.9 GB and 100% bit-exact to the official weights (KL divergence ≈ 0).[4] UD-Q4_K_XL is 155.1 GB near-lossless, and UD-IQ3_XXS is 103 GB with a recommended 110 GB of memory.",
-        "Beware community quants that down-convert the experts themselves: re-quantizing routed experts to Q4_K or IQ2_XXS rounds 5% and over 30% of the weights respectively.[4] Stick to quants that preserve expert bit-exactness when quality matters.",
+        "The UD-Q8_K_XL quant is 161.9 GB and 100% bit-exact to the official weights (KL divergence ≈ 0). UD-Q4_K_XL is 155.1 GB near-lossless, and UD-IQ3_XXS is 103 GB with a recommended 110 GB of memory.",
+        "Beware community quants that down-convert the experts themselves: re-quantizing routed experts to Q4_K or IQ2_XXS rounds 5% and over 30% of the weights respectively. Stick to quants that preserve expert bit-exactness when quality matters.",
       ],
     },
     {
@@ -138,7 +138,7 @@ huggingface-cli download deepseek-ai/DeepSeek-V4-Flash-0731 \\
       description:
         "Downloading 167 GB only makes sense if you have the hardware or a real use case. For most developers, the [[flash-api-setup|official API]] is the pragmatic choice: model id deepseek-v4-flash, input at $0.14 per 1M tokens, output at $0.28 per 1M tokens, and a ~98% [[flash-pricing|cache-hit discount]] that drops input to $0.0028.[6]",
       paragraphs: [
-        "The same model id deepseek-v4-flash powers both the 0731 and preview builds on the API; DeepSeek upgraded the weights without renaming the endpoint, so existing calls are unaffected. Note that the legacy ids deepseek-chat and deepseek-reasoner retired on July 24, 2026 at 15:59 UTC.[6]",
+        "The same model id deepseek-v4-flash powers both the 0731 and preview builds on the API; DeepSeek upgraded the weights without renaming the endpoint, so existing calls are unaffected. Note that the legacy ids deepseek-chat and deepseek-reasoner retired on July 24, 2026 at 15:59 UTC.",
         "If you only have a 24-48 GB consumer card, skip the full weights. Use the API or a smaller distill model instead - a full 284B model will not fit. Independent testing by Artificial Analysis puts the 0731 release at an Intelligence Index of 50, up 10 points from the April preview; that is the model you get on either path.",
       ],
       table: {

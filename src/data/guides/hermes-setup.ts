@@ -25,12 +25,12 @@ export const hermesSetup: GuideContent = {
       description:
         "Hermes Agent is Nous Research's self-improving AI agent — one of the few agents with a built-in learning loop that accumulates skills, memory, and a user model across sessions. The MIT-licensed repo sits at roughly 211K–223K stars and 43K forks, and the agent ships 60+ tools[2]. DeepSeek's official API docs carry a dedicated “Integrate with Hermes Agent” page, so this pairing is first-party on both sides[1].",
       paragraphs: [
-        "Install is a one-liner. On Linux, macOS, WSL2, or Termux run curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash; Windows users run iex (irm https://hermes-agent.nousresearch.com/install.ps1). Then hermes setup opens a Quick Setup flow: choose DeepSeek, paste an API key, keep the base URL at https://api.deepseek.com, and pick a model[1].",
+        "Install is a one-liner. On Linux, macOS, WSL2, or Termux run curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash; Windows users run iex (irm https://hermes-agent.nousresearch.com/install.ps1). Then hermes setup opens a Quick Setup flow: choose DeepSeek, paste an API key, keep the base URL at https://api.deepseek.com, and pick a model.",
         "The native model IDs deepseek-v4-flash and deepseek-v4-pro landed in Hermes' DeepSeek provider and OpenRouter lists on April 24, 2026 — the same day DeepSeek previewed the V4 family (PR #14934). You do not need a custom provider file just to run DeepSeek on Hermes.",
       ],
       list: [
         "Config splits across ~/.hermes/config.yaml (non-secrets) and ~/.hermes/.env (API keys).",
-        "Hermes supports 20+ providers: DeepSeek, Xiaomi MiMo, OpenRouter, Nous Portal, Anthropic, OpenAI, and Ollama among them[2].",
+        "Hermes supports 20+ providers: DeepSeek, Xiaomi MiMo, OpenRouter, Nous Portal, Anthropic, OpenAI, and Ollama among them.",
         "Xiaomi's own docs also list Hermes Agent as an official MiMo partner alongside Claude Code, Codex, and OpenClaw.",
       ],
       note: "The Hermes DeepSeek MiMo pattern in this guide is a community-validated multi-model setup, not an officially named combo. DeepSeek and Xiaomi each document Hermes integration independently; wiring the two together is the trick this guide walks through.",
@@ -49,15 +49,15 @@ export const hermesSetup: GuideContent = {
         "[[v4-pro|DeepSeek V4 Pro]] (1.6T/49B) is also text-only — the flagships share the limitation.",
         "Both run at $0.14 input / $0.28 output per 1M tokens, the cheapest agent-grade pricing covered on this site.",
       ],
-      note: "Hermes' vision docs treat DeepSeek as the canonical text-only main model, which is exactly the case this tutorial exists to solve[3].",
+      note: "Hermes' vision docs treat DeepSeek as the canonical text-only main model, which is exactly the case this tutorial exists to solve.",
     },
     {
       num: "03",
       title: "How Hermes Solves It: auxiliary.vision Routes Images to a Vision Model",
       description:
-        "Hermes fixes this with a two-model architecture. When the main model is text-only — DeepSeek is the documented case — pasted images automatically route to a vision_analyze auxiliary tool. That tool calls a separate vision model you configure, which describes the image in text, and the description is injected back into the conversation as context[3].",
+        "Hermes fixes this with a two-model architecture. When the main model is text-only — DeepSeek is the documented case — pasted images automatically route to a vision_analyze auxiliary tool. That tool calls a separate vision model you configure, which describes the image in text, and the description is injected back into the conversation as context.",
       paragraphs: [
-        "You configure the helper under the auxiliary.vision block in ~/.hermes/config.yaml, with three knobs per slot: provider, model, and base_url. The vision slot's default provider is “auto”, which routes images to the main model — and that default breaks with a text-only main model, because the main model cannot read the image[3]. Leave it at auto and image analysis fails; you must point the slot at a real multimodal model.",
+        "You configure the helper under the auxiliary.vision block in ~/.hermes/config.yaml, with three knobs per slot: provider, model, and base_url. The vision slot's default provider is “auto”, which routes images to the main model — and that default breaks with a text-only main model, because the main model cannot read the image. Leave it at auto and image analysis fails; you must point the slot at a real multimodal model.",
         "The same auxiliary mechanism powers web_extract, compression, title_generation, approval, triage, and profile_describer slots. Vision is just the one you need for images.",
       ],
       list: [
@@ -88,7 +88,7 @@ export const hermesSetup: GuideContent = {
       num: "05",
       title: "Configure config.yaml: Flash as Main, MiMo V2.5 in the Vision Slot",
       description:
-        "With both API keys in hand, the whole setup is one config block. The main model becomes deepseek-v4-flash — the 0731 build, and the model ID did not change — while the auxiliary.vision slot gets provider xiaomi with model mimo-v2.5[3].",
+        "With both API keys in hand, the whole setup is one config block. The main model becomes deepseek-v4-flash — the 0731 build, and the model ID did not change — while the auxiliary.vision slot gets provider xiaomi with model mimo-v2.5.",
       code: `# ~/.hermes/.env
 DEEPSEEK_API_KEY=sk-...
 XIAOMI_API_KEY=sk-...                # or OPENROUTER_API_KEY=sk-or-...
@@ -130,11 +130,11 @@ client.chat.completions.create(
     ]}],
 )`,
       paragraphs: [
-        "Images are accepted as a public URL or a Base64 data URL (data:{MIME};base64,...). Supported formats are JPEG, PNG, GIF, WebP, and BMP; a single image must stay under 50MB, and multiple images per request are allowed. There is no local-file upload — the image must be reachable over HTTP or embedded as Base64[5].",
+        "Images are accepted as a public URL or a Base64 data URL (data:{MIME};base64,...). Supported formats are JPEG, PNG, GIF, WebP, and BMP; a single image must stay under 50MB, and multiple images per request are allowed. There is no local-file upload — the image must be reachable over HTTP or embedded as Base64.",
         "The cost math stays small: one common-resolution image costs roughly 1,024 image tokens. At $0.14 per 1M tokens that is a rounding error per image, but it is extra on top of the conversation — community reports of MiMo “burning tokens like crazy” usually trace back to vision and long tool loops, not the base rate.",
       ],
       list: [
-        "Base64 and public URLs both work; local file paths do not[5].",
+        "Base64 and public URLs both work; local file paths do not.",
         "Roughly 1,024 image tokens per typical image.",
         "Multi-image requests are supported, so a screenshot batch costs about 1K tokens per image.",
       ],
@@ -144,16 +144,16 @@ client.chat.completions.create(
       num: "07",
       title: "Why This Combo Wins: Same Price, Community Consensus, Honest Trade-offs",
       description:
-        "The pairing makes one simple bet: Flash is the agent brain, MiMo V2.5 is the eyes, and neither raises the other's cost. Because both models bill at $0.14/$0.28, the multimodal upgrade is effectively free per token — you only pay for the ~1,024 image tokens per picture[4].",
+        "The pairing makes one simple bet: Flash is the agent brain, MiMo V2.5 is the eyes, and neither raises the other's cost. Because both models bill at $0.14/$0.28, the multimodal upgrade is effectively free per token — you only pay for the ~1,024 image tokens per picture.",
       paragraphs: [
         "This is community consensus, not a fringe hack. r/hermesagent threads frame it as a principle — “hermes works best when you don't hinge on one model” — and recommend a vision-capable model in the auxiliary slot exactly as described here[8]. The same community also votes for multi-model failover chains (MiMo 2.5, GLM 5.2, DeepSeek V4 Pro) when a task outgrows a single model.",
-        "Be honest about the trade-offs. Some users report MiMo is “less capable in autonomous work” than Flash in head-to-head agent loops, and vision tokens add up on heavy screenshot workflows. That is why the split exists: you want Flash driving, with MiMo only describing images on demand[8].",
-        "One more caveat: Hermes' direct xiaomi provider under auxiliary.vision is not yet battle-tested in the wild — issue #18884 shows metadata bugs on the Xiaomi side[7]. The safe default is provider xiaomi, and if it fails, OpenRouter's xiaomi/mimo-v2.5 is the documented fallback.",
+        "Be honest about the trade-offs. Some users report MiMo is “less capable in autonomous work” than Flash in head-to-head agent loops, and vision tokens add up on heavy screenshot workflows. That is why the split exists: you want Flash driving, with MiMo only describing images on demand.",
+        "One more caveat: Hermes' direct xiaomi provider under auxiliary.vision is not yet battle-tested in the wild — issue #18884 shows metadata bugs on the Xiaomi side. The safe default is provider xiaomi, and if it fails, OpenRouter's xiaomi/mimo-v2.5 is the documented fallback.",
       ],
       list: [
         "Flash 0731 does the reasoning and coding; it hit 82.7 on Terminal-Bench 2.1 in DeepSeek's own numbers.",
         "MiMo V2.5 handles vision_analyze only — image to text, then hands the context back.",
-        "Same token price on both sides; the vision slot adds no premium[4].",
+        "Same token price on both sides; the vision slot adds no premium.",
         "Budget tip: keep the conversation on Flash and let cache hits ($0.0028/M) absorb the long context — the same lever the [[reasonix-deepseek|Reasonix guide]] uses to hit 99%+ cache rates.",
       ],
       note: "The Hermes DeepSeek MiMo pairing is the cheapest way to give a text-only agent eyes — and the same auxiliary pattern extends to other agents when you need it.",
