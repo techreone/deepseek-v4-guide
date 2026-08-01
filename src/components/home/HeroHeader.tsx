@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MagnifyingGlass, CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 
 interface HeroHeaderProps {
-  activeCategory: string;
-  setActiveCategory: (cat: string) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
 }
@@ -56,27 +54,10 @@ function TypewriterText() {
   );
 }
 
-export function HeroHeader({ 
-  activeCategory, 
-  setActiveCategory,
+export function HeroHeader({
   searchQuery,
   setSearchQuery
 }: HeroHeaderProps) {
-  const categories = [
-    { id: "all", label: "All Guides" },
-    { id: "beginner", label: "Beginner" },
-    { id: "model", label: "Model Guides" },
-    { id: "api", label: "API Setup" },
-    { id: "pricing", label: "Pricing & Cost" },
-    { id: "benchmarks", label: "Benchmarks" },
-    { id: "agents", label: "Coding Agents" },
-    { id: "ide", label: "IDE Integration" },
-    { id: "router", label: "OpenRouter" },
-    { id: "local", label: "Local Setup" },
-    { id: "news", label: "Upcoming" },
-    { id: "deepdive", label: "Technical" },
-  ];
-
   return (
     <section className="pt-16 pb-10 border-b border-zinc-800/80 relative overflow-hidden">
       <div className="mx-auto max-w-4xl px-6 text-center flex flex-col items-center">
@@ -126,28 +107,7 @@ export function HeroHeader({
           />
         </div>
 
-        {/* Category Pill Filter Bar */}
-        <div className="w-full flex items-center justify-center gap-2 overflow-x-auto no-scrollbar py-1">
-          {categories.map((cat) => {
-            const isSelected = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-3 py-1.5 rounded text-xs font-sans whitespace-nowrap transition-colors ${
-                  isSelected
-                    ? "bg-zinc-100 text-zinc-950 font-medium"
-                    : "bg-[#0e0e11] border border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700"
-                }`}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-          <button className="px-2 py-1.5 rounded bg-[#0e0e11] border border-zinc-800 text-zinc-400 hover:text-zinc-200">
-            <CaretRight className="w-3.5 h-3.5" />
-          </button>
-        </div>
+        {/* Category Pill Filter Bar — 已移到 FEATURED GUIDES 上方（MainContent） */}
 
         {/* Essential Specs Bar */}
         <div id="specs" className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-zinc-800/60 font-mono text-xs text-left">

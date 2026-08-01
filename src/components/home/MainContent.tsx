@@ -4,20 +4,37 @@ import Link from "next/link";
 import { CodeTerminal } from "./CodeTerminal";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { getGuideCards } from "@/data/guides";
+import { computeReadTime } from "@/lib/readTime";
+
+const categories = [
+  { id: "all", label: "All Guides" },
+  { id: "beginner", label: "Beginner" },
+  { id: "model", label: "Model Guides" },
+  { id: "api", label: "API Setup" },
+  { id: "pricing", label: "Pricing & Cost" },
+  { id: "benchmarks", label: "Benchmarks" },
+  { id: "agents", label: "Coding Agents" },
+  { id: "ide", label: "IDE Integration" },
+  { id: "router", label: "OpenRouter" },
+  { id: "local", label: "Local Setup" },
+  { id: "news", label: "Upcoming" },
+  { id: "deepdive", label: "Technical" },
+];
 
 interface MainContentProps {
   activeCategory: string;
+  setActiveCategory: (cat: string) => void;
   searchQuery: string;
 }
 
-export function MainContent({ activeCategory, searchQuery }: MainContentProps) {
+export function MainContent({ activeCategory, setActiveCategory, searchQuery }: MainContentProps) {
   const guides = getGuideCards().map((card, i) => ({
     num: String(i + 1).padStart(2, "0"),
     catId: card.catId,
     tag: card.tag,
     title: card.guide.title,
     desc: card.desc,
-    readTime: card.guide.readTime,
+    readTime: computeReadTime(card.guide),
     href: `/guides/${card.guide.slug}`,
   }));
 
@@ -35,6 +52,26 @@ export function MainContent({ activeCategory, searchQuery }: MainContentProps) {
       <div className="mx-auto max-w-5xl px-6">
         {/* Essential Guides List Section */}
         <div id="guides" className="scroll-mt-24 mb-14">
+          {/* Category Filter — free-wrap, no scrollbar */}
+          <div className="flex flex-wrap gap-2 pb-5 mb-6 border-b border-zinc-800/80">
+            {categories.map((cat) => {
+              const isSelected = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`px-3 py-1.5 rounded text-xs font-sans whitespace-nowrap transition-colors ${
+                    isSelected
+                      ? "bg-zinc-100 text-zinc-950 font-medium"
+                      : "bg-[#0e0e11] border border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="flex items-center justify-between pb-4 border-b border-zinc-800/80 mb-6">
             <h2 className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-semibold">
               FEATURED GUIDES & TUTORIALS

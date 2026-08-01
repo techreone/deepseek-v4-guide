@@ -12,13 +12,11 @@ export default function Home() {
   return (
     <div className="min-h-screen text-zinc-100 selection:bg-zinc-800 selection:text-zinc-100">
       <HeroHeader
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
       <HarnessTracker />
-      <MainContent activeCategory={activeCategory} searchQuery={searchQuery} />
+      <MainContent activeCategory={activeCategory} setActiveCategory={setActiveCategory} searchQuery={searchQuery} />
     </div>
   );
 }

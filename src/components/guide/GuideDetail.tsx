@@ -13,6 +13,7 @@ import {
   Info
 } from "@phosphor-icons/react/dist/ssr";
 import type { GuideContent } from "@/data/guides/types";
+import { computeReadTime } from "@/lib/readTime";
 
 export type { GuideContent };
 
@@ -148,7 +149,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
               {guide.category}
             </span>
             <span className="text-zinc-600 text-xs font-mono">•</span>
-            <span className="text-xs font-mono text-zinc-500">{guide.readTime}</span>
+            <span className="text-xs font-mono text-zinc-500">{computeReadTime(guide)}</span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white font-sans mb-4">
@@ -160,7 +161,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
             <div className="flex items-center gap-4">
               <span>UPDATED: {guide.updatedAt}</span>
               <span>•</span>
-              <span>AUTHOR: DEEPSEEK GUIDE TEAM</span>
+              <span>AUTHOR: INDEPENDENT FAN GUIDE</span>
             </div>
 
             <button

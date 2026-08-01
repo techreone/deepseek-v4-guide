@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { getAllGuides } from "@/data/guides";
+import { computeReadTime } from "@/lib/readTime";
 
 const tagColors = [
   "bg-accent-green-bg text-accent-green-text",
@@ -42,7 +43,7 @@ export function GuideIndex() {
                   <span className={`text-[11px] font-medium px-2 py-0.5 rounded-full tracking-wide ${tagColors[i % tagColors.length]}`}>
                     {guide.category}
                   </span>
-                  <span className="text-xs text-text-muted font-mono">{guide.readTime}</span>
+                  <span className="text-xs text-text-muted font-mono">{computeReadTime(guide)}</span>
                 </div>
                 <h3 className="text-lg font-medium text-charcoal group-hover:text-black transition-colors mb-2">
                   {guide.title}
