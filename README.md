@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DeepSeek V4 Guide
 
-## Getting Started
+**🌐 Live site: [https://deepseekv4guide.org](https://deepseekv4guide.org)**
 
-First, run the development server:
+An independent, researched tutorial hub for **DeepSeek V4 Flash & Pro** — API setup, pricing, benchmarks, agent integration, and local deployment. Every fact is sourced (see the REFERENCES on each guide); prices and benchmark scores are labeled with their as-of date and marked when vendor-reported.
+
+## Guides
+
+| Guide | Topic |
+|-------|-------|
+| [What Is DeepSeek V4 Flash?](https://deepseekv4guide.org/guides/deepseek-v4-flash) | The July 31, 2026 official release explained |
+| [DeepSeek V4 Flash API Setup](https://deepseekv4guide.org/guides/flash-api-setup) | Base URL, models, first call |
+| [DeepSeek V4 Flash Pricing](https://deepseekv4guide.org/guides/flash-pricing) | Token costs & how to save up to 98% |
+| [DeepSeek V4 Flash Benchmarks](https://deepseekv4guide.org/guides/flash-benchmarks) | Agentic & coding scores in 2026 |
+| [Use DeepSeek V4 Flash with OpenCode](https://deepseekv4guide.org/guides/flash-opencode) | Open-source coding agent |
+| [DeepSeek V4 Flash in Cursor, Claude Code & Codex](https://deepseekv4guide.org/guides/flash-ide) | IDE integration |
+| [DeepSeek V4 Flash on OpenRouter](https://deepseekv4guide.org/guides/flash-openrouter) | Setup, pricing & BYOK |
+| [DeepSeek V4 Flash Model Size](https://deepseekv4guide.org/guides/flash-model-size) | Params, VRAM & local deployment |
+| [Download from HuggingFace & Run Locally](https://deepseekv4guide.org/guides/flash-huggingface) | Weights, vLLM, GGUF |
+| [DeepSeek V4 Pro](https://deepseekv4guide.org/guides/v4-pro) | Specs, pricing & release date |
+| [Beginner Guide](https://deepseekv4guide.org/guides/beginner-guide) | Best cheap AI right now |
+| [OpenCode Go Subscription](https://deepseekv4guide.org/guides/opencode-go) | $5/month unlocks DeepSeek V4 |
+| [Claude Code & Claude Desktop + CC Switch](https://deepseekv4guide.org/guides/cc-switch-claude-code) | Connect to DeepSeek V4 |
+| [DeepSeek Harness Tracker](https://deepseekv4guide.org/guides/deepseek-harness) | Everything we know pre-release |
+| [Why a Native Harness Improves Agents](https://deepseekv4guide.org/guides/harness-agent-capability) | Model + Harness = Agent |
+| [Reasonix: 99%+ Cache Rates](https://deepseekv4guide.org/guides/reasonix-deepseek) | The DeepSeek cache-first harness |
+| [Hermes + MiMo V2.5 Vision Setup](https://deepseekv4guide.org/guides/hermes-setup) | Best pairing for Hermes |
+| [DeepSeek V4 vs GPT-5.6 Luna](https://deepseekv4guide.org/guides/v4-vs-gpt56-luna) | Comparison after the price cut |
+| [DeepSeek V4 Technical Report](https://deepseekv4guide.org/guides/official-tech-report) | Architecture & official benchmarks |
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router, static export-ready)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- Deployed on [Vercel](https://vercel.com)
+- SEO: per-page metadata, sitemap, robots.txt, llms.txt, JSON-LD structured data, IndexNow
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Content lives in `src/data/guides/` (one file per tutorial) and research notes in `reference/`. Research files record verified facts with source URLs; tutorials never fabricate numbers.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Independence
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is **not affiliated with or endorsed by DeepSeek** or any model provider. Official info: [api-docs.deepseek.com](https://api-docs.deepseek.com), [platform.deepseek.com](https://platform.deepseek.com), [status.deepseek.com](https://status.deepseek.com).

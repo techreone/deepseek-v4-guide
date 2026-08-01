@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ClarityTracker } from "@/components/layout/ClarityTracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,6 +71,7 @@ export default function RootLayout({
         {/* Document-level Grid Overlay that scrolls 1:1 with content */}
         <div className="grid-pattern" aria-hidden="true" />
         <Header />
+        <ClarityTracker />
         <main className="flex-1 flex flex-col relative z-10">
           {children}
         </main>
