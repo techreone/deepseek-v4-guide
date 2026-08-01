@@ -1,0 +1,36 @@
+# DeepSeek V4 Guide
+
+> An independent tutorial hub helping developers and beginners access, cost-optimize, and integrate DeepSeek V4 Flash & Pro. All content is researched and sourced; prices and benchmarks are labeled with their as-of date.
+
+## What this site covers
+
+- DeepSeek V4 Flash & Pro: what they are, the July 31, 2026 official release, pricing, benchmarks
+- How to use DeepSeek V4: official API, OpenCode, OpenCode Go, OpenRouter, Cursor, Claude Code, Claude Desktop, Codex, CC Switch
+- Local deployment: HuggingFace weights, model size, VRAM, vLLM
+- Ecosystem news: DeepSeek Harness, V4 Pro GA timeline, comparisons
+
+## Key pages
+
+- [Home](https://deepseekv4guide.org/)
+- [What Is DeepSeek V4 Flash? Full Guide to the 0731 Release](https://deepseekv4guide.org/guides/deepseek-v4-flash)
+- [DeepSeek V4 Flash API Setup: Base URL, Models & Your First Call](https://deepseekv4guide.org/guides/flash-api-setup)
+- [DeepSeek V4 Flash Pricing: Token Costs & How to Save Up to 98%](https://deepseekv4guide.org/guides/flash-pricing)
+- [DeepSeek V4 Flash Benchmarks: Agentic & Coding Scores in 2026](https://deepseekv4guide.org/guides/flash-benchmarks)
+- [Use DeepSeek V4 Flash with OpenCode](https://deepseekv4guide.org/guides/flash-opencode)
+- [DeepSeek V4 Flash in Cursor, Claude Code & Codex](https://deepseekv4guide.org/guides/flash-ide)
+- [DeepSeek V4 Flash on OpenRouter: Setup, Pricing & BYOK](https://deepseekv4guide.org/guides/flash-openrouter)
+- [DeepSeek V4 Flash Model Size: Params, VRAM & What It Means](https://deepseekv4guide.org/guides/flash-model-size)
+- [Download DeepSeek V4 Flash from HuggingFace & Run It Locally](https://deepseekv4guide.org/guides/flash-huggingface)
+- [DeepSeek V4 Pro: Specs, Pricing & Release Date](https://deepseekv4guide.org/guides/v4-pro)
+- [Why DeepSeek V4 Is the Best Cheap AI Right Now: A Beginner Guide](https://deepseekv4guide.org/guides/beginner-guide)
+- [OpenCode Go: The $5/Month Subscription That Unlocks DeepSeek V4](https://deepseekv4guide.org/guides/opencode-go)
+- [Connect Claude Code & Claude Desktop to DeepSeek V4 with CC Switch](https://deepseekv4guide.org/guides/cc-switch-claude-code)
+- [DeepSeek Harness: Everything We Know Before the Official Release](https://deepseekv4guide.org/guides/deepseek-harness)
+- [DeepSeek V4 Technical Report Explained: Architecture & Benchmarks](https://deepseekv4guide.org/guides/official-tech-report)
+
+## Official resources
+
+- [DeepSeek API Docs](https://api-docs.deepseek.com/)
+- [DeepSeek Platform (API keys)](https://platform.deepseek.com/)
+- [DeepSeek V4 weights on Hugging Face](https://huggingface.co/deepseek-ai)
+- [OpenCode](https://opencode.ai/)

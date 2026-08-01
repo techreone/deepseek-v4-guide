@@ -1,0 +1,20 @@
+User-Agent: *
+Allow: /
+
+# AI crawlers explicitly allowed — GEO strategy: never block AI bots
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+Sitemap: https://deepseekv4guide.org/sitemap.xml

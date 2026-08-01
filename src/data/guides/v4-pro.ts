@@ -128,6 +128,7 @@ export const v4Pro: GuideContent = {
       ],
       paragraphs: [
         "Everything around the exact GA date is rumor. The Paper (June 29) reported a mid-July window; 36kr (July 20) claimed a release 'as early as tomorrow' with gray-rollout testing already underway[8]; later Reddit threads and media pushed expectations to mid-August. On July 4, a leaker posted build IDs deepseek-v4-pro-202606 and deepseek-v4-flash-202605, pointing at GA candidates. None of this is confirmed — DeepSeek has not announced a date.",
+        "Throughout mid-July, a wave of grayscale-test reports circulated — mostly on Bilibili and X. The loudest claim: the GA build's game-making ability rivals Claude Fable 5, with 'one-sentence game generation' demo videos racking up hundreds of thousands of views. Developer Pankaj Kumar's hands-on (July 18, ~18K views) rated it Opus-4.8-class overall, coding close to GPT-5.6 Sol, with Agent, 3D, and SVG abilities sharply improved — though he noted more iteration rounds than Fable 5. **Every one of these is a community claim, not an official or independently benchmarked result**, and some Reddit users explicitly suspect the hype is exaggerated. There is also an unverified 'verified-account roulette' folk method for checking whether you've been grayscaled (the CoT opening switches from 'Let me' to 'I'm/I'll') — treat that as anecdote, not a reliable signal[17].",
       ],
       table: {
         headers: ["Date", "Event"],

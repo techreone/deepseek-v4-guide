@@ -21,8 +21,18 @@ const pixelFont = Pixelify_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "DeepSeek V4 Guide - Step-by-Step Tutorials & API Access Guide",
-  description: "An independent tutorial hub helping developers and beginners access, cost-optimize, and integrate DeepSeek V4 Flash.",
+  metadataBase: new URL("https://deepseekv4guide.org"),
+  title: {
+    default: "DeepSeek V4 Guide - Step-by-Step Tutorials & API Access Guide",
+    template: "%s | DeepSeek V4 Guide",
+  },
+  description:
+    "The complete step-by-step guide to DeepSeek V4 Flash & Pro: official API setup, pricing, benchmarks, OpenCode, OpenRouter, Cursor, Claude Code, and local deployment.",
+  openGraph: {
+    siteName: "DeepSeek V4 Guide",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({

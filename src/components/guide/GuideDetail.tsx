@@ -81,6 +81,36 @@ export function GuideDetail({ guide }: GuideDetailProps) {
 
   return (
     <article className="min-h-screen text-zinc-100 pb-20">
+      {/* JSON-LD structured data (GEO / EEAT) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                headline: guide.title,
+                description: guide.summary,
+                dateModified: guide.updatedAt,
+                url: `https://deepseekv4guide.org/guides/${guide.slug}`,
+                publisher: {
+                  "@type": "Organization",
+                  name: "DeepSeek V4 Guide",
+                },
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "DeepSeek V4 Guide", item: "https://deepseekv4guide.org/" },
+                  { "@type": "ListItem", position: 2, name: "Guides", item: "https://deepseekv4guide.org/#guides" },
+                  { "@type": "ListItem", position: 3, name: guide.title, item: `https://deepseekv4guide.org/guides/${guide.slug}` },
+                ],
+              },
+            ],
+          }),
+        }}
+      />
       {/* Header Breadcrumb */}
       <div className="border-b border-zinc-800/80 pt-8 pb-6">
         <div className="mx-auto max-w-5xl px-6">
