@@ -5,6 +5,7 @@ export const flashIde: GuideContent = {
   slug: "flash-ide",
   category: "CURSOR & IDE",
   title: "DeepSeek V4 Flash in Cursor, Claude Code & Codex: Setup Guide",
+  seoTitle: "DeepSeek V4 Flash in Cursor & Claude Code",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

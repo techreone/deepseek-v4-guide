@@ -5,6 +5,7 @@ export const v4VsGpt56Luna: GuideContent = {
   slug: "v4-vs-gpt56-luna",
   category: "COMPARISONS",
   title: "DeepSeek V4 vs GPT-5.6 Luna: Which Is Better After the Price Cut?",
+  seoTitle: "DeepSeek V4 vs GPT-5.6 Luna: The Verdict",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

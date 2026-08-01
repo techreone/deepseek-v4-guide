@@ -5,6 +5,7 @@ export const opencodeGo: GuideContent = {
   slug: "opencode-go",
   category: "CODING AGENTS",
   title: "OpenCode Go: The $5/Month Subscription That Unlocks DeepSeek V4",
+  seoTitle: "OpenCode Go: $5/Month Unlocks DeepSeek V4",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

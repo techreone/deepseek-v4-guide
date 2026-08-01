@@ -17,14 +17,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const guide = getGuide(slug);
   if (!guide) return {};
 
+  // <title> 用短版 seoTitle（≤45 字符），避免超长被截断；H1/卡片仍用完整 title
+  const seoTitle = guide.seoTitle ?? guide.title;
+
   return {
-    title: guide.title,
+    title: seoTitle,
     description: guide.summary,
     alternates: {
       canonical: `https://deepseekv4guide.org/guides/${guide.slug}`,
     },
     openGraph: {
-      title: guide.title,
+      title: seoTitle,
       description: guide.summary,
       url: `https://deepseekv4guide.org/guides/${guide.slug}`,
       type: "article",
@@ -32,7 +35,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary",
-      title: guide.title,
+      title: seoTitle,
       description: guide.summary,
     },
   };

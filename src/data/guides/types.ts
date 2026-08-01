@@ -40,8 +40,10 @@ export interface GuideContent {
   slug: string;
   /** 分类标签（英文） */
   category: string;
-  /** 主关键词：H1 / title 用 */
+  /** 主关键词：H1 / 首页卡片用（可长，保留信息量） */
   title: string;
+  /** 短版 SEO <title>（≤45 字符，含站点后缀后全标题 ≤65）。缺省时回退 title */
+  seoTitle?: string;
   readTime: string;
   updatedAt: string;
   /** meta description 素材，≤160 字符 */

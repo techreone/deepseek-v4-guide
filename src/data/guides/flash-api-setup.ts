@@ -5,6 +5,7 @@ export const flashApiSetup: GuideContent = {
   slug: "flash-api-setup",
   category: "BEGINNER API GUIDE",
   title: "DeepSeek V4 Flash API Setup: Base URL, Models & Your First Call",
+  seoTitle: "DeepSeek V4 API Setup: Base URL & First Call",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

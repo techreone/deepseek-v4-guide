@@ -57,15 +57,18 @@ function renderRichText(text: string, sourceCount: number) {
     }
     const urlMatch = part.match(/^https?:\/\/[^\s\[\]]+$/);
     if (urlMatch) {
+      // 去掉被行内标点吞进的结尾字符（"https://api.deepseek.com." 中的句号），
+      // 避免生成带句号的畸形链接（SEMrush "URL 格式不正确"）
+      const url = urlMatch[0].replace(/[.,;:!?)\]}]+$/, "");
       return (
         <a
           key={i}
-          href={urlMatch[0]}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
           className="text-cyan-400 hover:text-cyan-300 hover:underline break-all"
         >
-          {urlMatch[0]}
+          {url}
         </a>
       );
     }

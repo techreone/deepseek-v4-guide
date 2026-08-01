@@ -5,6 +5,7 @@ export const flashOpencode: GuideContent = {
   slug: "flash-opencode",
   category: "AI CODING AGENTS",
   title: "Use DeepSeek V4 Flash with OpenCode: Step-by-Step",
+  seoTitle: "Use DeepSeek V4 Flash with OpenCode: Guide",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

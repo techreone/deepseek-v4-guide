@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HeroHeader } from "@/components/home/HeroHeader";
 import { HarnessTracker } from "@/components/home/HarnessTracker";
 import { MainContent } from "@/components/home/MainContent";
+import { HomeFaq } from "@/components/home/HomeFaq";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroHeader />
       <HarnessTracker />
       <MainContent activeCategory={activeCategory} setActiveCategory={setActiveCategory} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <HomeFaq />
     </div>
   );
 }

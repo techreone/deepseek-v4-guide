@@ -5,6 +5,7 @@ export const ccSwitchClaudeCode: GuideContent = {
   slug: "cc-switch-claude-code",
   category: "CLAUDE CODE & DESKTOP",
   title: "Connect Claude Code & Claude Desktop to DeepSeek V4 with CC Switch",
+  seoTitle: "CC Switch for Claude Code + DeepSeek V4",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

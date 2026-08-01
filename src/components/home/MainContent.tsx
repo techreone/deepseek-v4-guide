@@ -142,8 +142,8 @@ export function MainContent({ activeCategory, setActiveCategory, searchQuery, se
           )}
         </div>
 
-        {/* Code Terminal Section Header */}
-        <div className="pt-8 border-t border-zinc-800/80">
+        {/* Code Terminal Section Header — id="code" 供页头/页脚锚点跳转 */}
+        <div id="code" className="pt-8 border-t border-zinc-800/80 scroll-mt-24">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-semibold">
               QUICK INTEGRATION CODE SNIPPET

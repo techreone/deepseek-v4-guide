@@ -7,6 +7,7 @@ export const reasonixDeepseek: GuideContent = {
   slug: "reasonix-deepseek",
   category: "COST EFFICIENCY",
   title: "Reasonix: The DeepSeek Harness That Hits 99%+ Cache Rates",
+  seoTitle: "Reasonix: The 99% Cache-Rate Harness",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

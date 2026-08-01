@@ -7,6 +7,7 @@ export const deepseekHarness: GuideContent = {
   slug: "deepseek-harness",
   category: "NEWS & UPCOMING",
   title: "DeepSeek Harness: Everything We Know Before the Official Release",
+  seoTitle: "DeepSeek Harness: Everything We Know So Far",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

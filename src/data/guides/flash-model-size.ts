@@ -5,6 +5,7 @@ export const flashModelSize: GuideContent = {
   slug: "flash-model-size",
   category: "MODEL GUIDE",
   title: "DeepSeek V4 Flash Model Size: Params, VRAM & What It Means",
+  seoTitle: "DeepSeek V4 Flash Model Size: Params & VRAM",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

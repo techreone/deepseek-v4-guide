@@ -5,6 +5,7 @@ export const flashHuggingface: GuideContent = {
   slug: "flash-huggingface",
   category: "LOCAL DEPLOYMENT",
   title: "Download DeepSeek V4 Flash from HuggingFace & Run It Locally",
+  seoTitle: "Download DeepSeek V4 Flash from HuggingFace",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

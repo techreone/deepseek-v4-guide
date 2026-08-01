@@ -5,6 +5,7 @@ export const flashOpenrouter: GuideContent = {
   slug: "flash-openrouter",
   category: "ROUTERS & PROVIDERS",
   title: "DeepSeek V4 Flash on OpenRouter: Setup, Pricing & BYOK",
+  seoTitle: "DeepSeek V4 Flash on OpenRouter: Full Setup",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

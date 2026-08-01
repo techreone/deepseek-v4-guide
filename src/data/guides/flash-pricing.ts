@@ -5,6 +5,7 @@ export const flashPricing: GuideContent = {
   slug: "flash-pricing",
   category: "COST EFFICIENCY",
   title: "DeepSeek V4 Flash Pricing: Token Costs & How to Save Up to 98%",
+  seoTitle: "DeepSeek V4 Flash Pricing: Save Up to 98%",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

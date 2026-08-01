@@ -5,6 +5,7 @@ export const flashBenchmarks: GuideContent = {
   slug: "flash-benchmarks",
   category: "BENCHMARKS",
   title: "DeepSeek V4 Flash Benchmarks: Agentic & Coding Scores in 2026",
+  seoTitle: "DeepSeek V4 Flash Benchmarks: 2026 Scores",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

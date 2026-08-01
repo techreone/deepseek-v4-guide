@@ -5,6 +5,7 @@ export const hermesSetup: GuideContent = {
   slug: "hermes-setup",
   category: "AI CODING AGENTS",
   title: "Hermes Best Setup: DeepSeek V4 Flash 0731 + MiMo V2.5 (Vision)",
+  seoTitle: "Hermes + DeepSeek V4 Flash: Best Setup",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

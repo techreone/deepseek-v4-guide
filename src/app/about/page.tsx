@@ -32,18 +32,55 @@ export default function AboutPage() {
             DeepSeek V4 Guide is a step-by-step tutorial site covering the DeepSeek V4 family: what the models are,
             how to access them through the official API and third-party tools, what they cost, how they benchmark, and
             how to run them locally. We focus on practical, usable answers — API setup, pricing math, agent integration,
-            and local deployment.
+            and local deployment — written as complete walkthroughs rather than marketing summaries.
           </p>
         </section>
 
         <section>
-          <h2 className="text-lg font-semibold text-white font-sans mb-2">Editorial standards</h2>
+          <h2 className="text-lg font-semibold text-white font-sans mb-2">Who this site is for</h2>
+          <p className="mb-2">
+            We write for two distinct audiences, and every guide is tagged so you know which one it serves:
+          </p>
           <ul className="list-none flex flex-col gap-2">
-            <li>Every fact is researched and carries a source — check the REFERENCES list at the bottom of each guide.</li>
+            <li>
+              <span className="text-cyan-400 font-mono text-xs">BEGINNER</span> — people who do not yet know the model
+              names, let alone how APIs work. If you have never used a large language model, start with the{" "}
+              <Link href="/guides/beginner-guide" className="text-cyan-400 hover:underline">beginner guide</Link>.
+            </li>
+            <li>
+              <span className="text-cyan-400 font-mono text-xs">DEVELOPER</span> — engineers who already know what an
+              API key is and want exact base URLs, environment variables, model slugs, and code samples. See{" "}
+              <Link href="/guides/flash-api-setup" className="text-cyan-400 hover:underline">API setup</Link> or{" "}
+              <Link href="/guides/flash-ide" className="text-cyan-400 hover:underline">IDE integration</Link>.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-white font-sans mb-2">How we research</h2>
+          <p className="mb-2">
+            Each guide is assembled from primary sources — the official DeepSeek API documentation, the arXiv technical
+            report, official model cards on Hugging Face, and release changelogs — cross-checked against independent
+            analysis where available. Every factual claim carries a numbered citation that links to the reference at
+            the bottom of the page, so you can verify it yourself.
+          </p>
+          <ul className="list-none flex flex-col gap-2">
             <li>Prices, model specs, and benchmark scores are labeled with their as-of date and marked when vendor-reported.</li>
             <li>We do not fabricate numbers. Unverified claims are either flagged as reported/rumor or omitted.</li>
-            <li>Content is written to be genuinely useful; we do not publish thin or placeholder pages.</li>
+            <li>We link out to the source rather than paraphrasing it into an unverifiable claim.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-white font-sans mb-2">What is inside a guide</h2>
+          <p>
+            Every guide follows the same structure: an overview box that answers the question in one paragraph, numbered
+            steps that walk through the actual process, tables for specs and pricing where numbers matter, code blocks
+            you can copy, honest notes about pitfalls, and a references list with the sources used. Guides cross-link to
+            each other so you can follow a topic end to end — for example from{" "}
+            <Link href="/guides/flash-pricing" className="text-cyan-400 hover:underline">pricing</Link> to{" "}
+            <Link href="/guides/flash-huggingface" className="text-cyan-400 hover:underline">running the model locally</Link>.
+          </p>
         </section>
 
         <section>

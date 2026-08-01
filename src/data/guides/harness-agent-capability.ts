@@ -7,6 +7,7 @@ export const harnessAgentCapability: GuideContent = {
   slug: "harness-agent-capability",
   category: "AI AGENTS",
   title: "Why a Native Harness Makes AI Agents Dramatically Better",
+  seoTitle: "Why a Harness Makes AI Agents Better",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

@@ -5,6 +5,7 @@ export const officialTechReport: GuideContent = {
   slug: "official-tech-report",
   category: "TECHNICAL DEEP DIVE",
   title: "DeepSeek V4 Technical Report Explained: Architecture & Benchmarks",
+  seoTitle: "DeepSeek V4 Technical Report Explained",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

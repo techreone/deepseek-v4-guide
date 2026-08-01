@@ -6,6 +6,7 @@ export const deepseekV4Flash: GuideContent = {
   slug: "deepseek-v4-flash",
   category: "MODEL GUIDE",
   title: "What Is DeepSeek V4 Flash? Full Guide to the 0731 Release",
+  seoTitle: "What Is DeepSeek V4 Flash? The 0731 Guide",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:

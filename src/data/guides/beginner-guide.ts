@@ -5,6 +5,7 @@ export const beginnerGuide: GuideContent = {
   slug: "beginner-guide",
   category: "BEGINNER GUIDE",
   title: "Why DeepSeek V4 Is the Best Cheap AI Right Now: A Beginner Guide",
+  seoTitle: "Why DeepSeek V4 Is the Best Cheap AI",
   readTime: "8 MIN READ",
   updatedAt: "AUG 1, 2026",
   summary:
