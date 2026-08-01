@@ -1,7 +1,22 @@
+"use client";
+
+import { useState } from "react";
+import { HeroHeader } from "@/components/home/HeroHeader";
+import { MainContent } from "@/components/home/MainContent";
+
 export default function Home() {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
-    <main>
-      <div>Hello world!</div>
-    </main>
+    <div className="min-h-screen text-zinc-100 selection:bg-zinc-800 selection:text-zinc-100">
+      <HeroHeader
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
+      <MainContent activeCategory={activeCategory} searchQuery={searchQuery} />
+    </div>
   );
 }
