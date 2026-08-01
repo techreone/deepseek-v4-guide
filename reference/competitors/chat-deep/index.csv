@@ -1,0 +1,155 @@
+url,slug,title,category,published,wordcount,code_blocks,internal_links,external_links
+https://chat-deep.ai/guide/how-to-install-deepseek-locally/,how-to-install-deepseek-locally,Install DeepSeek Locally with Ollama: Tested Guide,DeepSeek Guides,2026-03-29T14:44:51+00:00,2904,11,13,20
+https://chat-deep.ai/guide/deepseek-english/,deepseek-english,DeepSeek English: Change Language & Fix Chinese Replies,DeepSeek Guides,2026-03-29T08:23:12+00:00,1655,0,2,18
+https://chat-deep.ai/use-cases/deepseek-accessibility-workflows/,deepseek-accessibility-workflows,DeepSeek Accessibility Workflows: Alt Text & WCAG,DeepSeek Use Cases,2026-06-20T16:12:58+00:00,4906,20,2,32
+https://chat-deep.ai/use-cases/deepseek-for-game-developers/,deepseek-for-game-developers,"DeepSeek for Game Developers: Dialogue, Lore & QA",DeepSeek Use Cases,2026-06-20T16:06:41+00:00,6147,24,6,13
+https://chat-deep.ai/use-cases/deepseek-for-obsidian-pkm/,deepseek-for-obsidian-pkm,DeepSeek for Obsidian & Personal Knowledge Management,DeepSeek Use Cases,2026-06-17T15:16:46+00:00,4736,36,1,20
+https://chat-deep.ai/use-cases/deepseek-for-excel-analysis/,deepseek-for-excel-analysis,"DeepSeek for Excel Analysis: Formulas, VBA & Insights",DeepSeek Use Cases,2026-06-02T07:14:56+00:00,5694,24,2,20
+https://chat-deep.ai/use-cases/deepseek-for-data-cleaning-qa/,deepseek-for-data-cleaning-qa,DeepSeek for Data Cleaning & Quality Assurance,DeepSeek Use Cases,2026-06-04T00:51:52+00:00,5677,12,2,12
+https://chat-deep.ai/use-cases/deepseek-for-sql-analysis/,deepseek-for-sql-analysis,"DeepSeek for SQL Analysis: Prompts, API & Safety",DeepSeek Use Cases,2026-06-02T04:59:31+00:00,5485,24,2,18
+https://chat-deep.ai/use-cases/deepseek-for-market-research/,deepseek-for-market-research,DeepSeek for Market Research: Competitors & Customers,DeepSeek Use Cases,2026-05-26T22:38:08+00:00,6019,29,2,17
+https://chat-deep.ai/use-cases/deepseek-for-productivity/,deepseek-for-productivity,DeepSeek for Productivity: Practical Workflows and Prompts,DeepSeek Use Cases,2026-05-19T15:47:22+00:00,8484,13,25,25
+https://chat-deep.ai/use-cases/deepseek-for-entrepreneurs/,deepseek-for-entrepreneurs,"DeepSeek for Entrepreneurs: Plans, Research & Pitches",DeepSeek Use Cases,2026-05-19T21:28:52+00:00,5163,35,2,8
+https://chat-deep.ai/use-cases/deepseek-real-estate-agents/,deepseek-real-estate-agents,DeepSeek for Real Estate Agents: Listings & Research,DeepSeek Use Cases,2026-05-18T14:24:52+00:00,5054,16,2,16
+https://chat-deep.ai/use-cases/deepseek-for-freelancers/,deepseek-for-freelancers,DeepSeek for Freelancers: Proposals & Client Workflows,DeepSeek Use Cases,2026-05-19T13:09:17+00:00,5488,22,2,11
+https://chat-deep.ai/use-cases/deepseek-for-students/,deepseek-for-students,"DeepSeek for Students: Study, Homework, Exams & Prompts",DeepSeek Use Cases,2026-05-18T12:02:40+00:00,6548,6,15,18
+https://chat-deep.ai/use-cases/deepseek-ai-for-translation/,deepseek-ai-for-translation,How to Use DeepSeek AI for Translation - Chat-Deep.ai,DeepSeek Use Cases,2026-05-18T08:00:51+00:00,4224,17,2,20
+https://chat-deep.ai/use-cases/deepseek-for-data-analysis/,deepseek-for-data-analysis,"DeepSeek for Data Analysis: CSV, Excel, SQL & Python",DeepSeek Use Cases,2026-05-12T04:06:54+00:00,5423,31,2,14
+https://chat-deep.ai/solutions/deepseek-ai-agents/,deepseek-ai-agents,DeepSeek AI Agents: Tool Calling & Python Guide,DeepSeek Solutions,2026-05-18T20:18:48+00:00,2956,2,6,8
+https://chat-deep.ai/news/deepseek-r2-tracker-release-date/,deepseek-r2-tracker-release-date,DeepSeek R2 Release Tracker: Official Status & Rumors,DeepSeek News,2026-05-15T08:35:48+00:00,1701,0,17,11
+https://chat-deep.ai/guide/write-better-emails-in-spanish-with-deepseek-ai/,write-better-emails-in-spanish-with-deepseek-ai,Write Better Spanish Emails With DeepSeek AI,DeepSeek Guides,2026-05-26T15:20:32+00:00,3442,22,1,9
+https://chat-deep.ai/guide/run-deepseek-in-lm-studio/,run-deepseek-in-lm-studio,Run DeepSeek in LM Studio: Models & Local API,DeepSeek Guides,2026-03-10T04:53:38+00:00,3256,7,12,6
+https://chat-deep.ai/guide/how-to-use-deepseek-chat/,how-to-use-deepseek-chat,"How to Use DeepSeek Chat: Web, App, Prompts & API",DeepSeek Guides,2026-05-12T10:15:38+00:00,3867,1,0,13
+https://chat-deep.ai/guide/google-sheets/,google-sheets,DeepSeek for Google Sheets: Apps Script & AI Formulas,DeepSeek Guides,2026-05-15T20:31:06+00:00,3846,21,0,20
+https://chat-deep.ai/guide/deepseek-write-better-english-emails/,deepseek-write-better-english-emails,Write Better English Emails With DeepSeek AI,DeepSeek Guides,2026-05-15T13:51:44+00:00,3534,35,1,9
+https://chat-deep.ai/guide/deepseek-gguf-vs-safetensors/,deepseek-gguf-vs-safetensors,DeepSeek GGUF vs Safetensors: Which Format to Use?,DeepSeek Guides,2026-05-07T05:08:41+00:00,3368,2,2,18
+https://chat-deep.ai/guide/deepseek-ai-facts/,deepseek-ai-facts,DeepSeek Facts: Verified Answers & Release Timeline,DeepSeek Guides,2026-04-06T13:51:14+00:00,2659,1,5,24
+https://chat-deep.ai/solutions/deepseek-for-pharma-biotech/,deepseek-for-pharma-biotech,"DeepSeek for Pharma & Biotech: Uses, Risks & Controls",DeepSeek Solutions,2026-06-13T12:13:12+00:00,3698,0,1,18
+https://chat-deep.ai/solutions/deepseek-for-legal-teams/,deepseek-for-legal-teams,"DeepSeek for Legal Teams: Uses, Risks & Governance",DeepSeek Solutions,2026-06-01T14:13:38+00:00,4077,0,1,21
+https://chat-deep.ai/solutions/deepseek-for-journalism-newsrooms/,deepseek-for-journalism-newsrooms,"DeepSeek for Journalism: Uses, Risks & Safeguards",DeepSeek Solutions,2026-06-13T00:40:20+00:00,5562,12,1,23
+https://chat-deep.ai/solutions/deepseek-for-internal-audit-grc/,deepseek-for-internal-audit-grc,DeepSeek for Internal Audit & GRC: Key Controls,DeepSeek Solutions,2026-06-10T17:21:20+00:00,5548,9,1,18
+https://chat-deep.ai/solutions/deepseek-for-insurance/,deepseek-for-insurance,"DeepSeek for Insurance: Uses, Risks & Controls",DeepSeek Solutions,2026-06-10T17:26:56+00:00,5024,1,1,12
+https://chat-deep.ai/solutions/deepseek-for-healthcare-medicine/,deepseek-for-healthcare-medicine,"DeepSeek for Healthcare: Uses, Risks & Limits",DeepSeek Solutions,2026-06-01T12:47:28+00:00,4416,0,1,26
+https://chat-deep.ai/solutions/deepseek-for-government-public-sector/,deepseek-for-government-public-sector,"DeepSeek for Government: Uses, Risks & Compliance",DeepSeek Solutions,2026-06-12T20:00:50+00:00,4193,0,1,19
+https://chat-deep.ai/solutions/deepseek-for-financial-risk-teams/,deepseek-for-financial-risk-teams,DeepSeek for Financial Risk Teams: Uses & Controls,DeepSeek Solutions,2026-05-26T19:07:22+00:00,4505,5,1,16
+https://chat-deep.ai/solutions/deepseek-for-cybersecurity/,deepseek-for-cybersecurity,DeepSeek for Cybersecurity: SOC Use Cases & Risks,DeepSeek Solutions,2026-05-18T10:03:36+00:00,5373,12,1,16
+https://chat-deep.ai/solutions/deepseek-for-banking-operations/,deepseek-for-banking-operations,"DeepSeek for Banking: Use Cases, Risks & Controls",DeepSeek Solutions,2026-06-12T20:13:29+00:00,4532,0,1,17
+https://chat-deep.ai/solutions/deepseek-customer-operations-commerce/,deepseek-customer-operations-commerce,DeepSeek for Customer Operations & Commerce,DeepSeek Solutions,2026-07-21T05:43:41+00:00,3513,3,3,12
+https://chat-deep.ai/privacy-security/what-not-to-paste-into-deepseek/,what-not-to-paste-into-deepseek,What Not to Paste Into DeepSeek: Privacy Checklist,DeepSeek Privacy & Security Center,2026-05-16T16:08:56+00:00,3969,6,0,15
+https://chat-deep.ai/privacy-security/deepseek-privacy-policy/,deepseek-privacy-policy,DeepSeek Privacy Policy: Data Collection Explained,DeepSeek Privacy & Security Center,2026-05-17T14:22:47+00:00,3944,0,1,13
+https://chat-deep.ai/privacy-security/deepseek-gdpr/,deepseek-gdpr,Is DeepSeek GDPR Compliant? EU Privacy Risks,DeepSeek Privacy & Security Center,2026-05-17T14:02:18+00:00,3003,0,1,15
+https://chat-deep.ai/privacy-security/deepseek-data-residency/,deepseek-data-residency,DeepSeek Data Residency: Storage & Processing,DeepSeek Privacy & Security Center,2026-05-18T15:15:22+00:00,3179,0,1,13
+https://chat-deep.ai/news/deepseek-ai-infrastructure-nvidia-vs-huawei/,deepseek-ai-infrastructure-nvidia-vs-huawei,DeepSeek Infrastructure: NVIDIA vs Huawei,DeepSeek News,2026-05-25T22:37:32+00:00,3898,0,1,16
+https://chat-deep.ai/guide/run-deepseek-locally-on-nvidia-rtx-gpus/,run-deepseek-locally-on-nvidia-rtx-gpus,Run DeepSeek on NVIDIA RTX GPUs: VRAM Guide,DeepSeek Guides,2026-05-27T05:27:08+00:00,2974,2,2,23
+https://chat-deep.ai/guide/power-bi-deepseek-integration/,power-bi-deepseek-integration,DeepSeek Power BI Integration: Power Query Guide,DeepSeek Guides,2026-05-16T06:28:03+00:00,2528,5,0,18
+https://chat-deep.ai/guide/is-deepseek-safe/,is-deepseek-safe,"Is DeepSeek Safe? Privacy, Security & Key Risks",DeepSeek Guides,2026-03-14T19:11:01+00:00,3006,0,0,17
+https://chat-deep.ai/guide/is-deepseek-ai-free/,is-deepseek-ai-free,"Is DeepSeek Free? Chat, App, API & Local Costs",DeepSeek Guides,2026-05-12T13:15:00+00:00,3529,0,2,18
+https://chat-deep.ai/guide/deepseek-workflow-automation/,deepseek-workflow-automation,"DeepSeek Workflow Automation: APIs, Agents & No-Code",DeepSeek Guides,2026-05-11T05:56:45+00:00,4179,7,1,17
+https://chat-deep.ai/guide/deepseek-with-vllm/,deepseek-with-vllm,DeepSeek with vLLM: Run and Serve Models Locally,DeepSeek Guides,2026-04-21T10:41:40+00:00,5252,14,25,11
+https://chat-deep.ai/guide/deepseek-v4-vscode/,deepseek-v4-vscode,DeepSeek V4 in VS Code: Setup & Usage Guide,DeepSeek Guides,2026-05-05T05:49:23+00:00,3079,22,2,23
+https://chat-deep.ai/guide/deepseek-tableau-data-studio/,deepseek-tableau-data-studio,DeepSeek for Tableau & Looker Studio: BI Workflows,DeepSeek Guides,2026-06-04T00:36:49+00:00,5643,20,1,24
+https://chat-deep.ai/guide/deepseek-system-requirements/,deepseek-system-requirements,"DeepSeek System Requirements: RAM, VRAM, GPU & OS",DeepSeek Guides,2026-05-01T22:35:44+00:00,3554,0,1,10
+https://chat-deep.ai/guide/deepseek-stock/,deepseek-stock,"DeepSeek Stock: Ticker, Ownership & IPO Status",DeepSeek Guides,2026-05-06T05:16:06+00:00,1974,0,0,13
+https://chat-deep.ai/guide/deepseek-local-vs-api/,deepseek-local-vs-api,DeepSeek Local vs API: Which Should You Use? - Chat-Deep.ai,DeepSeek Guides,2026-04-07T00:46:58+00:00,3125,2,12,7
+https://chat-deep.ai/guide/deepseek-kubernetes-deployment/,deepseek-kubernetes-deployment,Deploy DeepSeek on Kubernetes: Production Guide,DeepSeek Guides,2026-06-04T08:01:49+00:00,4323,27,1,23
+https://chat-deep.ai/guide/deepseek-generate-images/,deepseek-generate-images,Can DeepSeek Generate Images? Capabilities Explained,DeepSeek Guides,2026-05-12T08:50:02+00:00,2727,0,1,16
+https://chat-deep.ai/guide/deepseek-gateway-proxy-architecture/,deepseek-gateway-proxy-architecture,DeepSeek API Gateway & Proxy Architecture - Chat-Deep.ai,DeepSeek Guides,2026-06-04T07:57:26+00:00,5520,3,1,27
+https://chat-deep.ai/guide/deepseek-for-coding/,deepseek-for-coding,"DeepSeek for Coding: V4, API, FIM & Agents",DeepSeek Guides,2026-04-18T01:06:46+00:00,5552,27,32,23
+https://chat-deep.ai/guide/deepseek-fine-tuning/,deepseek-fine-tuning,"DeepSeek Fine-Tuning: LoRA, QLoRA, SFT & Deployment",DeepSeek Guides,2026-04-30T21:57:00+00:00,4288,9,2,18
+https://chat-deep.ai/guide/deepseek-docker-deployment/,deepseek-docker-deployment,"DeepSeek Docker Deployment: API, Ollama & vLLM",DeepSeek Guides,2026-05-01T18:22:00+00:00,4290,28,0,20
+https://chat-deep.ai/guide/deepseek-chrome-extension/,deepseek-chrome-extension,DeepSeek Chrome Extension: Is There an Official One?,DeepSeek Guides,2026-05-07T00:42:48+00:00,2766,0,1,17
+https://chat-deep.ai/docs/deepseek-vector-database-guide/,deepseek-vector-database-guide,DeepSeek Vector Databases for RAG: Complete Guide,DeepSeek API Docs,2026-06-21T18:13:37+00:00,5821,5,1,28
+https://chat-deep.ai/comparison/xai-grok/,xai-grok,"DeepSeek vs Grok: Coding, Research & Live Data",DeepSeek Comparisons,2025-10-12T22:53:34+00:00,3612,0,0,25
+https://chat-deep.ai/comparison/perplexity/,perplexity,"DeepSeek vs Perplexity: Research, Coding & Pricing",DeepSeek Comparisons,2026-05-14T18:00:17+00:00,3982,0,0,25
+https://chat-deep.ai/comparison/claude/,claude,"DeepSeek vs Claude: Features, Pricing & Use Cases",DeepSeek Comparisons,2025-09-05T02:41:02+00:00,4326,0,0,22
+https://chat-deep.ai/guide/what-is-deepseek/,what-is-deepseek,"What Is DeepSeek? Company, Chatbot & Models | Chat-Deep.ai",DeepSeek Guides,2025-09-04T00:51:50+00:00,2431,0,8,9
+https://chat-deep.ai/guide/deepseek-official-website/,deepseek-official-website,DeepSeek Official Website: Verified Links & Safety Guide,DeepSeek Guides,2026-05-12T12:29:55+00:00,1515,0,1,38
+https://chat-deep.ai/comparison/deepseek-alternatives/,deepseek-alternatives,"DeepSeek Alternatives for Chat, Research, Coding & APIs",DeepSeek Comparisons,2026-07-24T13:25:11+00:00,3539,0,16,28
+https://chat-deep.ai/guide/deepseek-cloud-deployment/,deepseek-cloud-deployment,"DeepSeek Cloud Deployment: API, Azure, AWS & GCP",DeepSeek Guides,2026-07-23T22:01:11+00:00,4001,2,6,26
+https://chat-deep.ai/solutions/deepseek-rag-knowledge-base/,deepseek-rag-knowledge-base,DeepSeek RAG Guide: Build a Grounded Knowledge Base,DeepSeek Solutions,2026-05-18T18:13:58+00:00,4080,2,6,8
+https://chat-deep.ai/docs/deepseek-mobile-app-development/,deepseek-mobile-app-development,DeepSeek Mobile App Development: Secure iOS & Android Guide,DeepSeek API Docs,2026-06-21T21:40:32+00:00,3351,5,5,8
+https://chat-deep.ai/guide/deepseek-roadmap-rumors/,deepseek-roadmap-rumors,DeepSeek V5 Release Date & Roadmap: Official Status,DeepSeek Guides,2026-05-07T03:39:30+00:00,1625,0,6,13
+https://chat-deep.ai/solutions/deepseek-marketing-content-teams/,deepseek-marketing-content-teams,DeepSeek for Marketing & Content Teams: Practical Guide,DeepSeek Solutions,2026-07-21T05:57:52+00:00,4503,6,8,13
+https://chat-deep.ai/guide/deepseek-not-working-troubleshooting/,deepseek-not-working-troubleshooting,"DeepSeek Not Working? Fix Server Busy, Login & API Errors",DeepSeek Guides,2026-02-21T22:59:06+00:00,3325,1,7,12
+https://chat-deep.ai/docs/api/,api,"DeepSeek API Docs: Quickstart, Models & Code Examples",DeepSeek API Docs,2025-09-05T02:02:46+00:00,3046,5,18,18
+https://chat-deep.ai/docs/migrate-deepseek-chat-reasoner-to-v4/,migrate-deepseek-chat-reasoner-to-v4,Migrate deepseek-chat & deepseek-reasoner to V4,DeepSeek API Docs,2026-07-22T04:18:25+00:00,2638,12,10,14
+https://chat-deep.ai/docs/deepseek-api-updates/,deepseek-api-updates,DeepSeek API Updates: Changelog & Deprecated Models Tracker,DeepSeek API Docs,2026-07-26T12:57:58+00:00,2481,0,14,20
+https://chat-deep.ai/docs/testing-deepseek-api/,testing-deepseek-api,"DeepSeek API Testing: Mocks, Regression & Live Smoke Tests",DeepSeek API Docs,2026-07-23T22:20:54+00:00,3323,11,17,14
+https://chat-deep.ai/guide/deepseek-prompt/,deepseek-prompt,DeepSeek Prompt Guide: 42 Copy-Paste Templates (2026),DeepSeek Guides,2026-05-05T07:12:51+00:00,5812,45,19,8
+https://chat-deep.ai/comparison/llama/,llama,DeepSeek vs Llama 4 (2026): Live API Tests & Costs,DeepSeek Comparisons,2026-05-13T18:10:00+00:00,4232,0,12,18
+https://chat-deep.ai/comparison/microsoft-copilot/,microsoft-copilot,DeepSeek vs Microsoft Copilot (2026): Live Tests,DeepSeek Comparisons,2026-05-14T21:20:08+00:00,3936,1,11,14
+https://chat-deep.ai/comparison/meta-ai/,meta-ai,DeepSeek vs Meta AI (2026): Live Tests & Features,DeepSeek Comparisons,2026-05-16T06:33:01+00:00,3047,0,7,12
+https://chat-deep.ai/comparison/qwen/,qwen,"DeepSeek vs Qwen (2026): Live Tests, Pricing & Models",DeepSeek Comparisons,2026-05-14T17:33:30+00:00,3338,0,10,26
+https://chat-deep.ai/comparison/kimi/,kimi,"DeepSeek V4 vs Kimi K3 (2026): Coding, Cost & API",DeepSeek Comparisons,2026-04-22T17:50:50+00:00,3076,1,9,12
+https://chat-deep.ai/comparison/deepseek-vs-cohere/,deepseek-vs-cohere,"DeepSeek vs Cohere (2026): API, RAG & Pricing",DeepSeek Comparisons,2026-05-22T18:59:03+00:00,2587,1,7,15
+https://chat-deep.ai/comparison/mistral-ai/,mistral-ai,"DeepSeek vs Mistral: Pricing, Coding & Models (2026)",DeepSeek Comparisons,2026-05-14T17:58:29+00:00,2964,0,12,22
+https://chat-deep.ai/comparison/gemini/,gemini,"DeepSeek vs Gemini (2026): Coding, Price & Privacy",DeepSeek Comparisons,2025-10-05T05:07:37+00:00,3887,0,0,17
+https://chat-deep.ai/docs/deepseek-api-key/,deepseek-api-key,"DeepSeek API Key: Create, Test, Store & Revoke Safely",DeepSeek API Docs,2026-05-14T16:36:20+00:00,4628,7,15,17
+https://chat-deep.ai/docs/deepseek-evaluation-framework/,deepseek-evaluation-framework,"DeepSeek Evaluation Framework: Evals, RAG & Regression",DeepSeek API Docs,2026-06-21T18:08:59+00:00,5459,5,14,20
+https://chat-deep.ai/docs/deepseek-observability/,deepseek-observability,"DeepSeek Observability: OpenTelemetry, Metrics & Alerts",DeepSeek API Docs,2026-06-20T21:14:00+00:00,4825,4,11,18
+https://chat-deep.ai/docs/deepseek-nodejs-typescript/,deepseek-nodejs-typescript,DeepSeek Node.js TypeScript Guide: API Examples,DeepSeek API Docs,2026-04-15T01:06:51+00:00,4768,11,11,16
+https://chat-deep.ai/docs/deepseek-llamaindex-integration/,deepseek-llamaindex-integration,DeepSeek LlamaIndex Integration: Python RAG Setup,DeepSeek API Docs,2026-04-13T00:44:53+00:00,4645,11,11,18
+https://chat-deep.ai/docs/deepseek-langchain-integration/,deepseek-langchain-integration,DeepSeek LangChain Integration: Python & TypeScript,DeepSeek API Docs,2026-04-09T00:45:21+00:00,4479,18,11,23
+https://chat-deep.ai/guide/pdf-file-analysis-benchmark/,pdf-file-analysis-benchmark,DeepSeek PDF Analysis Benchmark: 10 Live Tests,DeepSeek Guides,2026-07-25T10:14:27+00:00,2875,0,1,17
+https://chat-deep.ai/docs/deepseek-python-sdk/,deepseek-python-sdk,"DeepSeek Python SDK: Async, Streaming & Production",DeepSeek API Docs,2026-04-11T13:58:21+00:00,3872,14,5,21
+https://chat-deep.ai/docs/openai-sdk-to-deepseek/,openai-sdk-to-deepseek,"OpenAI SDK with DeepSeek: Python, Node.js & Live Tests",DeepSeek API Docs,2026-04-20T18:36:05+00:00,3573,7,7,22
+https://chat-deep.ai/docs/deepseek-tool-calls/,deepseek-tool-calls,DeepSeek Tool Calls: Function Calling & Live V4 Tests,DeepSeek API Docs,2026-04-05T15:38:05+00:00,5380,7,14,8
+https://chat-deep.ai/docs/json-output/,json-output,DeepSeek JSON Output: Live V4 Tests & Validation,DeepSeek API Docs,2026-04-17T18:15:42+00:00,5305,3,9,9
+https://chat-deep.ai/docs/api-rate-limits/,api-rate-limits,DeepSeek API Rate Limits: V4 Concurrency & Live Tests,DeepSeek API Docs,2026-05-02T16:40:58+00:00,3818,5,8,8
+https://chat-deep.ai/docs/deepseek-error-codes/,deepseek-error-codes,"DeepSeek API Error Codes: Fix 400, 401, 422 & 429",DeepSeek API Docs,2026-03-28T15:41:13+00:00,3039,3,12,11
+https://chat-deep.ai/docs/deepseek-thinking-mode/,deepseek-thinking-mode,DeepSeek Thinking Mode: Live API Tests & reasoning_content,DeepSeek API Docs,2026-04-04T04:04:37+00:00,3039,7,15,7
+https://chat-deep.ai/docs/deepseek-context-caching/,deepseek-context-caching,DeepSeek Context Caching: Live Cache-Hit Tests & Cost Guide,DeepSeek API Docs,2026-04-05T15:19:58+00:00,3272,2,8,15
+https://chat-deep.ai/docs/deepseek-coding-benchmark/,deepseek-coding-benchmark,DeepSeek Coding Benchmark: Flash vs Pro in 5 Languages,DeepSeek API Docs,,3199,2,1,13
+https://chat-deep.ai/docs/deepseek-retries-idempotency/,deepseek-retries-idempotency,DeepSeek Retries and Idempotency: Avoid Duplicate Work,DeepSeek API Docs,,6136,10,8,19
+https://chat-deep.ai/docs/deepseek-batch-processing/,deepseek-batch-processing,DeepSeek Batch Processing: Safe Local Queue Guide,DeepSeek API Docs,,5249,8,10,18
+https://chat-deep.ai/docs/deepseek-system-prompts/,deepseek-system-prompts,"DeepSeek System Prompts: Roles, Examples & Live Tests",DeepSeek API Docs,,4635,16,8,16
+https://chat-deep.ai/docs/deepseek-api-balance/,deepseek-api-balance,DeepSeek API Balance: Check Credits with /user/balance,DeepSeek API Docs,,4033,7,9,18
+https://chat-deep.ai/docs/deepseek-temperature-settings/,deepseek-temperature-settings,DeepSeek Temperature Settings: Top-P & Stop Tests,DeepSeek API Docs,,4826,9,1,19
+https://chat-deep.ai/docs/deepseek-user-id-isolation/,deepseek-user-id-isolation,"DeepSeek user_id Isolation: Cache, Scheduling & Safety",DeepSeek API Docs,,4751,7,7,18
+https://chat-deep.ai/docs/deepseek-multi-turn-conversations/,deepseek-multi-turn-conversations,DeepSeek Multi-Turn Conversations: API History & Cost,DeepSeek API Docs,,3863,3,7,11
+https://chat-deep.ai/docs/deepseek-v4-architecture/,deepseek-v4-architecture,"DeepSeek V4 Architecture Explained: MoE, mHC & 1M",DeepSeek API Docs,2026-07-25T13:53:55+00:00,4158,0,2,18
+https://chat-deep.ai/comparison/chatgpt/,chatgpt,DeepSeek vs ChatGPT (2026): Which AI Should You Use?,DeepSeek Comparisons,2026-05-18T14:01:55+00:00,3211,0,8,23
+https://chat-deep.ai/docs/deepseek-finish-reason/,deepseek-finish-reason,"DeepSeek finish_reason: Values, Meanings, and Fixes",DeepSeek API Docs,2026-07-23T11:06:47+00:00,3104,4,9,13
+https://chat-deep.ai/docs/deepseek-v4-context-output-limits/,deepseek-v4-context-output-limits,DeepSeek V4 Output Limit: Context and Token Planning,DeepSeek API Docs,2026-07-23T11:03:13+00:00,3149,6,10,16
+https://chat-deep.ai/docs/deepseek-api-vision-input/,deepseek-api-vision-input,DeepSeek Vision API: Does It Support Image Input?,DeepSeek API Docs,2026-07-23T10:56:33+00:00,3198,4,8,20
+https://chat-deep.ai/docs/deepseek-api-file-upload/,deepseek-api-file-upload,DeepSeek API File Upload: Support and Workarounds,DeepSeek API Docs,2026-07-22T11:11:41+00:00,3130,3,7,18
+https://chat-deep.ai/docs/deepseek-api-web-search/,deepseek-api-web-search,DeepSeek Web Search API: Chat vs API Explained,DeepSeek API Docs,2026-07-22T07:35:12+00:00,4296,3,8,16
+https://chat-deep.ai/docs/deepseek-api-keep-alive-timeouts/,deepseek-api-keep-alive-timeouts,DeepSeek API Timeout: Keep-Alive & Long Requests,DeepSeek API Docs,2026-07-22T05:35:14+00:00,3480,3,9,12
+https://chat-deep.ai/docs/deepseek-anthropic-api-compatibility/,deepseek-anthropic-api-compatibility,DeepSeek Anthropic API Compatibility: Field Mapping,DeepSeek API Docs,2026-07-21T18:20:45+00:00,2757,5,9,15
+https://chat-deep.ai/docs/deepseek-token-usage-fields/,deepseek-token-usage-fields,DeepSeek Token Usage & Cache Fields Explained,DeepSeek API Docs,2026-07-21T17:28:53+00:00,2581,7,14,10
+https://chat-deep.ai/comparison/deepseek-regional-ai-models/,deepseek-regional-ai-models,"DeepSeek vs Regional AI Models: ALIA, Jais, Sarvam & More",DeepSeek Comparisons,2026-07-21T13:43:51+00:00,4049,0,7,26
+https://chat-deep.ai/solutions/deepseek-industrial-operational-workflows/,deepseek-industrial-operational-workflows,DeepSeek for Industrial & Operational Workflows,DeepSeek Solutions,2026-07-21T05:48:56+00:00,3306,1,3,23
+https://chat-deep.ai/solutions/deepseek-enterprise-ai/,deepseek-enterprise-ai,"DeepSeek for Enterprise: Security, Governance & Use Cases",DeepSeek Solutions,2026-05-25T06:19:09+00:00,8144,7,3,30
+https://chat-deep.ai/,home,DeepSeek,,,2503,0,19,18
+https://chat-deep.ai/models/deepseek-r1-0528/,deepseek-r1-0528,"DeepSeek R1-0528: Benchmarks, Specs & API Status",,2026-05-12T14:34:36+00:00,3855,10,1,13
+https://chat-deep.ai/terms/,terms,Terms of Service - Chat-Deep.ai,,2025-08-31T16:01:14+00:00,3480,0,5,9
+https://chat-deep.ai/status/,status,Is DeepSeek Down? Live Status Checker,,,1109,0,0,7
+https://chat-deep.ai/security/,security,Security - Chat-Deep.ai,,2026-01-26T15:46:57+00:00,1323,0,8,2
+https://chat-deep.ai/research/,research,"DeepSeek Research Papers, Reports & Reading Guide",,2026-04-22T09:55:40+00:00,4092,4,1,49
+https://chat-deep.ai/privacy-policy/,privacy-policy,Privacy Policy - Chat-Deep.ai,,2025-08-31T15:11:18+00:00,3022,0,9,4
+https://chat-deep.ai/pricing/deepseek-api-cost-calculator/,deepseek-api-cost-calculator,DeepSeek API Cost Calculator: V4 Flash & Pro,,,501,0,2,6
+https://chat-deep.ai/models/is-deepseek-open-source/,is-deepseek-open-source,Is DeepSeek Open Source? Licenses & Safety Explained,Blog,2026-05-19T13:37:59+00:00,2971,0,2,12
+https://chat-deep.ai/models/deepseek-coder/,deepseek-coder,DeepSeek-Coder: Historical Coding Model Family Overview,Blog,2025-08-30T22:17:50+00:00,1707,0,6,19
+https://chat-deep.ai/disclaimer/,disclaimer,Disclaimer - Chat-Deep.ai,,2025-09-04T19:37:35+00:00,1283,0,10,3
+https://chat-deep.ai/cookie-policy/,cookie-policy,Cookie Policy - Chat-Deep.ai,,2025-09-04T17:54:39+00:00,1723,0,3,5
+https://chat-deep.ai/app/,app,DeepSeek App: Official iOS & Android Download,,2025-08-31T20:11:48+00:00,2048,0,22,15
+https://chat-deep.ai/about/,about,About Us - Chat-Deep.ai,,,1272,0,15,6
+https://chat-deep.ai/faq/,faq,"Chat-Deep.ai FAQ: Access, Privacy & Official Links",,,1205,0,5,12
+https://chat-deep.ai/pricing/,pricing,DeepSeek Pricing: V4 Flash & V4 Pro API Costs (2026),,2025-08-31T22:40:30+00:00,2913,0,13,9
+https://chat-deep.ai/models/,models,"DeepSeek Models: Model List, Comparison & Best Uses",,2026-03-26T17:58:29+00:00,3411,0,17,12
+https://chat-deep.ai/deepseek-chat/,deepseek-chat,"DeepSeek AI Chat Online – Free, No Sign-Up | Chat-Deep.ai",,,1192,0,2,11
+https://chat-deep.ai/models/deepseek-model-history/,deepseek-model-history,DeepSeek V2–V3.2: Model History & Release Dates,,2026-07-29T10:35:50+00:00,2208,0,8,8
+https://chat-deep.ai/research/deepseek-model-names/,deepseek-model-names,"DeepSeek Model Names: API IDs, Labels and Checkpoints",Blog,2026-07-24T07:40:26+00:00,2431,3,8,8
+https://chat-deep.ai/models/deepseek-ocr/,deepseek-ocr,"DeepSeek OCR Guide: Setup, API, Benchmarks & OCR 2",,2026-05-06T03:56:46+00:00,4244,5,1,18
+https://chat-deep.ai/models/deepseek-v4/,deepseek-v4,"DeepSeek V4 Preview: Pro vs Flash, API, Pricing & Download",,2026-04-24T10:52:10+00:00,3485,1,17,15
+https://chat-deep.ai/models/deepseek-r1/,deepseek-r1,DeepSeek R1: Complete Guide to the Open Reasoning Model,Blog,2026-02-21T14:08:33+00:00,4455,9,0,20
+https://chat-deep.ai/integrations/,integrations,"DeepSeek Integrations: Apps, APIs & Automation Guide",,2026-07-23T11:19:10+00:00,4439,0,23,10
+https://chat-deep.ai/editorial-policy/,editorial-policy,Editorial Policy - Chat-Deep.ai,,,2852,0,22,15
+https://chat-deep.ai/contact/,contact,Contact Us - Chat-Deep.ai,,,55,0,0,0
+https://chat-deep.ai/guide/,guide,"DeepSeek Guides: Chat, Prompts, Local AI & Deployment",,,36,0,66,0
+https://chat-deep.ai/comparison/,comparison,"DeepSeek Comparisons: ChatGPT, Gemini, Claude & More",,,40,0,27,0
+https://chat-deep.ai/docs/,docs,DeepSeek API Docs & Developer Guides,,,39,0,72,0
+https://chat-deep.ai/news/,news,"DeepSeek News: Releases, Models & Verified Updates",,,40,0,4,0
+https://chat-deep.ai/privacy-security/,privacy-security,DeepSeek Privacy & Security Center - Chat-Deep.ai,,,39,0,8,0
+https://chat-deep.ai/solutions/,solutions,DeepSeek Solutions: Enterprise AI by Industry,,,42,0,29,0
+https://chat-deep.ai/use-cases/,use-cases,"DeepSeek Use Cases: Work, Coding, Data & More",,,43,0,28,0
