@@ -2,35 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { 
-  ArrowLeft, 
-  ArrowRight, 
-  Check, 
-  Copy, 
-  BookmarkSimple, 
+import {
+  ArrowLeft,
+  ArrowRight,
+  Check,
+  Copy,
+  BookmarkSimple,
   ShareNetwork,
   List,
   Info
 } from "@phosphor-icons/react/dist/ssr";
+import type { GuideContent } from "@/data/guides/types";
 
-export interface GuideContent {
-  slug: string;
-  category: string;
-  title: string;
-  readTime: string;
-  updatedAt: string;
-  summary: string;
-  toc: { id: string; label: string }[];
-  steps: {
-    num: string;
-    title: string;
-    description: string;
-    code?: string;
-    note?: string;
-  }[];
-  prevGuide?: { title: string; slug: string };
-  nextGuide?: { title: string; slug: string };
-}
+export type { GuideContent };
 
 interface GuideDetailProps {
   guide: GuideContent;
@@ -138,6 +122,53 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                   {step.description}
                 </p>
 
+                {/* Additional Paragraphs (long-form) */}
+                {step.paragraphs?.map((para, i) => (
+                  <p key={i} className="text-sm text-zinc-300 leading-relaxed font-sans mb-4">
+                    {para}
+                  </p>
+                ))}
+
+                {/* Bullet List */}
+                {step.list && step.list.length > 0 && (
+                  <ul className="my-4 flex flex-col gap-2">
+                    {step.list.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed font-sans">
+                        <span className="mt-2 h-1 w-1 rounded-full bg-zinc-500 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {/* Data Table (specs / pricing / benchmarks) */}
+                {step.table && (
+                  <div className="my-4 rounded-lg bg-[#0c0c0e] border border-zinc-800/80 overflow-x-auto">
+                    <table className="w-full text-xs font-sans">
+                      <thead>
+                        <tr className="border-b border-zinc-800/80">
+                          {step.table.headers.map((h, i) => (
+                            <th key={i} className="text-left px-4 py-2.5 font-mono text-[10px] uppercase tracking-wider text-zinc-500 whitespace-nowrap">
+                              {h}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {step.table.rows.map((row, i) => (
+                          <tr key={i} className="border-b border-zinc-800/40 last:border-0">
+                            {row.map((cell, j) => (
+                              <td key={j} className={`px-4 py-2.5 text-zinc-300 whitespace-nowrap ${j === 0 ? "font-medium text-zinc-100" : ""}`}>
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
                 {/* Pure Monochrome Note Box */}
                 {step.note && (
                   <div className="my-4 rounded-lg bg-[#0c0c0e] border border-zinc-800/80 p-4 font-sans text-xs">
@@ -179,6 +210,52 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                 )}
               </section>
             ))}
+
+            {/* Related Guides (internal link network) */}
+            {guide.relatedGuides && guide.relatedGuides.length > 0 && (
+              <div className="pt-6 mt-6 border-t border-zinc-800/80">
+                <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3">
+                  RELATED GUIDES
+                </div>
+                <div className="flex flex-col gap-2">
+                  {guide.relatedGuides.map((rel, i) => (
+                    <Link
+                      key={i}
+                      href={`/guides/${rel.slug}`}
+                      className="group p-3 rounded-lg bg-[#0e0e11] border border-zinc-800/80 hover:border-zinc-700 transition-colors flex items-center justify-between gap-3"
+                    >
+                      <span className="text-sm text-zinc-200 group-hover:text-white font-sans leading-snug">
+                        {rel.title}
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:text-zinc-300 shrink-0 transition-colors" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Sources & References (GEO / EEAT) */}
+            {guide.sources && guide.sources.length > 0 && (
+              <div className="pt-6 mt-6 border-t border-zinc-800/80">
+                <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3">
+                  SOURCES & REFERENCES
+                </div>
+                <ul className="flex flex-col gap-2">
+                  {guide.sources.map((src, i) => (
+                    <li key={i} className="text-xs text-zinc-400 leading-relaxed">
+                      <a
+                        href={src.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400/90 hover:text-cyan-300 hover:underline font-sans break-all"
+                      >
+                        {src.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Bottom Navigation between guides */}
             <div className="pt-10 mt-6 border-t border-zinc-800/80 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { CodeTerminal } from "./CodeTerminal";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { getGuideCards } from "@/data/guides";
 
 interface MainContentProps {
   activeCategory: string;
@@ -10,53 +11,15 @@ interface MainContentProps {
 }
 
 export function MainContent({ activeCategory, searchQuery }: MainContentProps) {
-  const guides = [
-    {
-      num: "01",
-      catId: "api",
-      tag: "API Integration",
-      title: "Zero-Friction DeepSeek V4 Official API Setup Guide",
-      desc: "Step-by-step walkthrough covering console registration, API Key generation, and exponential backoff retry mechanisms to handle 429 rate limits in production.",
-      readTime: "4 MIN READ",
-      href: "/guides/api-integration"
-    },
-    {
-      num: "02",
-      catId: "pricing",
-      tag: "Cost Optimization",
-      title: "DeepSeek V4 Flash Token Pricing & Cost Benchmark",
-      desc: "Detailed analysis of input/output token pricing vs OpenAI GPT-4o and Claude 3.5 Sonnet. Calculate your real monthly savings of up to 90%.",
-      readTime: "6 MIN READ",
-      href: "/guides/pricing-strategy"
-    },
-    {
-      num: "03",
-      catId: "cursor",
-      tag: "Cursor & IDE",
-      title: "Connecting DeepSeek V4 Flash to Cursor & Cline IDE",
-      desc: "Seamlessly replace default OpenAI endpoints in Cursor IDE and VSCode extensions to unlock sub-300ms inline code completions.",
-      readTime: "5 MIN READ",
-      href: "/guides/cursor-setup"
-    },
-    {
-      num: "04",
-      catId: "code",
-      tag: "SDKs & Code",
-      title: "Streaming Responses & Tool Calling Code Snippets",
-      desc: "Production-ready Python and Node.js code snippets supporting Server-Sent Events (SSE) typewriter streaming and structured JSON output.",
-      readTime: "7 MIN READ",
-      href: "/guides/api-integration"
-    },
-    {
-      num: "05",
-      catId: "production",
-      tag: "Production Tips",
-      title: "High-Availability Proxy Architecture for Enterprise Scale",
-      desc: "Configure LiteLLM and OneAPI gateways with key rotation and failover routing for 99.99% operational uptime under high traffic.",
-      readTime: "8 MIN READ",
-      href: "/guides/api-integration"
-    }
-  ];
+  const guides = getGuideCards().map((card, i) => ({
+    num: String(i + 1).padStart(2, "0"),
+    catId: card.catId,
+    tag: card.tag,
+    title: card.guide.title,
+    desc: card.desc,
+    readTime: card.guide.readTime,
+    href: `/guides/${card.guide.slug}`,
+  }));
 
   const filteredGuides = guides.filter((guide) => {
     const matchesCat = activeCategory === "all" || guide.catId === activeCategory;

@@ -6,10 +6,10 @@ import { CurrencyDollar, TrendDown, ShieldCheck, Sparkle } from "@phosphor-icons
 export function CostCalculator() {
   const [millionTokens, setMillionTokens] = useState<number>(50); // Default 50 Million tokens
 
-  // Pricing constants (per 1M input tokens)
-  const deepseekV4Price = 0.07;
-  const gpt4oPrice = 2.50;
-  const claudeSonnetPrice = 3.00;
+  // Pricing constants (per 1M input tokens, official 2026-07 rates)
+  const deepseekV4Price = 0.14; // DeepSeek V4 Flash (cache miss)
+  const gpt4oPrice = 5.0; // OpenAI GPT-5.5
+  const claudeSonnetPrice = 3.0; // Claude Sonnet 4.6
 
   const deepseekCost = millionTokens * deepseekV4Price;
   const gpt4oCost = millionTokens * gpt4oPrice;
@@ -78,12 +78,12 @@ export function CostCalculator() {
 
         {/* GPT-4o */}
         <div className="p-5 rounded-lg bg-zinc-950/60 border border-zinc-800">
-          <div className="text-xs font-mono text-zinc-400 font-semibold mb-1">OpenAI GPT-4o</div>
+          <div className="text-xs font-mono text-zinc-400 font-semibold mb-1">OpenAI GPT-5.5</div>
           <div className="text-3xl font-mono font-bold text-zinc-300 mb-2">
             ${gpt4oCost.toFixed(2)}
             <span className="text-xs text-zinc-500 font-normal"> /月</span>
           </div>
-          <div className="text-[11px] text-zinc-500 font-mono">单价: $2.50 / 1M Tokens</div>
+          <div className="text-[11px] text-zinc-500 font-mono">单价: $5.00 / 1M Tokens</div>
           <div className="mt-4 pt-3 border-t border-zinc-800/80 text-xs text-zinc-500">
             多支出: +${(gpt4oCost - deepseekCost).toFixed(2)} /月
           </div>
@@ -91,7 +91,7 @@ export function CostCalculator() {
 
         {/* Claude 3.5 Sonnet */}
         <div className="p-5 rounded-lg bg-zinc-950/60 border border-zinc-800">
-          <div className="text-xs font-mono text-zinc-400 font-semibold mb-1">Claude 3.5 Sonnet</div>
+          <div className="text-xs font-mono text-zinc-400 font-semibold mb-1">Claude Sonnet 4.6</div>
           <div className="text-3xl font-mono font-bold text-zinc-300 mb-2">
             ${claudeCost.toFixed(2)}
             <span className="text-xs text-zinc-500 font-normal"> /月</span>

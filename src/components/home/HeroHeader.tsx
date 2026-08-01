@@ -64,11 +64,14 @@ export function HeroHeader({
 }: HeroHeaderProps) {
   const categories = [
     { id: "all", label: "All Guides" },
-    { id: "api", label: "Beginner API Guide" },
-    { id: "pricing", label: "Cost Efficiency" },
-    { id: "cursor", label: "Cursor Setup" },
-    { id: "code", label: "Code Templates" },
-    { id: "production", label: "Best Practices" },
+    { id: "model", label: "Model Guides" },
+    { id: "api", label: "API Setup" },
+    { id: "pricing", label: "Pricing & Cost" },
+    { id: "benchmarks", label: "Benchmarks" },
+    { id: "agents", label: "Coding Agents" },
+    { id: "ide", label: "IDE Integration" },
+    { id: "router", label: "OpenRouter" },
+    { id: "local", label: "Local Setup" },
   ];
 
   return (
@@ -133,15 +136,15 @@ export function HeroHeader({
         <div id="specs" className="w-full max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-zinc-800/60 font-mono text-xs text-left">
           <div>
             <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">OFFICIAL PRICE</div>
-            <div className="text-sm font-semibold text-zinc-200">$0.07 <span className="text-[10px] font-normal text-zinc-500">/ 1M Input Tokens</span></div>
+            <div className="text-sm font-semibold text-zinc-200">$0.14 <span className="text-[10px] font-normal text-zinc-500">/ 1M Input Tokens</span></div>
           </div>
           <div>
-            <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">API SPEED</div>
-            <div className="text-sm font-semibold text-zinc-200">Sub-300ms <span className="text-[10px] font-normal text-zinc-500">Latency</span></div>
+            <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">MODEL SIZE</div>
+            <div className="text-sm font-semibold text-zinc-200">284B <span className="text-[10px] font-normal text-zinc-500">Total Params</span></div>
           </div>
           <div>
             <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">CONTEXT</div>
-            <div className="text-sm font-semibold text-zinc-200">128K Tokens</div>
+            <div className="text-sm font-semibold text-zinc-200">1M Tokens</div>
           </div>
           <div>
             <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">DIFFICULTY</div>
