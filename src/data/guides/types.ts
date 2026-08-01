@@ -10,17 +10,19 @@ export interface GuideTable {
 export interface GuideStep {
   num: string;
   title: string;
-  /** 首段描述（必填） */
+  /** 首段描述（必填）。正文行内支持两种语法：
+   * - `[[slug|显示文字]]` → 站内双链，跳转 /guides/<slug>
+   * - `[n]` → 角注引用，n 为 sources 数组 1 基序号，渲染为上标链接 */
   description: string;
-  /** 附加段落（可选，用于长内容） */
+  /** 附加段落（可选，用于长内容），同样支持 [[slug|文字]] 与 [n] */
   paragraphs?: string[];
-  /** 要点列表（可选） */
+  /** 要点列表（可选），支持 [[slug|文字]] 与 [n] */
   list?: string[];
   /** 数据表格（可选，规格/价格/基准） */
   table?: GuideTable;
   /** 代码块（可选） */
   code?: string;
-  /** 提示框（可选） */
+  /** 提示框（可选），支持 [[slug|文字]] 与 [n] */
   note?: string;
 }
 

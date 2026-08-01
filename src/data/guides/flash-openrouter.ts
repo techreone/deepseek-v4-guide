@@ -24,10 +24,10 @@ export const flashOpenrouter: GuideContent = {
       num: "01",
       title: "Why Route DeepSeek V4 Flash Through OpenRouter?",
       description:
-        "OpenRouter is a unified AI router: one API key and one OpenAI-compatible endpoint give you access to hundreds of models, including DeepSeek V4 Flash. For DeepSeek specifically, OpenRouter is the largest third-party host — DeepSeek is the platform's #1 model author with a 16.7% token share as of July 13, 2026, and DeepSeek V4 Flash ranks #3 in model usage.",
+        "OpenRouter is a unified AI router: one API key and one OpenAI-compatible endpoint give you access to hundreds of models, including [[deepseek-v4-flash|DeepSeek V4 Flash]]. For DeepSeek specifically, OpenRouter is the largest third-party host — DeepSeek is the platform's #1 model author with a 16.7% token share as of July 13, 2026, and DeepSeek V4 Flash ranks #3 in model usage[3].",
       paragraphs: [
         "A single OpenRouter slug like `deepseek/deepseek-v4-flash` can route to several independent hosting companies behind the scenes. If one provider goes down, OpenRouter can fail over to another without touching your code. That is the core argument for a router over a direct connection.",
-        "OpenRouter states it does not mark up models: the catalog price is the price you pay, and it charges a 5.5% platform fee on pay-as-you-go traffic. V4 models also drive the platform's agentic traffic — they accounted for roughly 70% of DeepSeek's agentic token volume on OpenRouter within about a month of the April 24 release.",
+        "OpenRouter states it does not mark up models: the catalog price is the price you pay, and it charges a 5.5% platform fee on pay-as-you-go traffic[3]. V4 models also drive the platform's agentic traffic — they accounted for roughly 70% of DeepSeek's agentic token volume on OpenRouter within about a month of the April 24 release[3].",
       ],
       table: {
         headers: ["Spec", "DeepSeek V4 Flash"],
@@ -46,10 +46,10 @@ export const flashOpenrouter: GuideContent = {
       num: "02",
       title: "The Two Slugs: deepseek-v4-flash vs deepseek-v4-flash-0731",
       description:
-        "OpenRouter lists two DeepSeek V4 Flash slugs. `deepseek/deepseek-v4-flash` is the April 24 preview. `deepseek/deepseek-v4-flash-0731` is the official re-post-trained build DeepSeek shipped on July 31, 2026 as a public beta.",
+        "OpenRouter lists two DeepSeek V4 Flash slugs. `deepseek/deepseek-v4-flash` is the April 24 preview[1]. `deepseek/deepseek-v4-flash-0731` is the official re-post-trained build DeepSeek shipped on July 31, 2026 as a public beta[2].",
       paragraphs: [
-        "The 0731 build has the same architecture and the same size as the preview — it is re-post-training, not a new model. The update only applies to the Flash API; V4 Pro is unchanged. When the 0731 slug launched on OpenRouter, only two providers hosted it, and only the DeepSeek provider serves the official 0731 build — other providers still run the 0424 preview.",
-        "The 0731 update adds native Responses API support and a dedicated Codex integration. For agentic coding, DeepSeek reports the 0731 build scores 82.7 on Terminal-Bench 2.1 and 54.4 on DeepSWE. These are vendor-reported figures from DeepSeek's own changelog, not independent testing.",
+        "The 0731 build has the same architecture and the same size as the preview — it is re-post-training, not a new model. The update only applies to the Flash API; [[v4-pro|V4 Pro]] is unchanged. When the 0731 slug launched on OpenRouter, only two providers hosted it[2], and only the DeepSeek provider serves the official 0731 build — other providers still run the 0424 preview.",
+        "The 0731 update adds native Responses API support and a dedicated [[flash-ide|Codex integration]]. For agentic coding, DeepSeek reports the 0731 build scores 82.7 on Terminal-Bench 2.1 and 54.4 on DeepSWE. These are vendor-reported figures from DeepSeek's own changelog, not independent testing.",
       ],
       table: {
         headers: ["Agent benchmark (0731, vendor-reported)", "Score"],
@@ -63,16 +63,16 @@ export const flashOpenrouter: GuideContent = {
           ["Automation Bench (Public)", "25.1"],
         ],
       },
-      note: "Benchmark scores come from DeepSeek's July 31, 2026 changelog and are vendor-reported. Independent measurements may differ.",
+      note: "[[flash-benchmarks|Benchmark scores]] come from DeepSeek's July 31, 2026 changelog and are vendor-reported. Independent measurements may differ.",
     },
     {
       num: "03",
       title: "OpenRouter Pricing: $0.0896/$0.1792 vs Official $0.14/$0.28",
       description:
-        "As of August 1, 2026, OpenRouter lists DeepSeek V4 Flash at $0.0896 per 1M input tokens and $0.1792 per 1M output tokens, marked 36% off. The 0731 variant lists at $0.09 / $0.18. DeepSeek's official API prices V4 Flash at $0.14 input (cache miss) and $0.28 output.",
+        "As of August 1, 2026, OpenRouter lists DeepSeek V4 Flash at $0.0896 per 1M input tokens and $0.1792 per 1M output tokens, marked 36% off[1]. The 0731 variant lists at $0.09 / $0.18[2]. DeepSeek's official API prices V4 Flash at $0.14 input (cache miss) and $0.28 output[7].",
       paragraphs: [
-        "Today OpenRouter is roughly 36% cheaper than DeepSeek's official list price. That is an OpenRouter promotional discount, not an official DeepSeek price change — the two marketplaces can diverge over time.",
-        "The catch is cache pricing. DeepSeek's official API drops cache-hit input to $0.0028 per 1M tokens, a 98% discount. OpenRouter charges one flat price for DeepSeek and does not list a separate cache-hit tier. Applications with high cache hit rates — long repeated system prompts, agent sessions — can end up paying significantly less going direct.",
+        "Today OpenRouter is roughly 36% cheaper than DeepSeek's official list price[1]. That is an OpenRouter promotional discount, not an official DeepSeek price change — the two marketplaces can diverge over time.",
+        "The catch is [[flash-pricing|cache pricing]]. DeepSeek's official API drops cache-hit input to $0.0028 per 1M tokens, a 98% discount[7]. OpenRouter charges one flat price for DeepSeek and does not list a separate cache-hit tier[1]. Applications with high cache hit rates — long repeated system prompts, agent sessions — can end up paying significantly less going direct.",
       ],
       table: {
         headers: ["Route (per 1M tokens)", "Input", "Output", "Cache-hit input"],
@@ -82,16 +82,16 @@ export const flashOpenrouter: GuideContent = {
           ["DeepSeek official API", "$0.14 (miss)", "$0.28", "$0.0028"],
         ],
       },
-      note: "OpenRouter adds a 5.5% platform fee on pay-as-you-go traffic. For scale: at the official $0.14/M input price, $1 covers roughly 7 million input tokens on V4 Flash.",
+      note: "OpenRouter adds a 5.5% platform fee on pay-as-you-go traffic[3]. For scale: at the official $0.14/M input price, $1 covers roughly 7 million input tokens on V4 Flash[7].",
     },
     {
       num: "04",
       title: "Set Up OpenRouter: Account, API Key & Credits",
       description:
-        "Create an account at openrouter.ai, generate an API key from the dashboard (keys start with `sk-or-v1-`), and add credits. Third-party guides recommend a $5 minimum top-up with $20 as a comfortable starting balance; credits do not expire, and new accounts get a $1 trial credit.",
+        "Create an account at openrouter.ai, generate an API key from the dashboard (keys start with `sk-or-v1-`), and add credits[4]. Third-party guides recommend a $5 minimum top-up with $20 as a comfortable starting balance; credits do not expire, and new accounts get a $1 trial credit.",
       list: [
         "Sign up at openrouter.ai and open the dashboard.",
-        "Create an API key from the Keys page — it looks like `sk-or-v1-...`.",
+        "Create an API key from the Keys page — it looks like `sk-or-v1-...`[4].",
         "Add credits: $5 minimum, $20 recommended. Credits do not expire.",
         "Store the key as the `OPENROUTER_API_KEY` environment variable in your terminal or project `.env` file.",
       ],
@@ -101,7 +101,7 @@ export const flashOpenrouter: GuideContent = {
       num: "05",
       title: "First Call: curl & the OpenAI SDK",
       description:
-        "OpenRouter exposes an OpenAI-compatible API. Point the OpenAI SDK at `https://openrouter.ai/api/v1`, set the model to `deepseek/deepseek-v4-flash`, and everything else works as usual. OpenRouter also accepts Anthropic Messages and Responses formats.",
+        "OpenRouter exposes an OpenAI-compatible API. Point the OpenAI SDK at `https://openrouter.ai/api/v1`[4], set the model to `deepseek/deepseek-v4-flash`, and everything else works as usual. OpenRouter also accepts Anthropic Messages and Responses formats[4].",
       code: `curl https://openrouter.ai/api/v1/chat/completions \\
   -H "Authorization: Bearer $OPENROUTER_API_KEY" \\
   -H "Content-Type: application/json" \\
@@ -123,8 +123,8 @@ export const flashOpenrouter: GuideContent = {
       description:
         "OpenRouter exposes an optional reasoning switch for V3.2 and V4 models. Pass `\"reasoning\": {\"enabled\": true}` to turn on chain-of-thought and receive the reasoning steps in the response. Omit it to run the faster, cheaper non-thinking mode.",
       paragraphs: [
-        "V4 models also accept a `reasoning_effort` parameter. OpenRouter's model page states: \"Reasoning efforts `high` and `xhigh` are supported; `xhigh` maps to max reasoning.\" Use `xhigh` when you want maximum reasoning depth.",
-        "The official DeepSeek API uses `low` / `high` / `max` for effort, with `low` and `medium` mapped to `high` and `xhigh` mapped to `max`; complex agent requests are auto-set to `max`. Note the asymmetry: community bug reports (pi issue #4055, LiteLLM issue #27439) show OpenRouter's normalized reasoning API accepts `xhigh` directly, while passing `max` can be ignored or fall back to defaults. On OpenRouter, use `xhigh`.",
+        "V4 models also accept a `reasoning_effort` parameter. OpenRouter's model page states: \"Reasoning efforts `high` and `xhigh` are supported; `xhigh` maps to max reasoning.\"[1] Use `xhigh` when you want maximum reasoning depth.",
+        "The official DeepSeek API uses `low` / `high` / `max` for effort, with `low` and `medium` mapped to `high` and `xhigh` mapped to `max`; complex agent requests are auto-set to `max`[8]. Note the asymmetry: community bug reports (pi issue #4055, LiteLLM issue #27439) show OpenRouter's normalized reasoning API accepts `xhigh` directly, while passing `max` can be ignored or fall back to defaults. On OpenRouter, use `xhigh`.",
       ],
       code: `curl https://openrouter.ai/api/v1/chat/completions \\
   -H "Authorization: Bearer $OPENROUTER_API_KEY" \\
@@ -141,10 +141,10 @@ export const flashOpenrouter: GuideContent = {
       num: "07",
       title: "BYOK: Connect Your DeepSeek Key",
       description:
-        "BYOK stands for Bring Your Own Key. In your OpenRouter workspace, open the BYOK settings and bind your DeepSeek provider key. OpenRouter stores the key encrypted and uses it for every request routed to DeepSeek, so traffic bills against your own DeepSeek key instead of OpenRouter's list price.",
+        "BYOK stands for Bring Your Own Key. In your OpenRouter workspace, open the BYOK settings and bind your DeepSeek provider key. OpenRouter stores the key encrypted and uses it for every request routed to DeepSeek[5], so traffic bills against your own DeepSeek key instead of OpenRouter's list price.",
       paragraphs: [
-        "The economics are attractive: the first 1M BYOK requests per month are free, and after that you pay 5% of OpenRouter's normal price, deducted from your OpenRouter credits. That 5% is a routing convenience fee — you keep failover, unified billing, and one key for every model.",
-        "OpenRouter lets you manage multiple keys per provider with prioritized and backup partitions. A primary DeepSeek key is used first, and a fallback key absorbs the overflow when the primary is exhausted or down.",
+        "The economics are attractive: the first 1M BYOK requests per month are free, and after that you pay 5% of OpenRouter's normal price, deducted from your OpenRouter credits[5]. That 5% is a routing convenience fee — you keep failover, unified billing, and one key for every model.",
+        "OpenRouter lets you manage multiple keys per provider with prioritized and backup partitions[5]. A primary DeepSeek key is used first, and a fallback key absorbs the overflow when the primary is exhausted or down.",
       ],
       table: {
         headers: ["Traffic type", "Fee"],
@@ -154,13 +154,13 @@ export const flashOpenrouter: GuideContent = {
           ["BYOK, after 1M requests per month", "5% of OpenRouter's normal price, from OpenRouter credits"],
         ],
       },
-      note: "Because BYOK bills against your DeepSeek key, it combines OpenRouter's routing with DeepSeek's official rates — including the $0.0028 cache-hit input tier.",
+      note: "Because BYOK bills against your DeepSeek key, it combines OpenRouter's routing with DeepSeek's official rates — including the $0.0028 cache-hit input tier[6].",
     },
     {
       num: "08",
       title: "OpenRouter vs the Official API: Which Should You Pick?",
       description:
-        "Both routes serve the same model. Direct access hits `https://api.deepseek.com` with model `deepseek-v4-flash`; OpenRouter uses `https://openrouter.ai/api/v1` with `deepseek/deepseek-v4-flash`. For running DeepSeek V4 Flash on OpenRouter the deciding factors are failover, cache utilization, and how many models you juggle.",
+        "Both routes serve the same model. Direct access hits `https://api.deepseek.com` with model `deepseek-v4-flash`[7]; OpenRouter uses `https://openrouter.ai/api/v1` with `deepseek/deepseek-v4-flash`[4]. For running DeepSeek V4 Flash on OpenRouter the deciding factors are failover, cache utilization, and how many models you juggle.",
       table: {
         headers: ["Dimension", "DeepSeek official direct", "OpenRouter"],
         rows: [
@@ -174,9 +174,9 @@ export const flashOpenrouter: GuideContent = {
         ],
       },
       paragraphs: [
-        "Provider quality is why routing exists. V4 Pro on OpenRouter is hosted by 16 providers with roughly a 4x spread in input pricing ($0.435–$1.74 per 1M tokens) and throughput from 4 to 57 tokens/s. When hosts vary that much, a router that locks a known-good provider or sorts by throughput or price is genuinely useful.",
+        "Provider quality is why routing exists. V4 Pro on OpenRouter is hosted by 16 providers with roughly a 4x spread in input pricing ($0.435–$1.74 per 1M tokens) and throughput from 4 to 57 tokens/s[3]. When hosts vary that much, a router that locks a known-good provider or sorts by throughput or price is genuinely useful.",
         "OpenRouter exposes per-request routing controls: `sort: 'throughput'` for speed or `sort: 'price'` for the cheapest host, a `max_price` cost cap, and `order` / `only` / `ignore` to pin or exclude providers. Long sessions can pass a `session_id` for sticky routing, and a `models` array gives model-level fallback.",
-        "One caution: OpenRouter has a free variant, `deepseek/deepseek-v4-flash:free`, with reasoning support, but the community reports it is unstable — frequent 429 rate limits and downtime. Treat it as a test tier, not production.",
+        "One caution: OpenRouter has a free variant, `deepseek/deepseek-v4-flash:free`, with reasoning support[1], but the community reports it is unstable — frequent 429 rate limits and downtime. Treat it as a test tier, not production.",
       ],
       code: `from openai import OpenAI
 

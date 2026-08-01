@@ -16,6 +16,48 @@ import type { GuideContent } from "@/data/guides/types";
 
 export type { GuideContent };
 
+/**
+ * 正文富文本渲染：
+ * - `[[slug|显示文字]]` → 站内双链（跳转 /guides/<slug>）
+ * - `[n]` → 角注引用（上标编号，指向底部参考文献 #ref-n）
+ * 仅当 n 在 sources 范围内才解析为引用，否则按普通文本输出。
+ */
+function renderRichText(text: string, sourceCount: number) {
+  const parts = text.split(/(\[\[[^\]|]+\|[^\]]+\]\]|\[\d+\])/g);
+  return parts.map((part, i) => {
+    if (!part) return null;
+    const linkMatch = part.match(/^\[\[([^\]|]+)\|([^\]]+)\]\]$/);
+    if (linkMatch) {
+      return (
+        <Link
+          key={i}
+          href={`/guides/${linkMatch[1]}`}
+          className="text-cyan-400 hover:text-cyan-300 hover:underline font-medium transition-colors"
+        >
+          {linkMatch[2]}
+        </Link>
+      );
+    }
+    const citeMatch = part.match(/^\[(\d+)\]$/);
+    if (citeMatch) {
+      const n = parseInt(citeMatch[1], 10);
+      if (n >= 1 && n <= sourceCount) {
+        return (
+          <sup key={i} className="font-mono">
+            <a
+              href={`#ref-${n}`}
+              className="text-cyan-400 hover:text-cyan-300 hover:underline text-[10px]"
+            >
+              [{n}]
+            </a>
+          </sup>
+        );
+      }
+    }
+    return part;
+  });
+}
+
 interface GuideDetailProps {
   guide: GuideContent;
 }
@@ -23,6 +65,7 @@ interface GuideDetailProps {
 export function GuideDetail({ guide }: GuideDetailProps) {
   const [copiedCodeIndex, setCopiedCodeIndex] = useState<number | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
+  const sourceCount = guide.sources?.length ?? 0;
 
   const handleCopyCode = (code: string, idx: number) => {
     navigator.clipboard.writeText(code);
@@ -119,13 +162,13 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                 </div>
 
                 <p className="text-sm text-zinc-300 leading-relaxed font-sans mb-4">
-                  {step.description}
+                  {renderRichText(step.description, sourceCount)}
                 </p>
 
                 {/* Additional Paragraphs (long-form) */}
                 {step.paragraphs?.map((para, i) => (
                   <p key={i} className="text-sm text-zinc-300 leading-relaxed font-sans mb-4">
-                    {para}
+                    {renderRichText(para, sourceCount)}
                   </p>
                 ))}
 
@@ -135,7 +178,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                     {step.list.map((item, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm text-zinc-300 leading-relaxed font-sans">
                         <span className="mt-2 h-1 w-1 rounded-full bg-zinc-500 shrink-0" />
-                        <span>{item}</span>
+                        <span>{renderRichText(item, sourceCount)}</span>
                       </li>
                     ))}
                   </ul>
@@ -176,7 +219,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                       NOTE
                     </div>
                     <p className="text-zinc-300 text-xs leading-relaxed">
-                      {step.note}
+                      {renderRichText(step.note, sourceCount)}
                     </p>
                   </div>
                 )}
@@ -234,15 +277,20 @@ export function GuideDetail({ guide }: GuideDetailProps) {
               </div>
             )}
 
-            {/* Sources & References (GEO / EEAT) */}
+            {/* Sources & References (GEO / EEAT) — numbered, anchored for footnote citations */}
             {guide.sources && guide.sources.length > 0 && (
               <div className="pt-6 mt-6 border-t border-zinc-800/80">
                 <div className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3">
-                  SOURCES & REFERENCES
+                  REFERENCES
                 </div>
-                <ul className="flex flex-col gap-2">
+                <ol className="flex flex-col gap-2 list-none">
                   {guide.sources.map((src, i) => (
-                    <li key={i} className="text-xs text-zinc-400 leading-relaxed">
+                    <li
+                      key={i}
+                      id={`ref-${i + 1}`}
+                      className="text-xs text-zinc-400 leading-relaxed flex gap-2 scroll-mt-24"
+                    >
+                      <span className="text-cyan-400 font-mono shrink-0">[{i + 1}]</span>
                       <a
                         href={src.url}
                         target="_blank"
@@ -253,7 +301,7 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                       </a>
                     </li>
                   ))}
-                </ul>
+                </ol>
               </div>
             )}
 

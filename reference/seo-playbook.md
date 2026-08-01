@@ -31,6 +31,73 @@
 
 ---
 
+## 一之二、目标用户定位（2026-08-01 站长明确）
+
+### 核心判断：不抢头词
+
+**"deepseek v4" 这类精准头词不抢。** 官方站（platform.deepseek.com / api-docs.deepseek.com）权重碾压，搜这个词的用户要的是"接入/官方入口"，不是教程，竞争毫无胜算。
+
+**本站目标是两类人，他们搜的词不是模型名：**
+
+### 人群 A：小白 / AI 好奇者（非技术用户）
+- **画像**：不知道"deepseek v4"这个型号名，但知道 AI 好用；想知道"哪些 AI 便宜、哪些值得长期用、哪些能力极强"
+- **打法**：**推荐型教程**——"这是昨天刚发布的最新模型（0731），极其小巧却已强到 Opus/Claude 级别"；教小白花最少的钱体验最好的服务
+- **关键钩子**：OpenCode 订阅首月仅 $5，可享受近乎 Opus 体感的模型（Flash），一个月根本用不完——"5 美元像送的一样"
+- **写法**：推荐式，容易写，正文链到其他教程
+- **落地页**：`which ai to use / best cheap ai / deepseek v4 flash review` 类长尾
+
+### 人群 B：专业用户 / 开发者
+- **画像**：想接入 V4 Flash 最新型号，会搜 HuggingFace（HF 权重已开源 ~284B）、部署、集成
+- **打法**：**深度教程**——深度阅读官方文档 → 重新梳理组织成更详细教程 → 发布 + 外链 + 内链
+- **主观素材**：NVIDIA 论坛、Reddit、社区讨论中的真实玩家/用户主观观点，可作教程素材（标注来源语境，不是自己断言）
+- **落地页**：`deepseek v4 flash huggingface / api / benchmark / opencode / claude code` 等
+
+### 教程矩阵（当前 + 新增方向）
+
+| 类型 | 页面 | 目标人群 |
+|------|------|---------|
+| 主模型页 | deepseek-v4-flash（0731 正式版全解） | 两群都吃 |
+| API 接入 | flash-api-setup | B |
+| 定价/成本 | flash-pricing | 两群都吃 |
+| 基准 | flash-benchmarks | B |
+| OpenCode 接入 | flash-opencode | B |
+| IDE 集成 | flash-ide（Cursor/Claude Code/Codex） | B |
+| OpenRouter | flash-openrouter | B |
+| 模型规模 | flash-model-size | B |
+| HuggingFace 下载 | flash-huggingface | B |
+| V4 Pro 前瞻 | v4-pro | B |
+| 小白推荐页 | beginner-guide（best cheap AI 推荐 DeepSeek V4） | A |
+| OpenCode $5 订阅 | opencode-go（首月 $5 用满 Opus 级体验） | A |
+| Claude Code/Desktop | cc-switch-claude-code（CC Switch，含 Linux） | A/B |
+| **Harness 前瞻** | **deepseek-harness（已写，1900 词）** | B |
+| **Harness 技术深解** | **harness-agent-capability：为何原生 Harness 大幅提升 Agent 能力**（新，需搜索） | B |
+| **Reasonix 缓存优化** | **reasonix-deepseek：专为 DS 的高缓存命中率代理**（新，需搜索） | B |
+| **Hermes 最佳搭配** | **hermes-setup：DS V4 Flash 0731 + MiMo V2.5 识图**（新，需搜索） | B |
+| **对比评测** | **v4-vs-gpt56-luna：DS V4 正式版 vs 降价后 GPT-5.6 Luna**（新，需搜索） | A/B |
+| 技术报告深读 | official-tech-report | B |
+
+### Harness 首页追踪（2026-08-01 站长明确）
+
+- **Harness 是首页主关键词之一**：在首页显眼位置放"DeepSeek Harness 在线追踪"组件，风格贴合现有 UI（暗色 + 青色 accent + mono 字体 + 边框）
+- **核心叙事**：Harness 若上线，DeepSeek 模型能力将大幅跃升；搭配即将发布的 V4 Pro 正式版，效果可能前所未有
+- 其他教程正文要主动提及 Harness（双链到 harness 前瞻页）
+- V4 Pro GA 灰度测试传闻（7 月中旬网友测出游戏制作堪比 Fable 5，存疑）→ 做进 Harness 追踪/前瞻，标注置信度
+
+### 字数纪律（2026-08-01 站长明确，铁律）
+
+- **所有教程 ≥1000 词**，内容充实不水文；低于 1000 词的页面不值得做（低质量页拉低全站 SEO 权重）
+- 如果内容重要但撑不满 1000 词，**合并成一个高质量页面**，不做凑字数的薄页
+
+### 新内容策略要点
+
+1. **推荐型教程（人群 A）**：主观但有真实依据（官方定位、第三方评测、社区实测），基于检索写作；语气是"帮你选"，不是"权威断言"
+2. **Harness 前瞻页（提前布局 SEO）**：即便正式版未发布也要"言之有物"——写上线前的变化（内测阶段、邀请内测、即将发布），做成前沿信息站，先占坑再完善；这是高价值 SEO 词
+3. **官方技术报告/基准文档深读**：引用官方一手信息（arXiv、HF 模型卡、官方跑分）→ SEO 真实性与专业性极强；链接官方文档，扩写 + 与站内已有教程双向链接，提升全站权重
+4. **本地/部署教程**：HF 权重、vLLM、NVIDIA 论坛参考——专业用户的高价值内容
+5. **一切主观内容必须基于网络检索**（搜不到不写），数据必须来自官方或可核实来源
+
+---
+
 ## 二、关键词策略（接住 Trends 数据）
 
 ### 2026-07-31 发布窗口解读

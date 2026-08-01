@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { HeroHeader } from "@/components/home/HeroHeader";
+import { HarnessTracker } from "@/components/home/HarnessTracker";
 import { MainContent } from "@/components/home/MainContent";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
       />
+      <HarnessTracker />
       <MainContent activeCategory={activeCategory} searchQuery={searchQuery} />
     </div>
   );

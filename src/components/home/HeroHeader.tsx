@@ -64,6 +64,7 @@ export function HeroHeader({
 }: HeroHeaderProps) {
   const categories = [
     { id: "all", label: "All Guides" },
+    { id: "beginner", label: "Beginner" },
     { id: "model", label: "Model Guides" },
     { id: "api", label: "API Setup" },
     { id: "pricing", label: "Pricing & Cost" },
@@ -72,6 +73,8 @@ export function HeroHeader({
     { id: "ide", label: "IDE Integration" },
     { id: "router", label: "OpenRouter" },
     { id: "local", label: "Local Setup" },
+    { id: "news", label: "Upcoming" },
+    { id: "deepdive", label: "Technical" },
   ];
 
   return (

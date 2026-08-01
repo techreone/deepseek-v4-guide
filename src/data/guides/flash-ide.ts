@@ -23,7 +23,7 @@ export const flashIde: GuideContent = {
       num: "01",
       title: "Get Your DeepSeek API Key and Pick a Base URL",
       description:
-        "DeepSeek V4 speaks two native agent dialects. The OpenAI-compatible endpoint at https://api.deepseek.com and the Anthropic-compatible endpoint at https://api.deepseek.com/anthropic both accept the same sk- API key. Create one key at platform.deepseek.com/api_keys and it works in every tool below.",
+        "DeepSeek V4 speaks two native agent dialects. The [[flash-api-setup|OpenAI-compatible endpoint]] at https://api.deepseek.com and the Anthropic-compatible endpoint at https://api.deepseek.com/anthropic[4] both accept the same sk- API key. Create one key at platform.deepseek.com/api_keys and it works in every tool below.",
       table: {
         headers: ["Endpoint", "Format", "Best for"],
         rows: [
@@ -32,9 +32,9 @@ export const flashIde: GuideContent = {
         ],
       },
       list: [
-        "Create your key at platform.deepseek.com/api_keys. It starts with sk- and runs pay-as-you-go, so add balance before heavy use.",
-        "Model names are case-sensitive. Use deepseek-v4-flash for fast, cheap, high-frequency work and deepseek-v4-pro for complex reasoning.",
-        "The old aliases deepseek-chat and deepseek-reasoner retired on July 24, 2026. Requests to them now return a hard error.",
+        "Create your key at platform.deepseek.com/api_keys. It starts with sk- and runs [[flash-pricing|pay-as-you-go]], so add balance before heavy use.",
+        "Model names are case-sensitive. Use deepseek-v4-flash for fast, cheap, high-frequency work and [[v4-pro|deepseek-v4-pro]] for complex reasoning[5].",
+        "The old aliases deepseek-chat and deepseek-reasoner retired on July 24, 2026[1]. Requests to them now return a hard error.",
         "Append [1m] to select the 1M-context variant of a model, for example deepseek-v4-pro[1m].",
       ],
       code: `curl https://api.deepseek.com/chat/completions \\
@@ -53,7 +53,7 @@ export const flashIde: GuideContent = {
       num: "02",
       title: "Add DeepSeek V4 Flash in Cursor (Settings → Models)",
       description:
-        "Adding DeepSeek V4 Flash in Cursor takes about two minutes. DeepSeek ships no dedicated Cursor integration page, so this is the community-verified path: Settings to Models to Add Model.",
+        "Adding [[deepseek-v4-flash|DeepSeek V4 Flash]] in Cursor takes about two minutes. DeepSeek ships no dedicated Cursor integration page[6], so this is the community-verified path: Settings to Models to Add Model.",
       list: [
         "Open Settings (Cmd+, on macOS or Ctrl+, on Windows) and go to Models.",
         "Toggle Override OpenAI Base URL and enter https://api.deepseek.com. Do not append /v1.",
@@ -80,7 +80,7 @@ export const flashIde: GuideContent = {
       num: "03",
       title: "Connect Claude Code with the Official Environment Variables",
       description:
-        "DeepSeek's official Claude Code integration is the most authoritative of the three. Point Claude Code at the Anthropic endpoint, set the eight environment variables, and Claude Code routes to DeepSeek. Install first with npm install -g @anthropic-ai/claude-code (Node.js 18+ required; Windows also needs Git for Windows).",
+        "DeepSeek's official Claude Code integration is the most authoritative of the three[3]. Point Claude Code at the Anthropic endpoint, set the eight environment variables, and Claude Code routes to DeepSeek. Install first with npm install -g @anthropic-ai/claude-code (Node.js 18+ required; Windows also needs Git for Windows).",
       code: `npm install -g @anthropic-ai/claude-code
 
 export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
@@ -95,7 +95,7 @@ cd /path/to/my-project
 claude`,
       paragraphs: [
         "The official config gives heavy reasoning to Pro and cheap high-frequency work to Flash. Flash carries the Haiku tier and sub-agents; Pro carries the main task. The [1m] suffix selects the 1M-context variant. On Windows, write each export with the $env: form. Verify the install with claude --version.",
-        "Web Search works natively: Claude Code calls DeepSeek's Web Search tool when the model decides it is needed, and summarizing the results adds token cost. The awesome-deepseek-agent repo adds one more variable, CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1, and writes the Haiku tier as deepseek-v4-flash[1m].",
+        "Web Search works natively: Claude Code calls DeepSeek's Web Search tool when the model decides it is needed, and summarizing the results adds token cost. The awesome-deepseek-agent repo adds one more variable, CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1[8], and writes the Haiku tier as deepseek-v4-flash[1m].",
       ],
       list: [
         "Community reports put Claude Code on DeepSeek at roughly $7/month instead of $200/month using just two environment variables (MG-Cafe, live-tested, not official numbers).",
@@ -107,7 +107,7 @@ claude`,
       num: "04",
       title: "Run Codex with the Official One-Click Script",
       description:
-        "The 0731 build of DeepSeek V4 Flash natively supports the OpenAI Responses API, which is the protocol Codex speaks. That ends the proxy era: one official script wires up Codex, and it is re-runnable to switch models or restore the original config.",
+        "The 0731 build of DeepSeek V4 Flash natively supports the OpenAI Responses API[2], which is the protocol Codex speaks. That ends the proxy era: one official script wires up Codex, and it is re-runnable to switch models or restore the original config.",
       code: `# macOS / Linux — run once after installing Codex CLI
 bash <(curl -fsSL https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.sh)
 
@@ -121,7 +121,7 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
         "Prompts for your sk- API key on first run.",
       ],
       paragraphs: [
-        "Codex CLI, the ChatGPT desktop app, and the VS Code Codex extension share the same ~/.codex/ configuration. Today only deepseek-v4-flash integrates with Codex; DeepSeek says deepseek-v4-pro support arrives in early August 2026.",
+        "Codex CLI, the ChatGPT desktop app, and the VS Code Codex extension share the same ~/.codex/ configuration. Today only deepseek-v4-flash integrates with Codex; DeepSeek says deepseek-v4-pro support arrives in early August 2026[2].",
         "The Responses endpoint has no previous_response_id, so multi-turn sessions resend the full context, and OpenAI built-in tools like file_search and code_interpreter are not supported.",
       ],
       note: "Prerequisite: install Codex CLI or the ChatGPT desktop app and launch it once so ~/.codex exists before running the script.",
@@ -130,7 +130,7 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
       num: "05",
       title: "Understand Model-Name Auto-Mapping",
       description:
-        "The Anthropic endpoint maps claude-* model names onto DeepSeek models automatically. In most Claude Code sessions you never type a DeepSeek slug at all.",
+        "The Anthropic endpoint maps claude-* model names onto DeepSeek models automatically[4]. In most Claude Code sessions you never type a DeepSeek slug at all.",
       table: {
         headers: ["Claude model name", "Mapped to", "Why it matters"],
         rows: [
@@ -159,10 +159,10 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
         ],
       },
       paragraphs: [
-        "DeepSeek's own benchmarks, run on its DeepSeek Harness in minimal mode with max effort, put Flash-0731 at 82.7 on Terminal-Bench 2.1 and 54.4 on DeepSWE. The changelog says all nine published agent benchmarks beat V4-Pro-Preview. Treat these as vendor-reported until third parties reproduce them. On the independent Artificial Analysis Intelligence Index v4.1, V4-Flash-0731 scores 50, ranking #2 of 162 models in its price tier.",
+        "DeepSeek's own [[flash-benchmarks|benchmarks]], run on its DeepSeek Harness in minimal mode with max effort, put Flash-0731 at 82.7 on Terminal-Bench 2.1 and 54.4 on DeepSWE[1]. The changelog says all nine published agent benchmarks beat V4-Pro-Preview. Treat these as vendor-reported until third parties reproduce them. On the independent Artificial Analysis Intelligence Index v4.1, V4-Flash-0731 scores 50, ranking #2 of 162 models in its price tier.",
         "A typical Cursor Composer run is around 20K input and 3K output tokens: about $0.013 on Pro and $0.003 on Flash. A full day at roughly 150 rounds is about $2 on Pro and under $0.50 on Flash. Community estimates put a $5 top-up at about a week of heavy Flash usage.",
       ],
-      note: "Concurrency limits are account-level: 2,500 concurrent requests for flash, 500 for pro. In Cursor, your plan's own context ceiling hits before DeepSeek's 1M window.",
+      note: "Concurrency limits are account-level: 2,500 concurrent requests for flash, 500 for pro[5]. In Cursor, your plan's own context ceiling hits before DeepSeek's 1M window.",
     },
     {
       num: "07",
@@ -175,7 +175,7 @@ irm https://cdn.deepseek.com/api-docs/codex-deepseek-setup-en.ps1 | iex`,
       list: [
         "Use Chat to read the reasoning and Composer to change files. Zero cost, and the recommended default.",
         "Turn off thinking mode in Composer or switch to Flash. You lose the reasoning gain, but the agent stays stable.",
-        "Run the community proxy yxlao/deepseek-cursor-proxy. Point Cursor at http://localhost:<port>; the proxy caches the chain-of-thought per session and replays it on the next round. The full Composer agent loop works, and thinking tokens display as collapsed Markdown.",
+        "Run the community proxy yxlao/deepseek-cursor-proxy[7]. Point Cursor at http://localhost:<port>; the proxy caches the chain-of-thought per session and replays it on the next round. The full Composer agent loop works, and thinking tokens display as collapsed Markdown.",
       ],
       note: "The agent is fully usable once you route around the reasoning replay bug — this is the price of the deepseek-v4-flash thinking mode on this IDE. And remember the legacy aliases deepseek-chat and deepseek-reasoner are gone — any tool config still sending them should switch to deepseek-v4-flash or deepseek-v4-pro.",
     },
