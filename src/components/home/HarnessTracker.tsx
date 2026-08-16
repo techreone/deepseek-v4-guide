@@ -71,8 +71,8 @@ export function HarnessTracker() {
           DeepSeek Harness <span className="text-cyan-400">Coming Soon</span>
         </h2>
         <p className="text-sm text-zinc-400 leading-relaxed max-w-2xl font-sans mb-8">
-          DeepSeek's official agent framework — the &ldquo;Model + Harness = Agent&rdquo; layer that runs every
-          official agent benchmark. When it ships alongside the V4 Pro official release, DeepSeek's agent
+          DeepSeek&apos;s official agent framework — the &ldquo;Model + Harness = Agent&rdquo; layer that runs every
+          official agent benchmark. When it ships alongside the V4 Pro official release, DeepSeek&apos;s agent
           capability could jump significantly.
         </p>
 

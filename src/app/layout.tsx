@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ClarityTracker } from "@/components/layout/ClarityTracker";
+import AdsterraBanner from "@/components/ads/AdsterraBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +45,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${pixelFont.variable} antialiased bg-[#070709] text-charcoal selection:bg-zinc-800 selection:text-zinc-100 font-sans flex flex-col min-h-[100dvh] relative`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${pixelFont.variable} antialiased bg-[#070709] text-charcoal selection:bg-zinc-800 selection:text-zinc-100 font-sans flex flex-col min-h-[100dvh] relative pb-14 md:pb-0`}>
+        {/* Adsterra Popunder（每页一个，注入 head 尽早注册） */}
+        <Script
+          strategy="beforeInteractive"
+          src="https://pl30876528.effectivecpmnetwork.com/a5/1c/49/a51c4976537750022f212c723892c88b.js"
+        />
         {/* WebSite + Organization structured data (brand EEAT) */}
         <script
           type="application/ld+json"
@@ -76,6 +83,20 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+
+        {/* Adsterra 移动端 Sticky 底部 320x50（仅小屏显示） */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center bg-[#070709]/95 border-t border-zinc-800/80 py-1 shadow-2xl backdrop-blur-md md:hidden">
+          <AdsterraBanner
+            idKey="f90f744aec80e42cfd3ba9a7670d48c5"
+            width={320}
+            height={50}
+            label=""
+            className="!my-0 !p-0 !border-0 !bg-transparent !shadow-none"
+          />
+        </div>
+
+        {/* Adsterra Social Bar（body 底部） */}
+        <Script src="https://pl30876531.effectivecpmnetwork.com/56/f3/8d/56f38d1a4b3cf6f32693e9f543330fe2.js" />
       </body>
     </html>
   );

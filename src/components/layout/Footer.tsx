@@ -16,6 +16,14 @@ export function Footer() {
             <Link href="/privacy" className="hover:text-zinc-200 transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-zinc-200 transition-colors">Terms</Link>
             <a href="https://platform.deepseek.com" target="_blank" rel="noopener noreferrer" className="hover:text-zinc-200 transition-colors">Official API ↗</a>
+            <a
+              href="https://www.effectivecpmnetwork.com/guernhf9?key=00aad196365b56f8fc060676df42ed06"
+              target="_blank"
+              rel="nofollow sponsored noopener noreferrer"
+              className="hover:text-zinc-200 transition-colors"
+            >
+              Sponsored
+            </a>
           </div>
         </div>
         <p className="text-[11px] text-zinc-600 leading-relaxed max-w-2xl">

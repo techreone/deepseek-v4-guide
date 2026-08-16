@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Link from "next/link";
+import AdsterraBanner from "@/components/ads/AdsterraBanner";
+import AdsterraNative from "@/components/ads/AdsterraNative";
 import {
   ArrowLeft,
   ArrowRight,
@@ -204,9 +206,15 @@ export function GuideDetail({ guide }: GuideDetailProps) {
               </p>
             </div>
 
-            {/* Step-by-Step Sections */}
-            {guide.steps.map((step, idx) => (
-              <section id={`step-${idx + 1}`} key={idx} className="scroll-mt-24 pt-4">
+            {/* Step-by-Step Sections（长文 ≥6 步按 1/3、2/3 处穿插 300x250 广告，短文不插） */}
+            {guide.steps.map((step, idx) => {
+              const showAd =
+                guide.steps.length >= 6 &&
+                (idx === Math.floor(guide.steps.length / 3) ||
+                  idx === Math.floor((guide.steps.length * 2) / 3));
+              return (
+              <Fragment key={idx}>
+              <section id={`step-${idx + 1}`} className="scroll-mt-24 pt-4">
                 <div className="flex items-baseline gap-3 mb-3">
                   <span className="font-mono text-xs text-zinc-500 font-semibold">
                     {step.num}
@@ -307,7 +315,17 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                   </div>
                 )}
               </section>
-            ))}
+              {showAd && (
+                <AdsterraBanner
+                  idKey="b87b359765291fda5ec291c153acd977"
+                  width={300}
+                  height={250}
+                  label="Sponsored"
+                />
+              )}
+              </Fragment>
+            );
+            })}
 
             {/* Related Guides (internal link network) */}
             {guide.relatedGuides && guide.relatedGuides.length > 0 && (
@@ -393,6 +411,17 @@ export function GuideDetail({ guide }: GuideDetailProps) {
               )}
             </div>
 
+          {/* Adsterra Native Banner（文末，每页一次） */}
+          <AdsterraNative label="Sponsored" />
+
+          {/* Adsterra 728x90 Leaderboard（文章底部） */}
+          <AdsterraBanner
+            idKey="9b00a0e2de68851d25e97a77bf2e9004"
+            width={728}
+            height={90}
+            label="Sponsored"
+          />
+
           </div>
 
           {/* Table of Contents Sticky Sidebar (4 cols) */}
@@ -427,6 +456,16 @@ export function GuideDetail({ guide }: GuideDetailProps) {
                   Official DeepSeek Console ↗
                 </a>
               </div>
+            </div>
+
+            {/* Adsterra 160x600 Skyscraper（仅桌面端侧边栏可见） */}
+            <div className="hidden lg:block mt-6">
+              <AdsterraBanner
+                idKey="548a7c33e0b6c256defb46b945b92f28"
+                width={160}
+                height={600}
+                label="Sponsored"
+              />
             </div>
           </aside>
 

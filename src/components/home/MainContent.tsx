@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import AdsterraBanner from "@/components/ads/AdsterraBanner";
 import { CodeTerminal } from "./CodeTerminal";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { getGuideCards } from "@/data/guides";
@@ -89,6 +90,14 @@ export function MainContent({ activeCategory, setActiveCategory, searchQuery, se
               })}
             </div>
           </div>
+
+          {/* Adsterra 728x90 Leaderboard（指南列表上方） */}
+          <AdsterraBanner
+            idKey="9b00a0e2de68851d25e97a77bf2e9004"
+            width={728}
+            height={90}
+            label="Sponsored"
+          />
 
           <div className="flex items-center justify-between pb-4 border-b border-zinc-800/80 mb-6">
             <h2 className="text-xs font-mono uppercase tracking-widest text-zinc-400 font-semibold">
