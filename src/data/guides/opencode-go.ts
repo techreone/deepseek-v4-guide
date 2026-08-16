@@ -7,9 +7,9 @@ export const opencodeGo: GuideContent = {
   title: "OpenCode Go: The $5/Month Subscription That Unlocks DeepSeek V4",
   seoTitle: "OpenCode Go: $5/Month Unlocks DeepSeek V4",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 1, 2026",
+  updatedAt: "AUG 16, 2026",
   summary:
-    "OpenCode Go is OpenCode's official subscription: $5 for the first month, then $10, and it unlocks DeepSeek V4 Flash with a $60 monthly usage credit.",
+    "OpenCode Go is OpenCode's official subscription: $5 first month, then $10, with DeepSeek V4 Flash under a $60 monthly credit — and Flash rates rose on Aug 16.",
   toc: [
     { id: "step-1", label: "Step 1: What Is OpenCode Go (and What It Is Not)" },
     { id: "step-2", label: "Step 2: The DeepSeek V4 Credits Inside: Flash vs Pro" },
@@ -47,14 +47,14 @@ export const opencodeGo: GuideContent = {
         headers: ["", "DeepSeek V4 Flash", "DeepSeek V4 Pro"],
         rows: [
           ["Monthly credit", "$60", "$15"],
-          ["Per 1M tokens (in / out / cache read)", "$0.14 / $0.28 / $0.0028", "$0.435 / $0.87 / $0.003625"],
-          ["Estimated requests / 5 hours", "31,650", "3,450"],
-          ["Estimated requests / month", "158,150", "17,150"],
+          ["Per 1M (off-peak in / out / cache read)", "$0.22 / $0.66 / $0.007", "$0.66 / $1.98 / $0.022"],
+          ["Per 1M (peak in / out / cache read)", "$0.44 / $1.32 / $0.014", "$1.32 / $3.96 / $0.044"],
+          ["Estimated requests / 5 hours", "3,800", "~1,050"],
         ],
       },
       paragraphs: [
-        "Global limits cap the whole account at $12 of usage per 5-hour window, $30 per week, and $60 per month. At typical request sizes, DeepSeek V4 Flash is officially estimated at 31,650 requests per 5 hours and roughly 158,150 per month — effectively unlimited for a solo developer.",
-        "The per-token rates inside Go mirror DeepSeek's current official pricing: Flash at $0.14 input / $0.28 output per 1M tokens, Pro at $0.435 / $0.87.[4] The subscription buys volume at those rates, not a per-token discount.",
+        "Global limits cap the whole account at $12 of usage per 5-hour window, $30 per week, and $60 per month. OpenCode's current page estimates DeepSeek V4 Flash at about 3,800 requests per 5 hours — a sharp cut from the ~31,650 figure it quoted in early August, so Flash-heavy users hit the window far faster than before.",
+        "The per-token rates inside Go mirror DeepSeek's current official pricing, which moved to peak/off-peak tiers on Aug 16: Flash off-peak $0.22 in / $0.66 out ($0.007 cache read), peak $0.44 / $1.32 ($0.014 cache read); Pro off-peak $0.66 / $1.98, peak $1.32 / $3.96.[4] The subscription buys volume at those rates, not a per-token discount.",
         "Model ids on Go use an opencode-go/ prefix, so you request opencode-go/deepseek-v4-flash or opencode-go/deepseek-v4-pro.",
       ],
       note: "Request estimates assume typical coding requests: roughly 790 input, 68,000 cache-read, and 280 output tokens for Flash. They are estimates from OpenCode, not guarantees.",
@@ -126,10 +126,10 @@ curl https://opencode.ai/zen/go/v1/models -H "Authorization: Bearer YOUR_GO_API_
       code: `opencode run -m opencode-go/deepseek-v4-flash "Fix the failing test in auth.ts"`,
       list: [
         "OpenCode is free, MIT-licensed, with a large open-source community — the subscription is optional.",
-        "BYOK at official rates: Flash $0.14 / $0.28 per 1M; Pro $0.435 / $0.87.",
+        "BYOK at official rates since Aug 16: Flash off-peak $0.22 / $0.66, peak $0.44 / $1.32 per 1M; Pro off-peak $0.66 / $1.98, peak $1.32 / $3.96.",
         "Go: $10 per month flat, one key, roughly $60 of usage value.",
       ],
-      note: "Go's dollar credits are reference prices — the bulk discount is already inside the 6x multiplier. Recheck current official DeepSeek rates in the [[flash-pricing|pricing guide]] before you move a heavy workload.",
+      note: "After the Aug 16 rate change, recheck Go against direct billing — Flash on Go now consumes noticeably more of your window than in July. Go's dollar credits are reference prices; the bulk discount is already inside the 6x multiplier.",
     },
     {
       num: "07",
@@ -154,6 +154,7 @@ curl https://opencode.ai/zen/go/v1/models -H "Authorization: Bearer YOUR_GO_API_
     slug: "cc-switch-claude-code",
   },
   relatedGuides: [
+    { title: "OpenCode Go & the V4 Flash Price Hike: What Changed Aug 16", slug: "opencode-go-price-hike" },
     {
       title: "Why DeepSeek V4 Is the Best Cheap AI Right Now: A Beginner Guide",
       slug: "beginner-guide",

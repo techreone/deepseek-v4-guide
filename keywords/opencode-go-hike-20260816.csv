@@ -1,0 +1,19 @@
+# OpenCode Go × DeepSeek V4 Flash 涨价主题词表（2026-08-16 造词法产出）
+# 主词来源：搜索热词（Reddit r/opencode、HN、InfoQ 涨价讨论）+ 后缀组装法
+# 无维护：发布窗口直接用最新搜索热词，不建累积表
+# page_type=guide；status: update（更新现有页）/ new（新增页）/ link（关联）
+word,zh,intent,page_type,game,status,source,note
+"opencode go","OpenCode Go 订阅",informational,guide,deepseek,update,official,"主词：现有 opencode-go.ts 抓（$5/$10 套餐、Flash/Pro 额度）"
+"opencode go price","OpenCode Go 价格",informational,guide,deepseek,update,search,"长尾：opencode-go.ts step02/06 定价段"
+"opencode go price increase","OpenCode Go 涨价",informational,guide,deepseek,new,search,"主词：新增 opencode-go-price-hike.ts"
+"opencode go deepseek v4 flash","OpenCode Go 的 DeepSeek V4 Flash",informational,guide,deepseek,new,search,"长尾：price-hike 页 H2"
+"opencode go deepseek v4 flash price","OpenCode Go 里 Flash 的价格",informational,guide,deepseek,new,search,"长尾：price-hike 页 H2 + seoTitle"
+"deepseek v4 flash price increase","DeepSeek V4 Flash 涨价",informational,guide,deepseek,update,search,"长尾：flash-pricing.ts 更新（8/16 峰谷新价）"
+"deepseek v4 flash pricing 2026","DeepSeek V4 Flash 2026 定价",informational,guide,deepseek,update,search,"flash-pricing.ts 主词"
+"deepseek v4 flash off-peak pricing","DeepSeek V4 Flash 谷时价格",informational,guide,deepseek,new,search,"长尾：price-hike 页 H2 / surge-pricing 关联"
+"deepseek v4 flash peak vs off-peak","Flash 峰谷价对比",informational,guide,deepseek,link,search,"v4-pro-surge-pricing 关联词"
+"opencode go worth it 2026","OpenCode Go 2026 是否值得",comparison,guide,deepseek,update,search,"长尾：opencode-go.ts step06（BYOK vs Go）"
+"opencode go alternative","OpenCode Go 替代方案",comparison,guide,deepseek,new,search,"长尾：price-hike 页（DeepInfra/官方 API/其他 agent）"
+"deepseek v4 flash cheaper","更便宜的 V4 Flash 渠道",comparison,guide,deepseek,new,search,"长尾：price-hike 页（第三方/缓存策略）"
+"opencode go subscription","OpenCode Go 订阅指南",tutorial,guide,deepseek,update,official,"opencode-go.ts step03 订阅步骤"
+"opencode go api key","OpenCode Go API Key 获取",tutorial,guide,deepseek,update,official,"opencode-go.ts 订阅/连接"

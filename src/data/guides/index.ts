@@ -9,6 +9,7 @@ import { flashOpenrouter } from "./flash-openrouter";
 import { flashModelSize } from "./flash-model-size";
 import { flashHuggingface } from "./flash-huggingface";
 import { v4Pro } from "./v4-pro";
+import { opencodeGoPriceHike } from "./opencode-go-price-hike";
 import { beginnerGuide } from "./beginner-guide";
 import { opencodeGo } from "./opencode-go";
 import { ccSwitchClaudeCode } from "./cc-switch-claude-code";
@@ -78,6 +79,7 @@ export const guidesDatabase: Record<string, GuideContent> = {
   [v4Pro.slug]: v4Pro,
   [beginnerGuide.slug]: beginnerGuide,
   [opencodeGo.slug]: opencodeGo,
+  [opencodeGoPriceHike.slug]: opencodeGoPriceHike,
   [ccSwitchClaudeCode.slug]: ccSwitchClaudeCode,
   [deepseekHarness.slug]: deepseekHarness,
   [officialTechReport.slug]: officialTechReport,
