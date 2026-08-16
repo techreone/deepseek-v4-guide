@@ -27,6 +27,14 @@ jobs:
       - name: Build (static export to out/)
         run: npm run build
 
+      - name: Verify token format (debug)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          echo "token_length=${#CLOUDFLARE_API_TOKEN}"
+          echo "token_prefix=${CLOUDFLARE_API_TOKEN:0:5}"
+          echo "token_suffix=${CLOUDFLARE_API_TOKEN: -4}"
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
