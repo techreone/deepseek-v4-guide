@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -26,16 +26,6 @@ jobs:
 
       - name: Build (static export to out/)
         run: npm run build
-
-      - name: Verify token with curl
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          curl -s -o /tmp/verify.json -w "http_code=%{http_code}\n" \
-            https://api.cloudflare.com/client/v4/user/tokens/verify \
-            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN"
-          head -c 300 /tmp/verify.json
-          echo ""
 
       - name: Deploy to Cloudflare Pages
         env:
