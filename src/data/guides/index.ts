@@ -18,6 +18,50 @@ import { harnessAgentCapability } from "./harness-agent-capability";
 import { reasonixDeepseek } from "./reasonix-deepseek";
 import { hermesSetup } from "./hermes-setup";
 import { v4VsGpt56Luna } from "./v4-vs-gpt56-luna";
+import { whatIsDeepseekHarness } from "./what-is-deepseek-harness";
+import { harnessReleaseDate } from "./harness-release-date";
+import { harnessInstall } from "./harness-install";
+import { harnessSetup } from "./harness-setup";
+import { harnessGithub } from "./harness-github";
+import { harnessCordis } from "./harness-cordis";
+import { harnessSandbox } from "./harness-sandbox";
+import { harnessModel } from "./harness-model";
+import { harnessBenchmark } from "./harness-benchmark";
+import { harnessCodeMode } from "./harness-code-mode";
+import { harnessMinimalMode } from "./harness-minimal-mode";
+import { harnessVsClaudeCode } from "./harness-vs-claude-code";
+import { harnessVsOpencode } from "./harness-vs-opencode";
+import { harnessPlugins } from "./harness-plugins";
+import { harnessMcp } from "./harness-mcp";
+import { harnessCursor } from "./harness-cursor";
+import { harnessClaudeCode } from "./harness-claude-code";
+import { harnessWebUi } from "./harness-web-ui";
+import { harnessTerminal } from "./harness-terminal";
+import { harnessTutorial } from "./harness-tutorial";
+import { harnessQuickstart } from "./harness-quickstart";
+import { harnessErrorFix } from "./harness-error-fix";
+import { v4ProReleaseDate } from "./v4-pro-release-date";
+import { v4ProPricing } from "./v4-pro-pricing";
+import { v4ProApi } from "./v4-pro-api";
+import { v4ProBenchmarks } from "./v4-pro-benchmarks";
+import { v4Pro0813 } from "./v4-pro-0813";
+import { v4ProReview } from "./v4-pro-review";
+import { v4ProReasoningEffort } from "./v4-pro-reasoning-effort";
+import { v4ProSurgePricing } from "./v4-pro-surge-pricing";
+import { v4ProContextCaching } from "./v4-pro-context-caching";
+import { v4ProModelSize } from "./v4-pro-model-size";
+import { v4ProVsFlash } from "./v4-pro-vs-flash";
+import { v4ProVsGpt55 } from "./v4-pro-vs-gpt-5.5";
+import { v4ProOpenrouter } from "./v4-pro-openrouter";
+import { v4ProCursor } from "./v4-pro-cursor";
+import { v4ProClaudeCode } from "./v4-pro-claude-code";
+import { v4ProOpencode } from "./v4-pro-opencode";
+import { v4ProResponsesApi } from "./v4-pro-responses-api";
+import { v4ProHarness } from "./v4-pro-harness";
+import { v4ProAgent } from "./v4-pro-agent";
+import { v4ProExpertMode } from "./v4-pro-expert-mode";
+import { v4ProVsDeepseekR1 } from "./v4-pro-vs-deepseek-r1";
+
 
 // 中央指南注册表：新增教程 = 在 src/data/guides/ 新建文件并在下方登记
 // 首页列表 / 指南页 / 内链全部以此为准，避免硬编码失同步
@@ -41,6 +85,50 @@ export const guidesDatabase: Record<string, GuideContent> = {
   [reasonixDeepseek.slug]: reasonixDeepseek,
   [hermesSetup.slug]: hermesSetup,
   [v4VsGpt56Luna.slug]: v4VsGpt56Luna,
+  [whatIsDeepseekHarness.slug]: whatIsDeepseekHarness,
+  [harnessReleaseDate.slug]: harnessReleaseDate,
+  [harnessInstall.slug]: harnessInstall,
+  [harnessSetup.slug]: harnessSetup,
+  [harnessGithub.slug]: harnessGithub,
+  [harnessCordis.slug]: harnessCordis,
+  [harnessSandbox.slug]: harnessSandbox,
+  [harnessModel.slug]: harnessModel,
+  [harnessBenchmark.slug]: harnessBenchmark,
+  [harnessCodeMode.slug]: harnessCodeMode,
+  [harnessMinimalMode.slug]: harnessMinimalMode,
+  [harnessVsClaudeCode.slug]: harnessVsClaudeCode,
+  [harnessVsOpencode.slug]: harnessVsOpencode,
+  [harnessPlugins.slug]: harnessPlugins,
+  [harnessMcp.slug]: harnessMcp,
+  [harnessCursor.slug]: harnessCursor,
+  [harnessClaudeCode.slug]: harnessClaudeCode,
+  [harnessWebUi.slug]: harnessWebUi,
+  [harnessTerminal.slug]: harnessTerminal,
+  [harnessTutorial.slug]: harnessTutorial,
+  [harnessQuickstart.slug]: harnessQuickstart,
+  [harnessErrorFix.slug]: harnessErrorFix,
+  [v4ProReleaseDate.slug]: v4ProReleaseDate,
+  [v4ProPricing.slug]: v4ProPricing,
+  [v4ProApi.slug]: v4ProApi,
+  [v4ProBenchmarks.slug]: v4ProBenchmarks,
+  [v4Pro0813.slug]: v4Pro0813,
+  [v4ProReview.slug]: v4ProReview,
+  [v4ProReasoningEffort.slug]: v4ProReasoningEffort,
+  [v4ProSurgePricing.slug]: v4ProSurgePricing,
+  [v4ProContextCaching.slug]: v4ProContextCaching,
+  [v4ProModelSize.slug]: v4ProModelSize,
+  [v4ProVsFlash.slug]: v4ProVsFlash,
+  [v4ProVsGpt55.slug]: v4ProVsGpt55,
+  [v4ProOpenrouter.slug]: v4ProOpenrouter,
+  [v4ProCursor.slug]: v4ProCursor,
+  [v4ProClaudeCode.slug]: v4ProClaudeCode,
+  [v4ProOpencode.slug]: v4ProOpencode,
+  [v4ProResponsesApi.slug]: v4ProResponsesApi,
+  [v4ProHarness.slug]: v4ProHarness,
+  [v4ProAgent.slug]: v4ProAgent,
+  [v4ProExpertMode.slug]: v4ProExpertMode,
+  [v4ProVsDeepseekR1.slug]: v4ProVsDeepseekR1,
+
 };
 
 export function getAllGuides(): GuideContent[] {
