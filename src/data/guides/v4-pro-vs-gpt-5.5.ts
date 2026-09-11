@@ -5,9 +5,11 @@ export const v4ProVsGpt55: GuideContent = {
   slug: "v4-pro-vs-gpt-5.5",
   category: "COMPARISON",
   title: "DeepSeek V4 Pro vs GPT-5.5: Benchmarks & Cost Compared",
-  seoTitle: "DeepSeek V4 Pro vs GPT-5.5: Benchmarks & Cost",
+  seoTitle: "DeepSeek V4 Pro vs GPT-5.5: Score & Cost",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro 0813 vs GPT-5.5: BenchLM 61.2 vs 73.4, SWE-bench 96.4%, $0.022/test vs $0.785+. The gap at 1/59th the cost.",
   toc: [

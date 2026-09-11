@@ -62,11 +62,41 @@ import { v4ProHarness } from "./v4-pro-harness";
 import { v4ProAgent } from "./v4-pro-agent";
 import { v4ProExpertMode } from "./v4-pro-expert-mode";
 import { v4ProVsDeepseekR1 } from "./v4-pro-vs-deepseek-r1";
+import { deepseekV41Flash } from "./deepseek-v4-1-flash";
+import { v41FlashPricing } from "./v4-1-flash-pricing";
+import { v41FlashBenchmarks } from "./v4-1-flash-benchmarks";
+import { v41FlashApiSetup } from "./v4-1-flash-api-setup";
+import { v41FlashVision } from "./v4-1-flash-vision";
+import { v41FlashReasoningEffort } from "./v4-1-flash-reasoning-effort";
+import { deepseekFlashModelNames } from "./deepseek-flash-model-names";
+import { v41FlashVsV4Flash } from "./v4-1-flash-vs-v4-flash";
+import { v41FlashVsOpus5 } from "./v4-1-flash-vs-opus-5";
+import { v41FlashVsKimiK3 } from "./v4-1-flash-vs-kimi-k3";
+import { deepseekV41Pro } from "./deepseek-v4-1-pro";
+import { v41FlashLocalDeployment } from "./v4-1-flash-local-deployment";
+import { v41FlashCodingAgents } from "./v4-1-flash-coding-agents";
+import { v41FlashKvCache } from "./v4-1-flash-kv-cache";
+import { deepseekV4ProRetired } from "./deepseek-v4-pro-retired";
 
 
 // 中央指南注册表：新增教程 = 在 src/data/guides/ 新建文件并在下方登记
 // 首页列表 / 指南页 / 内链全部以此为准，避免硬编码失同步
 export const guidesDatabase: Record<string, GuideContent> = {
+  [deepseekV41Flash.slug]: deepseekV41Flash,
+  [v41FlashPricing.slug]: v41FlashPricing,
+  [v41FlashBenchmarks.slug]: v41FlashBenchmarks,
+  [v41FlashApiSetup.slug]: v41FlashApiSetup,
+  [v41FlashVision.slug]: v41FlashVision,
+  [v41FlashReasoningEffort.slug]: v41FlashReasoningEffort,
+  [deepseekFlashModelNames.slug]: deepseekFlashModelNames,
+  [v41FlashVsV4Flash.slug]: v41FlashVsV4Flash,
+  [v41FlashVsOpus5.slug]: v41FlashVsOpus5,
+  [v41FlashVsKimiK3.slug]: v41FlashVsKimiK3,
+  [deepseekV41Pro.slug]: deepseekV41Pro,
+  [v41FlashLocalDeployment.slug]: v41FlashLocalDeployment,
+  [v41FlashCodingAgents.slug]: v41FlashCodingAgents,
+  [v41FlashKvCache.slug]: v41FlashKvCache,
+  [deepseekV4ProRetired.slug]: deepseekV4ProRetired,
   [deepseekV4Flash.slug]: deepseekV4Flash,
   [flashApiSetup.slug]: flashApiSetup,
   [flashPricing.slug]: flashPricing,
@@ -150,6 +180,96 @@ export interface GuideCardMeta {
 }
 
 export const guideMeta: Record<string, GuideCardMeta> = {
+  "deepseek-v4-1-flash": {
+    slug: "deepseek-v4-1-flash",
+    catId: "model",
+    tag: "Model Guide",
+    desc: "The Sept 10, 2026 release: a 552B MoE with native vision, 8B/16B asymmetric activation, a 1M context, and an 890-byte-per-token KV cache.",
+  },
+  "v4-1-flash-pricing": {
+    slug: "v4-1-flash-pricing",
+    catId: "pricing",
+    tag: "Pricing",
+    desc: "$0.003 per 1M cached input tokens off-peak, $0.15 uncached, $0.60 output. Peak/off-peak table, cache math, and how it compares to GPT and Claude.",
+  },
+  "v4-1-flash-benchmarks": {
+    slug: "v4-1-flash-benchmarks",
+    catId: "benchmarks",
+    tag: "Benchmarks",
+    desc: "Every official score: Terminal-Bench 2.1 90.6, DeepSWE 74.2, CyberGym 88.1, plus the multi-scaffold table and the effort-cost caveat.",
+  },
+  "v4-1-flash-api-setup": {
+    slug: "v4-1-flash-api-setup",
+    catId: "api",
+    tag: "API Setup",
+    desc: "Set model to deepseek-flash, keep your base URL, and migrate from old names. Includes a first curl call and reasoning-effort parameters.",
+  },
+  "v4-1-flash-vision": {
+    slug: "v4-1-flash-vision",
+    catId: "model",
+    tag: "Vision",
+    desc: "Native image understanding via a 32-layer DeepSeek-ViT: MMMU-Pro 56.5, DocVQA 95.6, and visual-agent scores, replacing V4-Flash-Vision-Exp.",
+  },
+  "v4-1-flash-reasoning-effort": {
+    slug: "v4-1-flash-reasoning-effort",
+    catId: "deepdive",
+    tag: "Reasoning",
+    desc: "A continuous 1-100 effort scale, not just low/high/max. How the setting trades 2.5x output tokens for accuracy, and how to pick a level.",
+  },
+  "deepseek-flash-model-names": {
+    slug: "deepseek-flash-model-names",
+    catId: "api",
+    tag: "Migration",
+    desc: "Every DeepSeek model id, alias, and retirement status in one table — so a rerouted or deprecated name never breaks production.",
+  },
+  "v4-1-flash-vs-v4-flash": {
+    slug: "v4-1-flash-vs-v4-flash",
+    catId: "benchmarks",
+    tag: "Comparison",
+    desc: "The 94% backbone jump from 284B to 552B, the move from 13B to 8B/16B activation, a 4x smaller KV cache, and what it means for migration.",
+  },
+  "v4-1-flash-vs-opus-5": {
+    slug: "v4-1-flash-vs-opus-5",
+    catId: "benchmarks",
+    tag: "Comparison",
+    desc: "DeepSWE 74.2 vs 74.0 and CyberGym 88.1 vs none — but Opus 5 wins the harder Terminal-Bench 3.0/4.0. Open weights at a fraction of the price.",
+  },
+  "v4-1-flash-vs-kimi-k3": {
+    slug: "v4-1-flash-vs-kimi-k3",
+    catId: "benchmarks",
+    tag: "Comparison",
+    desc: "Two open-weight rivals compared: V4.1 Flash leads on agent and coding tests, Kimi K3 leads GPQA and HLE. Pricing and cache rates compared.",
+  },
+  "deepseek-v4-1-pro": {
+    slug: "deepseek-v4-1-pro",
+    catId: "news",
+    tag: "Upcoming",
+    desc: "DeepSeek's next flagship has no release date. What the CED family implies, why V4-Pro traffic routes to Flash until it ships, and how to track it.",
+  },
+  "v4-1-flash-local-deployment": {
+    slug: "v4-1-flash-local-deployment",
+    catId: "local",
+    tag: "Local Setup",
+    desc: "Download the MIT weights and serve them with vLLM: a 511 GB checkpoint, a 614 GB VRAM floor, GB200/H200 layouts, and DSpark.",
+  },
+  "v4-1-flash-coding-agents": {
+    slug: "v4-1-flash-coding-agents",
+    catId: "agents",
+    tag: "Coding Agents",
+    desc: "Official setup for Claude Code, OpenCode, and OpenClaw, plus the DeepSeek Harness minimal mode used for the official agent benchmarks.",
+  },
+  "v4-1-flash-kv-cache": {
+    slug: "v4-1-flash-kv-cache",
+    catId: "deepdive",
+    tag: "Technical",
+    desc: "How V4.1 Flash stores its KV cache in 890 bytes per token: CED projection, CSA2 layer modes, FP4 KV, SWA Bounded Replay, and the 72-hour cache.",
+  },
+  "deepseek-v4-pro-retired": {
+    slug: "deepseek-v4-pro-retired",
+    catId: "news",
+    tag: "Release",
+    desc: "From Sept 14, 2026, every deepseek-v4-pro request routes to V4.1 Flash at Flash rates. The timeline, official reasons, and developer pushback.",
+  },
   "deepseek-v4-flash": {
     slug: "deepseek-v4-flash",
     catId: "model",

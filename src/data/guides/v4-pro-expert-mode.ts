@@ -7,7 +7,9 @@ export const v4ProExpertMode: GuideContent = {
   title: "DeepSeek V4 Pro Expert Mode: What It Is & How to Use It",
   seoTitle: "DeepSeek V4 Pro Expert Mode: Guide",
   readTime: "4 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro is available in the app and web through Expert Mode — what it does, how to enable it on desktop and mobile, and how it differs from the API.",
   toc: [

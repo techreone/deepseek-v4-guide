@@ -7,7 +7,9 @@ export const v4ProCursor: GuideContent = {
   title: "Use DeepSeek V4 Pro in Cursor: Complete Setup",
   seoTitle: "DeepSeek V4 Pro in Cursor: Setup Guide",
   readTime: "6 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "Connect Cursor to DeepSeek V4 Pro 0813: OpenAI-compatible base_url, model names, reasoning-effort support, and the proxy workaround.",
   toc: [

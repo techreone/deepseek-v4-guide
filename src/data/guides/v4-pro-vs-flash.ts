@@ -7,7 +7,9 @@ export const v4ProVsFlash: GuideContent = {
   title: "DeepSeek V4 Pro vs V4 Flash: Which Model Should You Use?",
   seoTitle: "DeepSeek V4 Pro vs Flash: Compare & Choose",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro vs V4 Flash: 1.6T vs 284B params, $0.435 vs $0.14 per 1M input, 96.4% vs 88.8% SWE-bench. How to pick.",
   toc: [

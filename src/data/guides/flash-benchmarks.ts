@@ -7,7 +7,9 @@ export const flashBenchmarks: GuideContent = {
   title: "DeepSeek V4 Flash Benchmarks: Agentic & Coding Scores in 2026",
   seoTitle: "DeepSeek V4 Flash Benchmarks: 2026 Scores",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 1, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Superseded Sept 10, 2026: DeepSeek V4-Flash was retired and now routes to V4.1 Flash. See [[deepseek-v4-1-flash|What Is DeepSeek V4.1 Flash?]] for the current model, [[v4-1-flash-pricing|the new pricing]], and [[deepseek-flash-model-names|the model-name migration table]].",
   summary:
     "DeepSeek V4 Flash benchmark scores: Terminal-Bench 2.1 hits 82.7, DeepSWE 54.4, AA Intelligence Index 50. Full 2026 agentic comparison.",
   toc: [

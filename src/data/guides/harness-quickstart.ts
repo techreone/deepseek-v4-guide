@@ -16,7 +16,8 @@ export const harnessQuickstart: GuideContent = {
     { id: "step-2", label: "Launch the Harness" },
     { id: "step-3", label: "Add Your API Key" },
     { id: "step-4", label: "Run Your First Task" },
-    { id: "step-5", label: "What to Try Next" },
+    { id: "step-5", label: "Quick Answers to Common Questions" },
+    { id: "step-6", label: "What to Try Next" },
   ],
   steps: [
     {

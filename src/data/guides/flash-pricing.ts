@@ -7,7 +7,9 @@ export const flashPricing: GuideContent = {
   title: "DeepSeek V4 Flash Pricing: Token Costs & How to Save (Aug 2026)",
   seoTitle: "DeepSeek V4 Flash Pricing: Save on Tokens",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Superseded Sept 10, 2026: DeepSeek V4-Flash was retired and now routes to V4.1 Flash. See [[deepseek-v4-1-flash|What Is DeepSeek V4.1 Flash?]] for the current model, [[v4-1-flash-pricing|the new pricing]], and [[deepseek-flash-model-names|the model-name migration table]].",
   summary:
     "DeepSeek V4 Flash pricing moved to peak/off-peak tiers Aug 16: $0.22/$0.66 at off-peak, $0.44/$1.32 at peak per 1M, and cache hits still cut input costs.",
   toc: [

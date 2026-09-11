@@ -7,7 +7,9 @@ export const v4ProReleaseDate: GuideContent = {
   title: "DeepSeek V4 Pro Release Date: From Preview to GA (2026)",
   seoTitle: "DeepSeek V4 Pro Release Date: GA on Aug 13",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro went generally available on August 13, 2026 with the 0813 build, ending a 4-month preview. Full release timeline, GA details, and what changed.",
   toc: [

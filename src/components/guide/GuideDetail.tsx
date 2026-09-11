@@ -206,6 +206,21 @@ export function GuideDetail({ guide }: GuideDetailProps) {
               </p>
             </div>
 
+            {/* Superseded / migration notice banner */}
+            {guide.notice && (
+              <div
+                role="note"
+                className="p-4 rounded-lg bg-amber-950/30 border border-amber-600/40 font-sans text-xs sm:text-sm text-amber-100 leading-relaxed"
+              >
+                <div className="font-mono text-[10px] text-amber-400/90 uppercase tracking-widest mb-1.5">
+                  NOTICE
+                </div>
+                <p className="text-amber-100/90 font-sans text-xs sm:text-sm leading-relaxed">
+                  {renderRichText(guide.notice, sourceCount)}
+                </p>
+              </div>
+            )}
+
             {/* Step-by-Step Sections（长文 ≥6 步按 1/3、2/3 处穿插 300x250 广告，短文不插） */}
             {guide.steps.map((step, idx) => {
               const showAd =

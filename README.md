@@ -2,12 +2,27 @@
 
 **🌐 Live site: [https://deepseekv4guide.org](https://deepseekv4guide.org)**
 
-An independent, researched tutorial hub for **DeepSeek V4 Flash & Pro** — API setup, pricing, benchmarks, agent integration, and local deployment. Every fact is sourced (see the REFERENCES on each guide); prices and benchmark scores are labeled with their as-of date and marked when vendor-reported.
+An independent, researched tutorial hub for **DeepSeek V4.1 Flash**, plus the older V4 Flash & Pro — API setup, pricing, benchmarks, agent integration, and local deployment. Every fact is sourced (see the REFERENCES on each guide); prices and benchmark scores are labeled with their as-of date and marked when vendor-reported.
 
 ## Guides
 
 | Guide | Topic |
 |-------|-------|
+| [What Is DeepSeek V4.1 Flash?](https://deepseekv4guide.org/guides/deepseek-v4-1-flash) | The September 10, 2026 release explained |
+| [DeepSeek V4.1 Flash Pricing](https://deepseekv4guide.org/guides/v4-1-flash-pricing) | $0.003 cache hits & peak rates |
+| [DeepSeek V4.1 Flash Benchmarks](https://deepseekv4guide.org/guides/v4-1-flash-benchmarks) | Every official score, max effort |
+| [DeepSeek V4.1 Flash API Setup](https://deepseekv4guide.org/guides/v4-1-flash-api-setup) | `deepseek-flash` & migration |
+| [DeepSeek V4.1 Flash Vision](https://deepseekv4guide.org/guides/v4-1-flash-vision) | Native image understanding |
+| [Reasoning Effort: 1-100](https://deepseekv4guide.org/guides/v4-1-flash-reasoning-effort) | Continuous effort control |
+| [Model Names & Retired IDs](https://deepseekv4guide.org/guides/deepseek-flash-model-names) | Every id, alias & status |
+| [V4.1 Flash vs V4 Flash](https://deepseekv4guide.org/guides/v4-1-flash-vs-v4-flash) | 552B, CED & the 94% jump |
+| [V4.1 Flash vs Opus 5](https://deepseekv4guide.org/guides/v4-1-flash-vs-opus-5) | DeepSWE & cost compared |
+| [V4.1 Flash vs Kimi K3](https://deepseekv4guide.org/guides/v4-1-flash-vs-kimi-k3) | The open-weight duel |
+| [DeepSeek V4.1 Pro](https://deepseekv4guide.org/guides/deepseek-v4-1-pro) | What we know so far |
+| [Run V4.1 Flash Locally](https://deepseekv4guide.org/guides/v4-1-flash-local-deployment) | vLLM, VRAM & GGUF |
+| [V4.1 Flash Coding Agents](https://deepseekv4guide.org/guides/v4-1-flash-coding-agents) | Claude Code, OpenCode, OpenClaw |
+| [V4.1 Flash KV Cache](https://deepseekv4guide.org/guides/v4-1-flash-kv-cache) | 890 bytes per token |
+| [DeepSeek V4 Pro Retired](https://deepseekv4guide.org/guides/deepseek-v4-pro-retired) | Why it routes to V4.1 Flash |
 | [What Is DeepSeek V4 Flash?](https://deepseekv4guide.org/guides/deepseek-v4-flash) | The July 31, 2026 official release explained |
 | [DeepSeek V4 Flash API Setup](https://deepseekv4guide.org/guides/flash-api-setup) | Base URL, models, first call |
 | [DeepSeek V4 Flash Pricing](https://deepseekv4guide.org/guides/flash-pricing) | Token costs & how to save up to 98% |

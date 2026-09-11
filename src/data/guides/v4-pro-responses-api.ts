@@ -7,7 +7,9 @@ export const v4ProResponsesApi: GuideContent = {
   title: "DeepSeek V4 Pro Responses API & Codex Setup",
   seoTitle: "DeepSeek V4 Pro Responses API & Codex Setup",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro natively supports OpenAI's Responses API: one-click Codex setup, models.json metadata, SSE stream — full guide.",
   toc: [

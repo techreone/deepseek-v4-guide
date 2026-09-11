@@ -7,7 +7,9 @@ export const v4ProModelSize: GuideContent = {
   title: "DeepSeek V4 Pro Model Size: 1.6T Parameters, 49B Active, VRAM Needs",
   seoTitle: "V4 Pro Model Size: 1.6T/49B, ~862GB VRAM",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "V4 Pro is a 1.6T-param MoE with 49B active per token, 1M context, FP4+FP8 weights (~862GB VRAM to self-host). Specs, memory math, hardware.",
   toc: [

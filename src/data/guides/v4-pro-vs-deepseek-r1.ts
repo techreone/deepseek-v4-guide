@@ -7,7 +7,9 @@ export const v4ProVsDeepseekR1: GuideContent = {
   title: "DeepSeek V4 Pro vs DeepSeek R1: Should You Still Use R1?",
   seoTitle: "DeepSeek V4 Pro vs R1: Which Reasoning Model",
   readTime: "6 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro vs DeepSeek R1: the 2025 reasoning pioneer vs the 2026 flagship — alias retirement, effort dials, and the practical choice.",
   toc: [

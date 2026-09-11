@@ -7,7 +7,9 @@ export const flashIde: GuideContent = {
   title: "DeepSeek V4 Flash in Cursor, Claude Code & Codex: Setup Guide",
   seoTitle: "DeepSeek V4 Flash in Cursor & Claude Code",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 1, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Superseded Sept 10, 2026: DeepSeek V4-Flash was retired and now routes to V4.1 Flash. See [[deepseek-v4-1-flash|What Is DeepSeek V4.1 Flash?]] for the current model, [[v4-1-flash-pricing|the new pricing]], and [[deepseek-flash-model-names|the model-name migration table]].",
   summary:
     "DeepSeek V4 Flash in Cursor, Claude Code and Codex: the complete setup guide. Official env vars, base URLs, model-name mapping, and the reasoning_content fix.",
   toc: [

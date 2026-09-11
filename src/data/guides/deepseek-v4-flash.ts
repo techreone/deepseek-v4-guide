@@ -8,7 +8,9 @@ export const deepseekV4Flash: GuideContent = {
   title: "What Is DeepSeek V4 Flash? Full Guide to the 0731 Release",
   seoTitle: "What Is DeepSeek V4 Flash? The 0731 Guide",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 1, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Superseded Sept 10, 2026: DeepSeek V4-Flash was retired and now routes to V4.1 Flash. See [[deepseek-v4-1-flash|What Is DeepSeek V4.1 Flash?]] for the current model, [[v4-1-flash-pricing|the new pricing]], and [[deepseek-flash-model-names|the model-name migration table]].",
   summary:
     "DeepSeek V4 Flash is DeepSeek's 284B-parameter open-weight model with 1M context. Here's the full guide to the July 31, 2026 official release.",
   toc: [

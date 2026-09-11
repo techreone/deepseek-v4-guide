@@ -7,7 +7,9 @@ export const v4ProContextCaching: GuideContent = {
   title: "DeepSeek V4 Pro Context Caching: Prices & How to Max Your Hits",
   seoTitle: "DeepSeek V4 Pro Context Caching Guide (2026)",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "V4 Pro cache-hit input costs $0.022/M off-peak vs $0.66 miss — a 30x discount. How prefix caching works, Aug 16 rates, prompt design for hits.",
   toc: [

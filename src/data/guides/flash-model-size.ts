@@ -7,7 +7,9 @@ export const flashModelSize: GuideContent = {
   title: "DeepSeek V4 Flash Model Size: Params, VRAM & What It Means",
   seoTitle: "DeepSeek V4 Flash Model Size: Params & VRAM",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 1, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Superseded Sept 10, 2026: DeepSeek V4-Flash was retired and now routes to V4.1 Flash. See [[deepseek-v4-1-flash|What Is DeepSeek V4.1 Flash?]] for the current model, [[v4-1-flash-pricing|the new pricing]], and [[deepseek-flash-model-names|the model-name migration table]].",
   summary:
     "DeepSeek V4 Flash model size: 284B total params, 13B active, ~160 GB official FP4/FP8 weights. Full guide to VRAM needs and quantization.",
   toc: [

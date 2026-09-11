@@ -4,7 +4,7 @@ import type { MetadataRoute } from "next";
 import { getAllGuides } from "@/data/guides";
 
 const BASE_URL = "https://deepseekv4guide.org";
-const LAST_MOD = "2026-08-01";
+const LAST_MOD = "2026-09-11";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const guideUrls: MetadataRoute.Sitemap = getAllGuides().map((guide) => ({

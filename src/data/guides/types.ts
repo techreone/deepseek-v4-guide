@@ -49,6 +49,9 @@ export interface GuideContent {
   /** meta description 素材，≤160 字符 */
   summary: string;
   toc: { id: string; label: string }[];
+  /** 顶部提示横幅（可选，用于退役/被取代/迁移等时效提醒）。
+   * 支持 [[slug|文字]] 与 [n] 语法 */
+  notice?: string;
   steps: GuideStep[];
   prevGuide?: GuideLink;
   nextGuide?: GuideLink;

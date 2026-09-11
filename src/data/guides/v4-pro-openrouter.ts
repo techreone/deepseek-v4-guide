@@ -7,7 +7,9 @@ export const v4ProOpenrouter: GuideContent = {
   title: "DeepSeek V4 Pro on OpenRouter: Model IDs, Pricing & Setup",
   seoTitle: "DeepSeek V4 Pro on OpenRouter: Setup",
   readTime: "5 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "Use V4 Pro 0813 on OpenRouter: model ID deepseek/deepseek-v4-pro-0813 at $0.435/$0.87, BYOK, and the 8/16 peak-pricing impact.",
   toc: [

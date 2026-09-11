@@ -1,36 +1,41 @@
 # DeepSeek V4 Guide
 
-> An independent tutorial hub helping developers and beginners access, cost-optimize, and integrate DeepSeek V4 Flash & Pro. All content is researched and sourced; prices and benchmarks are labeled with their as-of date.
+> An independent tutorial hub helping developers and beginners access, cost-optimize, and integrate DeepSeek V4.1 Flash, V4 Flash & V4 Pro. All content is researched and sourced; prices and benchmarks are labeled with their as-of date.
 
 ## What this site covers
 
-- DeepSeek V4 Flash & Pro: what they are, the July 31, 2026 official release, pricing, benchmarks
+- DeepSeek V4.1 Flash: the September 10, 2026 release — Causal Encoder-Decoder architecture, 552B MoE, native vision, 1M context, KV cache compression
+- Why V4-Flash was retired and V4-Pro is being routed to V4.1 Flash
+- Pricing (peak/off-peak), benchmarks, reasoning effort, API setup, and local deployment
 - How to use DeepSeek V4: official API, OpenCode, OpenCode Go, OpenRouter, Cursor, Claude Code, Claude Desktop, Codex, CC Switch
-- Local deployment: HuggingFace weights, model size, VRAM, vLLM
 - Ecosystem news: DeepSeek Harness, V4 Pro GA timeline, comparisons
 
 ## Key pages
 
 - [Home](https://deepseekv4guide.org/)
+- [What Is DeepSeek V4.1 Flash? The 552B MoE, Explained](https://deepseekv4guide.org/guides/deepseek-v4-1-flash)
+- [DeepSeek V4.1 Flash Pricing: $0.003 Cache Hits & Peak Rates](https://deepseekv4guide.org/guides/v4-1-flash-pricing)
+- [DeepSeek V4.1 Flash Benchmarks: Full Official Table](https://deepseekv4guide.org/guides/v4-1-flash-benchmarks)
+- [DeepSeek V4.1 Flash API Setup: deepseek-flash & Migration](https://deepseekv4guide.org/guides/v4-1-flash-api-setup)
+- [DeepSeek V4.1 Flash Vision: Native Images](https://deepseekv4guide.org/guides/v4-1-flash-vision)
+- [DeepSeek V4.1 Flash Reasoning Effort: 1-100](https://deepseekv4guide.org/guides/v4-1-flash-reasoning-effort)
+- [DeepSeek Model Names & Retired IDs (2026)](https://deepseekv4guide.org/guides/deepseek-flash-model-names)
+- [V4.1 Flash vs V4 Flash: 552B & CED](https://deepseekv4guide.org/guides/v4-1-flash-vs-v4-flash)
+- [V4.1 Flash vs Opus 5: DeepSWE & Cost](https://deepseekv4guide.org/guides/v4-1-flash-vs-opus-5)
+- [V4.1 Flash vs Kimi K3: Open-Weight Duel](https://deepseekv4guide.org/guides/v4-1-flash-vs-kimi-k3)
+- [DeepSeek V4.1 Pro: What We Know So Far](https://deepseekv4guide.org/guides/deepseek-v4-1-pro)
+- [Run DeepSeek V4.1 Flash Locally: vLLM Guide](https://deepseekv4guide.org/guides/v4-1-flash-local-deployment)
+- [DeepSeek V4.1 Flash Coding Agent Setup](https://deepseekv4guide.org/guides/v4-1-flash-coding-agents)
+- [DeepSeek V4.1 Flash KV Cache: 890 Bytes](https://deepseekv4guide.org/guides/v4-1-flash-kv-cache)
+- [DeepSeek V4 Pro Retired: Why It Routes to V4.1 Flash](https://deepseekv4guide.org/guides/deepseek-v4-pro-retired)
 - [What Is DeepSeek V4 Flash? Full Guide to the 0731 Release](https://deepseekv4guide.org/guides/deepseek-v4-flash)
 - [DeepSeek V4 Flash API Setup: Base URL, Models & Your First Call](https://deepseekv4guide.org/guides/flash-api-setup)
 - [DeepSeek V4 Flash Pricing: Token Costs & How to Save Up to 98%](https://deepseekv4guide.org/guides/flash-pricing)
 - [DeepSeek V4 Flash Benchmarks: Agentic & Coding Scores in 2026](https://deepseekv4guide.org/guides/flash-benchmarks)
-- [Use DeepSeek V4 Flash with OpenCode](https://deepseekv4guide.org/guides/flash-opencode)
-- [DeepSeek V4 Flash in Cursor, Claude Code & Codex](https://deepseekv4guide.org/guides/flash-ide)
-- [DeepSeek V4 Flash on OpenRouter: Setup, Pricing & BYOK](https://deepseekv4guide.org/guides/flash-openrouter)
-- [DeepSeek V4 Flash Model Size: Params, VRAM & What It Means](https://deepseekv4guide.org/guides/flash-model-size)
-- [Download DeepSeek V4 Flash from HuggingFace & Run It Locally](https://deepseekv4guide.org/guides/flash-huggingface)
 - [DeepSeek V4 Pro: Specs, Pricing & Release Date](https://deepseekv4guide.org/guides/v4-pro)
 - [Why DeepSeek V4 Is the Best Cheap AI Right Now: A Beginner Guide](https://deepseekv4guide.org/guides/beginner-guide)
-- [OpenCode Go: The $5/Month Subscription That Unlocks DeepSeek V4](https://deepseekv4guide.org/guides/opencode-go)
-- [Connect Claude Code & Claude Desktop to DeepSeek V4 with CC Switch](https://deepseekv4guide.org/guides/cc-switch-claude-code)
 - [DeepSeek Harness: Everything We Know Before the Official Release](https://deepseekv4guide.org/guides/deepseek-harness)
 - [DeepSeek V4 Technical Report Explained: Architecture & Benchmarks](https://deepseekv4guide.org/guides/official-tech-report)
-- [Why a Native Harness Makes AI Agents Dramatically Better](https://deepseekv4guide.org/guides/harness-agent-capability)
-- [Reasonix: The DeepSeek Harness That Hits 99%+ Cache Rates](https://deepseekv4guide.org/guides/reasonix-deepseek)
-- [Hermes Best Setup: DeepSeek V4 Flash 0731 + MiMo V2.5 (Vision)](https://deepseekv4guide.org/guides/hermes-setup)
-- [DeepSeek V4 vs GPT-5.6 Luna: Which Is Better After the Price Cut?](https://deepseekv4guide.org/guides/v4-vs-gpt56-luna)
 
 ## Official resources
 

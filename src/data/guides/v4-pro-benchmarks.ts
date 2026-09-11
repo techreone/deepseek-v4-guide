@@ -5,9 +5,11 @@ export const v4ProBenchmarks: GuideContent = {
   slug: "v4-pro-benchmarks",
   category: "BENCHMARKS",
   title: "DeepSeek V4 Pro Benchmarks: 0813 GA Scores & Independent Tests",
-  seoTitle: "V4 Pro Benchmarks: TB2.1 87.9, Top-1 Cybergym",
+  seoTitle: "V4 Pro Benchmarks: TB2.1 87.9 & Cybergym",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "V4 Pro 0813 scores Terminal Bench 2.1 at 87.9 and tops Cybergym and AutomationBench. Full official table, independent tests, and the harness caveat.",
   toc: [

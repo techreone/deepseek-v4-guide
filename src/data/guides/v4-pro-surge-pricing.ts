@@ -5,9 +5,11 @@ export const v4ProSurgePricing: GuideContent = {
   slug: "v4-pro-surge-pricing",
   category: "PRICING & COST",
   title: "DeepSeek V4 Pro Peak & Off-Peak Pricing: Hours, Rates & Strategy",
-  seoTitle: "DeepSeek V4 Pro Peak Hours: Save 50% Off-Peak",
+  seoTitle: "DeepSeek V4 Pro Peak Hours: Save 50%",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek's peak/off-peak pricing took effect Aug 16: peak 01:00-04:00 and 06:00-10:00 UTC, off-peak 50% cheaper. Exact hours, rates, strategy.",
   toc: [

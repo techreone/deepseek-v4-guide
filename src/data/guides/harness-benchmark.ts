@@ -6,7 +6,7 @@ export const harnessBenchmark: GuideContent = {
   slug: "harness-benchmark",
   category: "GUIDE",
   title: "DeepSeek Harness Benchmarks: Official Scores, Minimal Mode, and Caveats",
-  seoTitle: "DeepSeek Harness Benchmarks: Scores & Caveats",
+  seoTitle: "DeepSeek Harness Benchmarks & Caveats",
   readTime: "9 MIN READ",
   updatedAt: "AUG 16, 2026",
   summary:

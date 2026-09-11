@@ -7,7 +7,9 @@ export const v4ProApi: GuideContent = {
   title: "DeepSeek V4 Pro API Setup: Base URL, Model ID & First Call",
   seoTitle: "DeepSeek V4 Pro API Setup Guide",
   readTime: "7 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "Call DeepSeek V4 Pro with model deepseek-v4-pro, base URL api.deepseek.com, reasoning_effort low/high/max. OpenAI + Anthropic formats and Codex setup.",
   toc: [

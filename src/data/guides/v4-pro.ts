@@ -9,7 +9,9 @@ export const v4Pro: GuideContent = {
   title: "DeepSeek V4 Pro: GA Release, Pricing & Benchmarks (0813)",
   seoTitle: "DeepSeek V4 Pro: GA, Pricing & Benchmarks",
   readTime: "10 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro is now GA (Aug 13, 2026, 0813 build): 1.6T-param MoE, 1M context, new peak/off-peak pricing from Aug 16, and agent-first upgrades.",
   toc: [

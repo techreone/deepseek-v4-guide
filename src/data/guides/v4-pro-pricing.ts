@@ -5,9 +5,11 @@ export const v4ProPricing: GuideContent = {
   slug: "v4-pro-pricing",
   category: "PRICING & COST",
   title: "DeepSeek V4 Pro Pricing: Peak & Off-Peak Rates (Aug 2026)",
-  seoTitle: "DeepSeek V4 Pro Pricing: $1.98-$3.96/M Output",
+  seoTitle: "DeepSeek V4 Pro Pricing: $1.98-$3.96/M",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "DeepSeek V4 Pro costs $1.98/M output off-peak, $3.96 peak after the Aug 16 update. Full rate table, the 1100% hike claim, and savings strategies.",
   toc: [

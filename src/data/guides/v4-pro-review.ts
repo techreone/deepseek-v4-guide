@@ -5,9 +5,11 @@ export const v4ProReview: GuideContent = {
   slug: "v4-pro-review",
   category: "MODEL GUIDE",
   title: "DeepSeek V4 Pro Review: The GA Build Under a Microscope",
-  seoTitle: "V4 Pro Review: Strengths, Weaknesses, Verdict",
+  seoTitle: "V4 Pro Review: Strengths & Weaknesses",
   readTime: "9 MIN READ",
-  updatedAt: "AUG 16, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Retiring: from Sept 14, 2026, all deepseek-v4-pro requests route to V4.1 Flash at Flash rates. See [[deepseek-v4-pro-retired|why V4-Pro was retired]] and [[deepseek-v4-1-flash|the V4.1 Flash guide]].",
   summary:
     "An honest V4 Pro 0813 review: elite agentic coding, top-1 Cybergym, but over-thinking simple tasks and new peak pricing. Verdict and who should buy.",
   toc: [

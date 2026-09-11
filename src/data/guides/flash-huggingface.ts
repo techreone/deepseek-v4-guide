@@ -7,7 +7,9 @@ export const flashHuggingface: GuideContent = {
   title: "Download DeepSeek V4 Flash from HuggingFace & Run It Locally",
   seoTitle: "Download DeepSeek V4 Flash from HuggingFace",
   readTime: "8 MIN READ",
-  updatedAt: "AUG 1, 2026",
+  updatedAt: "SEP 11, 2026",
+  notice:
+    "Superseded Sept 10, 2026: DeepSeek V4-Flash was retired and now routes to V4.1 Flash. See [[deepseek-v4-1-flash|What Is DeepSeek V4.1 Flash?]] for the current model, [[v4-1-flash-pricing|the new pricing]], and [[deepseek-flash-model-names|the model-name migration table]].",
   summary:
     "DeepSeek V4 Flash from HuggingFace: the official 0731 repo, MIT license, 167 GB weights, and how to download and run it locally with vLLM.",
   toc: [
