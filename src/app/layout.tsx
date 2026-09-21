@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ClarityTracker } from "@/components/layout/ClarityTracker";
+import { GA4Tracker } from "@/components/layout/GA4Tracker";
 import AdsterraBanner from "@/components/ads/AdsterraBanner";
 
 const geistSans = Geist({
@@ -79,6 +80,7 @@ export default function RootLayout({
         <div className="grid-pattern" aria-hidden="true" />
         <Header />
         <ClarityTracker />
+        <GA4Tracker />
         <main className="flex-1 flex flex-col relative z-10">
           {children}
         </main>
