@@ -77,6 +77,21 @@ import { v41FlashLocalDeployment } from "./v4-1-flash-local-deployment";
 import { v41FlashCodingAgents } from "./v4-1-flash-coding-agents";
 import { v41FlashKvCache } from "./v4-1-flash-kv-cache";
 import { deepseekV4ProRetired } from "./deepseek-v4-pro-retired";
+import { deepseekV41Flash1017 } from "./deepseek-v4-1-flash-1017";
+import { v41Flash1017Benchmarks } from "./v4-1-flash-1017-benchmarks";
+import { v41Flash1017VsV41Flash } from "./v4-1-flash-1017-vs-v4-1-flash";
+import { v41Flash1017Local } from "./v4-1-flash-1017-local";
+import { deepseekSearchApi } from "./deepseek-search-api";
+import { deepseekRagSearchApi } from "./deepseek-rag-search-api";
+import { deepseekDown } from "./deepseek-down";
+import { deepseekOutageRefund } from "./deepseek-outage-refund";
+import { deepseekServerBusy } from "./deepseek-server-busy";
+import { deepseekApiErrorCodes } from "./deepseek-api-error-codes";
+import { opencodeDeepseek1017 } from "./opencode-deepseek-1017";
+import { deepseekVscodeCopilot } from "./deepseek-vscode-copilot";
+import { deepseekCodex } from "./deepseek-codex";
+import { deepseekFree1017 } from "./deepseek-free-1017";
+import { deepseekMcpServers } from "./deepseek-mcp-servers";
 
 
 // 中央指南注册表：新增教程 = 在 src/data/guides/ 新建文件并在下方登记
@@ -160,6 +175,21 @@ export const guidesDatabase: Record<string, GuideContent> = {
   [v4ProAgent.slug]: v4ProAgent,
   [v4ProExpertMode.slug]: v4ProExpertMode,
   [v4ProVsDeepseekR1.slug]: v4ProVsDeepseekR1,
+  [deepseekV41Flash1017.slug]: deepseekV41Flash1017,
+  [v41Flash1017Benchmarks.slug]: v41Flash1017Benchmarks,
+  [v41Flash1017VsV41Flash.slug]: v41Flash1017VsV41Flash,
+  [v41Flash1017Local.slug]: v41Flash1017Local,
+  [deepseekSearchApi.slug]: deepseekSearchApi,
+  [deepseekRagSearchApi.slug]: deepseekRagSearchApi,
+  [deepseekDown.slug]: deepseekDown,
+  [deepseekOutageRefund.slug]: deepseekOutageRefund,
+  [deepseekServerBusy.slug]: deepseekServerBusy,
+  [deepseekApiErrorCodes.slug]: deepseekApiErrorCodes,
+  [opencodeDeepseek1017.slug]: opencodeDeepseek1017,
+  [deepseekVscodeCopilot.slug]: deepseekVscodeCopilot,
+  [deepseekCodex.slug]: deepseekCodex,
+  [deepseekFree1017.slug]: deepseekFree1017,
+  [deepseekMcpServers.slug]: deepseekMcpServers,
 
 };
 
@@ -383,6 +413,96 @@ export const guideMeta: Record<string, GuideCardMeta> = {
     catId: "benchmarks",
     tag: "Comparisons",
     desc: "DeepSeek V4 Flash vs the price-cut GPT-5.6 Luna: AI Intelligence Index 50 vs 51, but 60% lower cost per task. Who wins by scenario.",
+  },
+  "deepseek-v4-1-flash-1017": {
+    slug: "deepseek-v4-1-flash-1017",
+    catId: "model",
+    tag: "Release",
+    desc: "The October 17, 2026 checkpoint: same 552B CED architecture and same price, five more weeks of self-feedback RL. Zero code changes required.",
+  },
+  "v4-1-flash-1017-benchmarks": {
+    slug: "v4-1-flash-1017-benchmarks",
+    catId: "benchmarks",
+    tag: "Benchmarks",
+    desc: "Every official 1017 score and its delta: DeepSWE 77.0, Terminal-Bench 4.0 42.3 (+11.1), ProgramBench 29.1 (+8.8), and where Opus 5 still leads.",
+  },
+  "v4-1-flash-1017-vs-v4-1-flash": {
+    slug: "v4-1-flash-1017-vs-v4-1-flash",
+    catId: "benchmarks",
+    tag: "Comparison",
+    desc: "Same name, same price, new training. What actually changed on October 17, how to confirm which build you are hitting, and an A/B checklist.",
+  },
+  "v4-1-flash-1017-local": {
+    slug: "v4-1-flash-1017-local",
+    catId: "local",
+    tag: "Local Setup",
+    desc: "A 510 GB checkpoint becomes a 113.6 GB community GGUF sized for one 128 GB DGX Spark. Quant sizes, VRAM floors and the missing chat template.",
+  },
+  "deepseek-search-api": {
+    slug: "deepseek-search-api",
+    catId: "api",
+    tag: "Search API",
+    desc: "DeepSeek's in-house Search and Fetch APIs opened on October 17 at $0.75 per 1,000 calls. Endpoints, operators, response fields and the free window.",
+  },
+  "deepseek-rag-search-api": {
+    slug: "deepseek-rag-search-api",
+    catId: "api",
+    tag: "RAG",
+    desc: "Ground a RAG pipeline in live web content: rerank and authority gates, the three field slots, and what 1,000 grounded answers actually cost.",
+  },
+  "deepseek-down": {
+    slug: "deepseek-down",
+    catId: "news",
+    tag: "Status",
+    desc: "Is it down or is it you? The October 15 outage minute by minute, thirteen faults since September, uptime figures and a four-step triage.",
+  },
+  "deepseek-outage-refund": {
+    slug: "deepseek-outage-refund",
+    catId: "pricing",
+    tag: "Refunds",
+    desc: "DeepSeek refunded a full week of API spend as credit after the October 15 outage. Who qualifies, how credits are deducted, and the common misread.",
+  },
+  "deepseek-server-busy": {
+    slug: "deepseek-server-busy",
+    catId: "news",
+    tag: "Troubleshooting",
+    desc: "\"Server is busy\" means capacity, not your account. What instant mode changes, why off-peak is both cheaper and emptier, and the retry rules.",
+  },
+  "deepseek-api-error-codes": {
+    slug: "deepseek-api-error-codes",
+    catId: "api",
+    tag: "Reference",
+    desc: "Every DeepSeek status code across the model and tools APIs: what each one means, which are worth retrying, and how to tell a fault from a mistake.",
+  },
+  "opencode-deepseek-1017": {
+    slug: "opencode-deepseek-1017",
+    catId: "agents",
+    tag: "OpenCode",
+    desc: "Two lanes, two answers: the official DeepSeek key is already on 1017, while OpenCode Zen and Go serve their own endpoint. Tiers, limits and fallbacks.",
+  },
+  "deepseek-vscode-copilot": {
+    slug: "deepseek-vscode-copilot",
+    catId: "ide",
+    tag: "VS Code",
+    desc: "Wire DeepSeek into VS Code through Copilot's custom endpoint provider, Cline, Roo Code or Continue — including the Anthropic-format route Copilot CLI needs.",
+  },
+  "deepseek-codex": {
+    slug: "deepseek-codex",
+    catId: "ide",
+    tag: "Codex",
+    desc: "DeepSeek speaks the Responses API natively and ships a one-click Codex setup script. The config files, the apply_patch tool rule and the harness caveat.",
+  },
+  "deepseek-free-1017": {
+    slug: "deepseek-free-1017",
+    catId: "pricing",
+    tag: "Free Access",
+    desc: "MIT weights are free forever, the official API is not, and every \"free\" headline is a time-boxed promotion. The three buckets and the four real levers.",
+  },
+  "deepseek-mcp-servers": {
+    slug: "deepseek-mcp-servers",
+    catId: "agents",
+    tag: "MCP",
+    desc: "MCP is a host capability, not a model one. Which clients connect servers, the pairs worth wiring, and why more tools quietly raises your token bill.",
   },
 };
 

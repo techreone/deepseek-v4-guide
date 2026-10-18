@@ -8,7 +8,8 @@ export const v41FlashLocalDeployment: GuideContent = {
   title: "Run DeepSeek V4.1 Flash Locally: VRAM, vLLM & Quantization",
   seoTitle: "Run DeepSeek V4.1 Flash Locally: vLLM Guide",
   readTime: "11 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: 1017 weights are on Hugging Face under MIT, and a community GGUF now fits a single 128 GB DGX Spark. See [[v4-1-flash-1017-local|the 1017 local guide]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "How to run DeepSeek V4.1 Flash locally: MIT weights, a ~511 GB checkpoint, a 614 GB VRAM floor, the official vLLM image, MXFP4/MXFP8 and GGUF.",
   toc: [

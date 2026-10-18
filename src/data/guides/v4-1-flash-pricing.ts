@@ -8,7 +8,8 @@ export const v41FlashPricing: GuideContent = {
   title: "DeepSeek V4.1 Flash Pricing: $0.003 Cache Hits & Peak Rates",
   seoTitle: "DeepSeek V4.1 Flash Pricing: $0.003 Cache",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the 1017 checkpoint did not change these rates. The saving comes from shorter outputs and a high cache-hit rate — see [[v4-1-flash-1017-vs-v4-1-flash|what 1017 changed]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek V4.1 Flash costs $0.003 per 1M cached input tokens off-peak, $0.15 uncached, and $0.60 output. Peak doubles it. Full table and cache math.",
   toc: [

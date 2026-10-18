@@ -8,7 +8,8 @@ export const deepseekFlashModelNames: GuideContent = {
   title: "DeepSeek Model Names & Retired IDs: The 2026 Alias Reference",
   seoTitle: "DeepSeek Model Names & Retired IDs (2026)",
   readTime: "8 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the version behind deepseek-flash is now DeepSeek-V4.1-Flash-1017. The table below is current as of the October 17 update.",
+  updatedAt: "OCT 18, 2026",
   summary:
     "Every DeepSeek model id and status: deepseek-flash, retired V4 Flash names, the V4-Pro route from Sept 14, and old deepseek-chat / deepseek-reasoner ids.",
   toc: [
@@ -25,14 +26,14 @@ export const deepseekFlashModelNames: GuideContent = {
       num: "01",
       title: "The Current Model Name — deepseek-flash",
       description:
-        "If you call the DeepSeek API today and want the newest small model, the model string is `deepseek-flash`. It points at V4.1 Flash, released September 10, 2026, and it is the recommended id for new integrations[1][3].",
+        "If you call the DeepSeek API today and want the newest small model, the model string is `deepseek-flash`. It points at V4.1 Flash, released September 10, 2026 and updated to the DeepSeek-V4.1-Flash-1017 checkpoint on October 17, 2026, and it is the recommended id for new integrations[1][3].",
       paragraphs: [
-        "DeepSeek decoupled the public model name from the architecture name. The architecture is V4.1 Flash; the API id is deepseek-flash. Keeping a stable public identifier across checkpoints lets the backend weights change without forcing every caller to edit code[1].",
+        "DeepSeek decoupled the public model name from the architecture name. The architecture is V4.1 Flash; the API id is deepseek-flash. The current checkpoint behind that id is DeepSeek-V4.1-Flash-1017, so the same string now resolves to newer weights than it did in September. Keeping a stable public identifier across checkpoints lets the backend weights change without forcing every caller to edit code[1].",
         "The same id works on the OpenAI-compatible endpoint at `api.deepseek.com` and the Anthropic endpoint at `api.deepseek.com/anthropic`. For request examples, see [[v4-1-flash-api-setup|the API setup guide]].",
       ],
       list: [
         "Current id: deepseek-flash",
-        "Served by: DeepSeek V4.1 Flash",
+        "Served by: DeepSeek V4.1 Flash (DeepSeek-V4.1-Flash-1017 checkpoint)",
         "OpenAI endpoint: https://api.deepseek.com",
         "Anthropic endpoint: https://api.deepseek.com/anthropic",
         "Concurrency limit: 2,500[3]",
@@ -47,10 +48,10 @@ export const deepseekFlashModelNames: GuideContent = {
       table: {
         headers: ["Model id", "Status", "Served by"],
         rows: [
-          ["deepseek-flash", "Current", "DeepSeek V4.1 Flash"],
-          ["deepseek-v4-flash", "Retired", "V4.1 Flash (compatibility route)"],
-          ["deepseek-v4-flash-vision-exp", "Retired", "V4.1 Flash (compatibility route)"],
-          ["deepseek-v4-pro", "Phasing out", "V4.1 Flash from Sept 14, 2026"],
+          ["deepseek-flash", "Current", "DeepSeek-V4.1-Flash-1017"],
+          ["deepseek-v4-flash", "Retired", "1017 checkpoint (compatibility route)"],
+          ["deepseek-v4-flash-vision-exp", "Retired", "1017 checkpoint (compatibility route)"],
+          ["deepseek-v4-pro", "Phasing out", "1017 checkpoint from Sept 14, 2026"],
           ["deepseek-chat", "Retired July 24, 2026", "Not a current alias"],
           ["deepseek-reasoner", "Retired July 24, 2026", "Not a current alias"],
         ],

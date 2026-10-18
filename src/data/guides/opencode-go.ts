@@ -7,6 +7,7 @@ export const opencodeGo: GuideContent = {
   title: "OpenCode Go: The $5/Month Subscription That Unlocks DeepSeek V4",
   seoTitle: "OpenCode Go: $5/Month Unlocks DeepSeek V4",
   readTime: "8 MIN READ",
+  notice: "Updated Oct 17, 2026: the DeepSeek allowance on Go and the free Zen entry have both moved since this page was written. See [[opencode-deepseek-1017|the current OpenCode limits]].",
   updatedAt: "AUG 16, 2026",
   summary:
     "OpenCode Go is OpenCode's official subscription: $5 first month, then $10, with DeepSeek V4 Flash under a $60 monthly credit — and Flash rates rose on Aug 16.",

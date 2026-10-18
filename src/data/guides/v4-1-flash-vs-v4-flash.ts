@@ -8,7 +8,8 @@ export const v41FlashVsV4Flash: GuideContent = {
   title: "DeepSeek V4.1 Flash vs V4 Flash: 552B, CED & the 94% Jump",
   seoTitle: "V4.1 Flash vs V4 Flash: 552B & CED",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: this comparison covers the September build. The 1017 checkpoint widens the gap further — see [[v4-1-flash-1017-vs-v4-1-flash|1017 vs the September release]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek V4.1 Flash vs V4 Flash: 552B vs 284B parameters, 8B/16B vs 13B activation, CED vs CSA+HCA, and a KV cache cut to one-quarter.",
   toc: [

@@ -8,7 +8,8 @@ export const v41FlashBenchmarks: GuideContent = {
   title: "DeepSeek V4.1 Flash Benchmarks: Full Official Table",
   seoTitle: "DeepSeek V4.1 Flash Benchmarks: Full Table",
   readTime: "10 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the scores below describe the September build. The 1017 checkpoint raises every one of them — see [[v4-1-flash-1017-benchmarks|the 1017 benchmark table]] for the full delta.",
+  updatedAt: "OCT 18, 2026",
   summary:
     "Every DeepSeek V4.1 Flash benchmark: Terminal-Bench 2.1 90.6, DeepSWE 74.2, CyberGym 88.1, plus the multi-scaffold table and the effort-cost caveat.",
   toc: [

@@ -8,7 +8,8 @@ export const v41FlashVsOpus5: GuideContent = {
   title: "DeepSeek V4.1 Flash vs Claude Opus 5: DeepSWE & the Cost Gap",
   seoTitle: "V4.1 Flash vs Opus 5: DeepSWE & Cost",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: 1017 now scores 77.0 on DeepSWE v1.1 against Opus 5's 74.0, while Opus 5 still leads the hardest rows. See [[v4-1-flash-1017-benchmarks|the updated table]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek V4.1 Flash vs Claude Opus 5: DeepSWE 74.2 vs 74.0, Opus leads HLE 56.3 vs 36.8, and V4.1 costs roughly 86x less on a mixed workload.",
   toc: [

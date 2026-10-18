@@ -8,7 +8,8 @@ export const v41FlashKvCache: GuideContent = {
   title: "DeepSeek V4.1 Flash KV Cache: 890 Bytes per Token Explained",
   seoTitle: "DeepSeek V4.1 Flash KV Cache: 890 Bytes",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the 1017 checkpoint keeps this cache design unchanged, which is why its shorter outputs translate directly into lower cost per task. See [[v4-1-flash-1017-vs-v4-1-flash|what changed]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "How DeepSeek V4.1 Flash stores its KV cache in 890 bytes per token: CED projection, CSA2, a hierarchical sparse indexer, FP4 KV and 72h persistence.",
   toc: [

@@ -8,7 +8,8 @@ export const deepseekV41Flash: GuideContent = {
   title: "What Is DeepSeek V4.1 Flash? The 552B MoE, Explained",
   seoTitle: "DeepSeek V4.1 Flash: 552B MoE & 1M Context",
   readTime: "11 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: DeepSeek shipped DeepSeek-V4.1-Flash-1017, a checkpoint of this same model with every benchmark improved at the same price. Start with [[deepseek-v4-1-flash-1017|what the 1017 update actually changed]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek V4.1 Flash is a 552B-parameter MoE with native vision, 8B/16B asymmetric activation, and a 1M-token context. Full guide to the Sept 10, 2026 release.",
   toc: [

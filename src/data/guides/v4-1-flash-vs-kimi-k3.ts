@@ -8,7 +8,8 @@ export const v41FlashVsKimiK3: GuideContent = {
   title: "DeepSeek V4.1 Flash vs Kimi K3: The Open-Weight Duel",
   seoTitle: "V4.1 Flash vs Kimi K3: Open-Weight Duel",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the 1017 checkpoint extends the lead on agent and coding rows while Kimi K3 keeps its edge on HLE. See [[v4-1-flash-1017-benchmarks|the updated table]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek V4.1 Flash vs Kimi K3: GPQA 90.9 vs 92.9, HLE 36.8 vs 43.5, DeepSWE 74.2 vs 67.5, and API pricing of $0.15/$0.60 vs $3/$15.",
   toc: [

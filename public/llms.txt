@@ -4,15 +4,33 @@
 
 ## What this site covers
 
+- DeepSeek-V4.1-Flash-1017: the October 17, 2026 checkpoint — same 552B Causal Encoder-Decoder architecture and price, stronger benchmarks, shorter outputs
 - DeepSeek V4.1 Flash: the September 10, 2026 release — Causal Encoder-Decoder architecture, 552B MoE, native vision, 1M context, KV cache compression
+- The Search and Fetch APIs DeepSeek opened on October 17 ($0.75 per 1,000 calls) and how to ground a RAG pipeline on them
+- Reliability: the October 2026 outage run, the seven-day credit refund, status triage and API error codes
 - Why V4-Flash was retired and V4-Pro is being routed to V4.1 Flash
 - Pricing (peak/off-peak), benchmarks, reasoning effort, API setup, and local deployment
-- How to use DeepSeek V4: official API, OpenCode, OpenCode Go, OpenRouter, Cursor, Claude Code, Claude Desktop, Codex, CC Switch
+- How to use DeepSeek V4: official API, OpenCode, OpenCode Go, OpenRouter, Cursor, VS Code, Claude Code, Claude Desktop, Codex, CC Switch, MCP servers
 - Ecosystem news: DeepSeek Harness, V4 Pro GA timeline, comparisons
 
 ## Key pages
 
 - [Home](https://deepseekv4guide.org/)
+- [What Is DeepSeek V4.1-Flash-1017? The Oct 17 Checkpoint](https://deepseekv4guide.org/guides/deepseek-v4-1-flash-1017)
+- [DeepSeek V4.1-Flash-1017 Benchmarks: 77.0 DeepSWE](https://deepseekv4guide.org/guides/v4-1-flash-1017-benchmarks)
+- [1017 vs V4.1 Flash: What Changed & Should You Switch](https://deepseekv4guide.org/guides/v4-1-flash-1017-vs-v4-1-flash)
+- [Run V4.1-Flash-1017 Locally: GGUF, VRAM & Spark](https://deepseekv4guide.org/guides/v4-1-flash-1017-local)
+- [DeepSeek Search & Fetch API: Setup, Pricing, Operators](https://deepseekv4guide.org/guides/deepseek-search-api)
+- [Build RAG with DeepSeek Search & Fetch API](https://deepseekv4guide.org/guides/deepseek-rag-search-api)
+- [Is DeepSeek Down? Outage History & Status Check](https://deepseekv4guide.org/guides/deepseek-down)
+- [DeepSeek Outage Refund: The 7-Day Credit Explained](https://deepseekv4guide.org/guides/deepseek-outage-refund)
+- [DeepSeek Server Busy: What It Means & How to Fix It](https://deepseekv4guide.org/guides/deepseek-server-busy)
+- [DeepSeek API Error Codes: 400-503 Fixes](https://deepseekv4guide.org/guides/deepseek-api-error-codes)
+- [DeepSeek 1017 in OpenCode: Zen, Go & Free Tiers](https://deepseekv4guide.org/guides/opencode-deepseek-1017)
+- [DeepSeek in VS Code & GitHub Copilot: Setup](https://deepseekv4guide.org/guides/deepseek-vscode-copilot)
+- [DeepSeek + Codex CLI: Responses API Setup](https://deepseekv4guide.org/guides/deepseek-codex)
+- [Is DeepSeek V4.1-Flash-1017 Free? Every Route](https://deepseekv4guide.org/guides/deepseek-free-1017)
+- [DeepSeek MCP Servers: Setup & Best Pairs](https://deepseekv4guide.org/guides/deepseek-mcp-servers)
 - [What Is DeepSeek V4.1 Flash? The 552B MoE, Explained](https://deepseekv4guide.org/guides/deepseek-v4-1-flash)
 - [DeepSeek V4.1 Flash Pricing: $0.003 Cache Hits & Peak Rates](https://deepseekv4guide.org/guides/v4-1-flash-pricing)
 - [DeepSeek V4.1 Flash Benchmarks: Full Official Table](https://deepseekv4guide.org/guides/v4-1-flash-benchmarks)

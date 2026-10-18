@@ -8,7 +8,8 @@ export const deepseekV4ProRetired: GuideContent = {
   title: "DeepSeek V4 Pro Retired: Why It Routes to V4.1 Flash",
   seoTitle: "DeepSeek V4 Pro Retired: Routes to V4.1",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: V4-Pro requests still route to the Flash line, which now means the 1017 checkpoint. See [[deepseek-v4-1-flash-1017|the 1017 release notes]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek is phasing out V4-Pro. From Sept 14, 2026 all deepseek-v4-pro requests route to V4.1 Flash at Flash prices — timeline, reasons and developer backlash.",
   toc: [

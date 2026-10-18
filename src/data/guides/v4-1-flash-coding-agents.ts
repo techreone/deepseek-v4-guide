@@ -8,7 +8,8 @@ export const v41FlashCodingAgents: GuideContent = {
   title: "DeepSeek V4.1 Flash for Coding Agents: OpenCode, Claude Code & Harness",
   seoTitle: "DeepSeek V4.1 Flash Coding Agent Setup",
   readTime: "10 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: 1017 is tuned for DeepSeek Harness v0.2.1-rc.1 or later and for Tencent CodeBuddy and WorkBuddy. See [[deepseek-v4-1-flash-1017|the 1017 release notes]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "How to run DeepSeek V4.1 Flash in Claude Code, OpenCode, OpenClaw and other coding agents: env vars, /connect, harness minimal mode and scaffold scores.",
   toc: [

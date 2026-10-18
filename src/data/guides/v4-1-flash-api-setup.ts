@@ -8,7 +8,8 @@ export const v41FlashApiSetup: GuideContent = {
   title: "DeepSeek V4.1 Flash API Setup: Base URL, Model ID & Migration",
   seoTitle: "DeepSeek V4.1 Flash API Setup & Migration",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the model name is unchanged, so existing calls now hit 1017 automatically. DeepSeek recommends DeepSeek Harness v0.2.1-rc.1 or later to get the full benefit.",
+  updatedAt: "OCT 18, 2026",
   summary:
     "Call DeepSeek V4.1 Flash with model deepseek-flash at api.deepseek.com. cURL and Python examples, continuous reasoning_effort, Responses API, V4 migration.",
   toc: [

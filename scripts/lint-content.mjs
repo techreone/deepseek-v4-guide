@@ -46,6 +46,22 @@ const NEW_SLUGS = new Set([
   "v4-1-flash-coding-agents",
   "v4-1-flash-kv-cache",
   "deepseek-v4-pro-retired",
+  // 2026-10-18 战役：1017 checkpoint + 10 月宕机事件 + OpenCode
+  "deepseek-v4-1-flash-1017",
+  "v4-1-flash-1017-benchmarks",
+  "v4-1-flash-1017-vs-v4-1-flash",
+  "v4-1-flash-1017-local",
+  "deepseek-search-api",
+  "deepseek-rag-search-api",
+  "deepseek-down",
+  "deepseek-outage-refund",
+  "deepseek-server-busy",
+  "deepseek-api-error-codes",
+  "opencode-deepseek-1017",
+  "deepseek-vscode-copilot",
+  "deepseek-codex",
+  "deepseek-free-1017",
+  "deepseek-mcp-servers",
 ]);
 
 const REQUIRED = ["slug", "category", "title", "seoTitle", "readTime", "updatedAt", "summary", "toc", "steps", "sources"];

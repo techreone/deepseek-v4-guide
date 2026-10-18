@@ -8,7 +8,8 @@ export const v41FlashReasoningEffort: GuideContent = {
   title: "DeepSeek V4.1 Flash Reasoning Effort: The 1-100 Dial Explained",
   seoTitle: "DeepSeek V4.1 Flash Reasoning Effort: 1-100",
   readTime: "9 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: reasoning-effort control is unchanged in 1017, but the checkpoint reaches higher scores at the same effort level. See [[v4-1-flash-1017-vs-v4-1-flash|what changed]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "V4.1 Flash turns reasoning effort into a continuous 1-100 integer. Presets, default effort 50, the 2.5x token cost from 25 to 100, and how to choose.",
   toc: [

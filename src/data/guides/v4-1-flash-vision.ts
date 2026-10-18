@@ -8,7 +8,8 @@ export const v41FlashVision: GuideContent = {
   title: "DeepSeek V4.1 Flash Vision: Native Multimodal Images",
   seoTitle: "DeepSeek V4.1 Flash Vision: Native Images",
   readTime: "8 MIN READ",
-  updatedAt: "SEP 11, 2026",
+  notice: "Updated Oct 17, 2026: the 1017 checkpoint improves the vision rows too, with BabyVision rising to 92.5 and Chartography to 83.0. See [[v4-1-flash-1017-benchmarks|the 1017 benchmark table]].",
+  updatedAt: "OCT 18, 2026",
   summary:
     "DeepSeek V4.1 Flash is natively multimodal through a 32-layer DeepSeek-ViT. Image tokens, routing bias, MMMU-Pro and DocVQA scores, and limits to know.",
   toc: [
