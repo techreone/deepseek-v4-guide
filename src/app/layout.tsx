@@ -47,11 +47,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} ${pixelFont.variable} antialiased bg-[#070709] text-charcoal selection:bg-zinc-800 selection:text-zinc-100 font-sans flex flex-col min-h-[100dvh] relative pb-14 md:pb-0`}>
-        {/* Adsterra Popunder（每页一个，注入 head 尽早注册） */}
-        <Script
-          strategy="beforeInteractive"
-          src="https://pl30876528.effectivecpmnetwork.com/a5/1c/49/a51c4976537750022f212c723892c88b.js"
-        />
         {/* WebSite + Organization structured data (brand EEAT) */}
         <script
           type="application/ld+json"
